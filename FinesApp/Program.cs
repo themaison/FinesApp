@@ -17,6 +17,7 @@ namespace FinesApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DriverRegisterForm());
+            //Application.Run(new DriverAuthForm());
         }
     }
 }

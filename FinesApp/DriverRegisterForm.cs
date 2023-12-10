@@ -17,7 +17,7 @@ namespace FinesApp
         public DriverRegisterForm()
         {
             InitializeComponent();
-            licenseNumberTextBox.Text = "ХХХХХХХХХХ";
+            //licenseNumberTextBox.Text = "ХХХХХХХХХХ";
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -62,20 +62,20 @@ namespace FinesApp
 
         private void licenseNumberEnter(object sender, EventArgs e)
         {
-            if (licenseNumberTextBox.Text == "ХХХХХХХХХХ")
-            {
-                licenseNumberTextBox.Text = "";
-                licenseNumberTextBox.ForeColor = Color.Black;
-            }
+            //if (licenseNumberTextBox.Text == "ХХХХХХХХХХ")
+            //{
+            //    licenseNumberTextBox.Text = "";
+            //    licenseNumberTextBox.ForeColor = Color.Black;
+            //}
         }
 
         private void licenseNumberLeave(object sender, EventArgs e)
         {
-            if (licenseNumberTextBox.Text == "")
-            {
-                licenseNumberTextBox.Text = "ХХХХХХХХХХ";
-                licenseNumberTextBox.ForeColor = Color.Gray;
-            }
+            //if (licenseNumberTextBox.Text == "")
+            //{
+            //    licenseNumberTextBox.Text = "ХХХХХХХХХХ";
+            //    licenseNumberTextBox.ForeColor = Color.Gray;
+            //}
         }
 
         private void driverRegisterButtonClick(object sender, EventArgs e)
@@ -87,18 +87,21 @@ namespace FinesApp
             DateTime licenseIssueDate = licenseIssueDatePicker.Value;
             DateTime licenseValidityDate = licenseValidityDatePicker.Value;
 
-            if (maleRB.Checked)
-            {
-                gender = "Мужской";
+            gender = maleRB.Checked ? "Мужской" : (femaleRB.Checked ? "Женский" : "");
+
+            if (string.IsNullOrEmpty(licenseNumber) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(gender) || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+                {
+                MessageBox.Show("Есть незаполненные поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
 
-            else if (femaleRB.Checked)
+            if (IsDriverExists(licenseNumber))
             {
-                gender = "Женский";
+                return;
             }
 
 
-            DB db = new DB();
+                DB db = new DB();
 
             string query = "INSERT INTO driver (license_number, full_name, gender, birth_date, license_issue_date, license_validity) VALUES (@licenseNumber, @fullName, @gender, @birthDate, @licenseIssueDate, @licenseValidityDate)";
 
@@ -119,10 +122,34 @@ namespace FinesApp
             }
             else
             {
-                MessageBox.Show("Упс... Регистрация не удалась!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Упс... Регистрация не удалась!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             db.closeConnection();
+        }
+
+        public Boolean IsDriverExists(String licenseNumber)
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+
+            string query = "SELECT * FROM driver WHERE license_number = @licenseNumber";
+            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
+
+            command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой номер в/у уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

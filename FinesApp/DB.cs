@@ -35,23 +35,5 @@ namespace FinesApp
         {
             return conn;
         }
-
-        public void DoQuery(string query)
-        {
-            openConnection();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = query;
-            NpgsqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-            }
-
-            cmd.Dispose();
-            conn.Close();
-        }
     }
 }
