@@ -33,7 +33,8 @@ namespace FinesApp
 
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
 
-            NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM protocol WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)", db.GetConnection());
+            string query = "SELECT * FROM protocol WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)";
+            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
 
             adapter.SelectCommand = command;
@@ -47,6 +48,26 @@ namespace FinesApp
             {
                 MessageBox.Show("Неверный номер в/у!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void licenseNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

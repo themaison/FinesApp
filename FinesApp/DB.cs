@@ -17,17 +17,17 @@ namespace FinesApp
         
 
         public void openConnection() { 
-            if (conn.State == ConnectionState.Open)
+            if (conn.State == ConnectionState.Closed)
             {
-                conn.Close();
+                conn.Open();
             }
         }
 
         public void closeConnection()
         {
-            if (conn.State == ConnectionState.Closed)
+            if (conn.State == ConnectionState.Open)
             {
-                conn.Open();
+                conn.Close();
             }
         }
 
