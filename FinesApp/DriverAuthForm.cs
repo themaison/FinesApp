@@ -70,5 +70,12 @@ namespace FinesApp
         {
 
         }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            DriverRegisterForm  driverRegisterForm = new DriverRegisterForm();
+            driverRegisterForm.Show();
+        }
     }
 }

@@ -261,6 +261,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Name = "DriverRegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DriverRegisterForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

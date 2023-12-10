@@ -102,19 +102,37 @@
     <Compile Include="DriverAuthForm.Designer.cs">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriverMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverMainForm.Designer.cs">
+      <DependentUpon>DriverMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriverRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DriverRegisterForm.Designer.cs">
       <DependentUpon>DriverRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DriverAuthForm.resx">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DriverMainForm.resx">
+      <DependentUpon>DriverMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriverRegisterForm.resx">
       <DependentUpon>DriverRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using Npgsql;
 
 namespace FinesApp
@@ -13,7 +7,6 @@ namespace FinesApp
     {
         static string DBConnect = "Server=localhost; Port=5432; User Id=postgres; Database=fines;";
         NpgsqlConnection conn = new NpgsqlConnection(DBConnect);
-        NpgsqlCommand cmd = new NpgsqlCommand();
         
 
         public void openConnection() { 

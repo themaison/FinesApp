@@ -34,6 +34,8 @@
             this.driverLoginButton = new System.Windows.Forms.Button();
             this.licenseNumberTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.registerLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +72,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.registerLabel);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.driverLoginButton);
             this.panel2.Controls.Add(this.licenseNumberTextBox);
             this.panel2.Controls.Add(this.label2);
@@ -120,6 +124,31 @@
             this.label2.Text = "Номер в/у";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(357, 496);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(299, 26);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Еще не зарегистрированы? ";
+            // 
+            // registerLabel
+            // 
+            this.registerLabel.AutoSize = true;
+            this.registerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registerLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.registerLabel.Location = new System.Drawing.Point(659, 496);
+            this.registerLabel.Name = "registerLabel";
+            this.registerLabel.Size = new System.Drawing.Size(220, 26);
+            this.registerLabel.TabIndex = 4;
+            this.registerLabel.Text = "Зарегистрироваться";
+            this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
+            // 
             // DriverAuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -128,6 +157,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "DriverAuthForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DriverAuthForm";
             this.Load += new System.EventHandler(this.DriverAuthForm_Load);
             this.panel1.ResumeLayout(false);
@@ -145,5 +175,7 @@
         private System.Windows.Forms.Button driverLoginButton;
         private System.Windows.Forms.TextBox licenseNumberTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label registerLabel;
     }
 }
