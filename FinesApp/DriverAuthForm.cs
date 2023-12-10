@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Npgsql;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinesApp
@@ -17,35 +12,6 @@ namespace FinesApp
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -55,6 +21,32 @@ namespace FinesApp
         private void DriverAuthForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void driverLoginButton_Click(object sender, EventArgs e)
+        {
+            String licenseNumber = licenseNumberTextBox.Text;
+
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+
+            NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM protocol WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)", db.GetConnection());
+            command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Авторизация прошла успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Неверный номер в/у!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
