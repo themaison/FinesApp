@@ -43,7 +43,10 @@ namespace FinesApp
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Авторизация прошла успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Авторизация прошла успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                DriverMainForm  driverMainForm = new DriverMainForm();
+                driverMainForm.Show();
             }
             else
             {

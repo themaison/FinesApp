@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="Driver.cs" />
     <Compile Include="DriverAuthForm.cs">
       <SubType>Form</SubType>
     </Compile>
