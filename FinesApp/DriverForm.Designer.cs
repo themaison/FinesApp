@@ -84,7 +84,7 @@
             this.profile_button.Cursor = System.Windows.Forms.Cursors.Default;
             this.profile_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.profile_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.profile_button.Location = new System.Drawing.Point(1041, 1);
+            this.profile_button.Location = new System.Drawing.Point(1032, 1);
             this.profile_button.Name = "profile_button";
             this.profile_button.Size = new System.Drawing.Size(180, 80);
             this.profile_button.TabIndex = 9;
@@ -208,9 +208,9 @@
             this.full_name_label.Location = new System.Drawing.Point(24, 18);
             this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
             this.full_name_label.Name = "full_name_label";
-            this.full_name_label.Size = new System.Drawing.Size(628, 47);
+            this.full_name_label.Size = new System.Drawing.Size(432, 47);
             this.full_name_label.TabIndex = 4;
-            this.full_name_label.Text = "Мельничук Владислав Викторович";
+            this.full_name_label.Text = "Имя Фамилия Отчество\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.full_name_label.Click += new System.EventHandler(this.label1_Click);
             // 
