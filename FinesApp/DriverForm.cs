@@ -53,6 +53,7 @@ namespace FinesApp
         {
             this.Hide();
             DriverProfileForm driverProfileForm = new DriverProfileForm();
+            driverProfileForm.driver = driver;
             driverProfileForm.Show();
         }
 

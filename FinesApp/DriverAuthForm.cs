@@ -33,7 +33,6 @@ namespace FinesApp
 
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
 
-            //string query = "SELECT * FROM protocol WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)";
             string query = "SELECT * FROM driver WHERE license_number = @licenseNumber";
             NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
@@ -43,7 +42,6 @@ namespace FinesApp
 
             if (table.Rows.Count > 0)
             {
-                //MessageBox.Show("Авторизация прошла успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 DriverForm  driverForm = new DriverForm();
 
