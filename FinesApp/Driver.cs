@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace FinesApp
 {
-    class Driver
+    public class Driver
     {
-        private String _licenseNumber;
-        public String LicenseNumber {
-            get { return _licenseNumber; }  
-            set { _licenseNumber = value; }
-        }
+        public string LicenseNumber { get; set; }
+        public string FullName { get; set; }
+        public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime LicenseIssueDate { get; set; }
+        public DateTime LicenseValidity { get; set; }
 
-        public Driver(String license_number)
+        public Driver(string licenseNumber, string fullName, string gender, DateTime birthDate, DateTime licenseIssueDate, DateTime licenseValidity)
         {
-            this._licenseNumber = license_number;
+            LicenseNumber = licenseNumber;
+            FullName = fullName;
+            Gender = gender;
+            BirthDate = birthDate;
+            LicenseIssueDate = licenseIssueDate;
+            LicenseValidity = licenseValidity;
         }
-
     }
 }

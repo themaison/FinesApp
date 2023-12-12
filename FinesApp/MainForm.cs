@@ -34,12 +34,16 @@ namespace FinesApp
 
         private void adminButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminAuthForm adminAuthForm = new AdminAuthForm();
+            adminAuthForm.Show();
         }
 
         private void inspectorButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            InspectorAuthForm inspectorAuthForm = new InspectorAuthForm();
+            inspectorAuthForm.Show();
         }
 
         private void driverButton_Click(object sender, EventArgs e)

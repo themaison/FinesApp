@@ -45,8 +45,28 @@ namespace FinesApp
             {
                 //MessageBox.Show("Авторизация прошла успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                DriverMainForm  driverMainForm = new DriverMainForm();
-                driverMainForm.Show();
+                DriverForm  driverForm = new DriverForm();
+
+                db.openConnection();
+                NpgsqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Driver driver = new Driver(
+                        reader.GetString(0),
+                        reader.GetString(1),
+                        reader.GetString(2),
+                        reader.GetDateTime(3),
+                        reader.GetDateTime(4),
+                        reader.GetDateTime(5)
+                    );
+
+                    driverForm.driver = driver;
+                }
+                reader.Close();
+                db.closeConnection();
+
+                driverForm.Show();
             }
             else
             {

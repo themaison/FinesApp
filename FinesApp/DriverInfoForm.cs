@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinesApp
 {
-    public partial class DriverMainForm : Form
+    public partial class DriverInfoForm : Form
     {
-        public DriverMainForm()
+        public DriverInfoForm()
         {
             InitializeComponent();
         }

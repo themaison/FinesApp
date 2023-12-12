@@ -95,6 +95,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAuthForm.Designer.cs">
+      <DependentUpon>AdminAuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverAuthForm.cs">
@@ -103,17 +115,47 @@
     <Compile Include="DriverAuthForm.Designer.cs">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DriverMainForm.cs">
+    <Compile Include="DriverForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DriverMainForm.Designer.cs">
-      <DependentUpon>DriverMainForm.cs</DependentUpon>
+    <Compile Include="DriverForm.Designer.cs">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverInfoForm.Designer.cs">
+      <DependentUpon>DriverInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverPaymentForm.Designer.cs">
+      <DependentUpon>DriverPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverProfileForm.Designer.cs">
+      <DependentUpon>DriverProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DriverRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DriverRegisterForm.Designer.cs">
       <DependentUpon>DriverRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InspectorAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectorAuthForm.Designer.cs">
+      <DependentUpon>InspectorAuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectorForm.Designer.cs">
+      <DependentUpon>InspectorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -123,14 +165,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAuthForm.resx">
+      <DependentUpon>AdminAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriverAuthForm.resx">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DriverMainForm.resx">
-      <DependentUpon>DriverMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="DriverForm.resx">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverInfoForm.resx">
+      <DependentUpon>DriverInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverPaymentForm.resx">
+      <DependentUpon>DriverPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverProfileForm.resx">
+      <DependentUpon>DriverProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriverRegisterForm.resx">
       <DependentUpon>DriverRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectorAuthForm.resx">
+      <DependentUpon>InspectorAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectorForm.resx">
+      <DependentUpon>InspectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
