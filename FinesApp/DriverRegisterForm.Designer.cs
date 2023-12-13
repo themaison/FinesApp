@@ -44,6 +44,7 @@
             this.licenseNumberTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -260,11 +261,25 @@
             this.label1.Text = "Водитель";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // to_back_button
+            // 
+            this.to_back_button.AutoSize = true;
+            this.to_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.to_back_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.to_back_button.Location = new System.Drawing.Point(24, 22);
+            this.to_back_button.Name = "to_back_button";
+            this.to_back_button.Size = new System.Drawing.Size(53, 41);
+            this.to_back_button.TabIndex = 18;
+            this.to_back_button.Text = "<-";
+            this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
+            // 
             // DriverRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 689);
+            this.Controls.Add(this.to_back_button);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Name = "DriverRegisterForm";
@@ -273,6 +288,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,5 +310,6 @@
         private System.Windows.Forms.RadioButton maleRB;
         private System.Windows.Forms.DateTimePicker licenseValidityDatePicker;
         private System.Windows.Forms.DateTimePicker licenseIssueDatePicker;
+        private System.Windows.Forms.Label to_back_button;
     }
 }

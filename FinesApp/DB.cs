@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using Npgsql;
 
 namespace FinesApp
@@ -27,6 +28,26 @@ namespace FinesApp
         public NpgsqlConnection GetConnection()
         {
             return conn;
+        }
+
+        public DataTable GetTableFromDB(String tableName)
+        {
+            DataTable table = new DataTable();
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+            NpgsqlCommand command;
+
+            string query = "SELECT * FROM " + tableName;
+
+            this.openConnection();
+
+            command = new NpgsqlCommand(query, this.GetConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            this.closeConnection();
+
+            return table;
         }
     }
 }

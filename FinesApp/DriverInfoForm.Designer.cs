@@ -32,11 +32,11 @@
             this.to_back_button = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
+            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.violationDGV = new System.Windows.Forms.DataGridView();
-            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,9 +71,9 @@
             this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.to_back_button.Location = new System.Drawing.Point(31, 31);
             this.to_back_button.Name = "to_back_button";
-            this.to_back_button.Size = new System.Drawing.Size(149, 41);
+            this.to_back_button.Size = new System.Drawing.Size(53, 41);
             this.to_back_button.TabIndex = 12;
-            this.to_back_button.Text = "<- Назад";
+            this.to_back_button.Text = "<-";
             this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
             // 
             // panel2
@@ -110,6 +110,22 @@
             this.paymentStatusDGV.RowTemplate.Height = 33;
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 200);
             this.paymentStatusDGV.TabIndex = 3;
+            // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.Width = 200;
+            // 
+            // status_name
+            // 
+            this.status_name.DataPropertyName = "status_name";
+            this.status_name.HeaderText = "Наименование";
+            this.status_name.MinimumWidth = 10;
+            this.status_name.Name = "status_name";
+            this.status_name.Width = 340;
             // 
             // label3
             // 
@@ -155,22 +171,6 @@
             this.violationDGV.Size = new System.Drawing.Size(1180, 320);
             this.violationDGV.TabIndex = 0;
             // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.Width = 200;
-            // 
-            // status_name
-            // 
-            this.status_name.DataPropertyName = "status_name";
-            this.status_name.HeaderText = "Наименование";
-            this.status_name.MinimumWidth = 10;
-            this.status_name.Name = "status_name";
-            this.status_name.Width = 340;
-            // 
             // violation_id
             // 
             this.violation_id.DataPropertyName = "violation_id";
@@ -193,6 +193,7 @@
             this.fine_amount.HeaderText = "Сумма штрафа";
             this.fine_amount.MinimumWidth = 10;
             this.fine_amount.Name = "fine_amount";
+            this.fine_amount.Width = 200;
             // 
             // DriverInfoForm
             // 

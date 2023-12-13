@@ -164,5 +164,12 @@ namespace FinesApp
         {
 
         }
+
+        private void to_back_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DriverAuthForm driverAuthForm = new DriverAuthForm();
+            driverAuthForm.Show();
+        }
     }
 }

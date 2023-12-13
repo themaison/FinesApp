@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DriverProfileForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.data3_label = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.license_number_label = new System.Windows.Forms.Label();
             this.to_back_button = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,17 +91,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 566);
             this.panel2.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FinesApp.Properties.Resources.profile_icon;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(160, 121);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 280);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
             // 
             // data3_label
             // 
@@ -243,10 +232,21 @@
             this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.to_back_button.Location = new System.Drawing.Point(30, 22);
             this.to_back_button.Name = "to_back_button";
-            this.to_back_button.Size = new System.Drawing.Size(149, 41);
+            this.to_back_button.Size = new System.Drawing.Size(53, 41);
             this.to_back_button.TabIndex = 11;
-            this.to_back_button.Text = "<- Назад";
+            this.to_back_button.Text = "<-";
             this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FinesApp.Properties.Resources.profile_icon;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(160, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 280);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // DriverProfileForm
             // 

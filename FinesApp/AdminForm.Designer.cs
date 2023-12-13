@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.adminButton = new System.Windows.Forms.Button();
+            this.drivers_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.adminButton);
+            this.flowLayoutPanel1.Controls.Add(this.drivers_button);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button3);
@@ -67,21 +67,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(944, 300);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
-            // adminButton
+            // drivers_button
             // 
-            this.adminButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.drivers_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.adminButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.adminButton.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.adminButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.adminButton.Location = new System.Drawing.Point(10, 10);
-            this.adminButton.Margin = new System.Windows.Forms.Padding(10);
-            this.adminButton.Name = "adminButton";
-            this.adminButton.Padding = new System.Windows.Forms.Padding(10);
-            this.adminButton.Size = new System.Drawing.Size(294, 80);
-            this.adminButton.TabIndex = 6;
-            this.adminButton.Text = "Водители";
-            this.adminButton.UseVisualStyleBackColor = true;
+            this.drivers_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.drivers_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drivers_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.drivers_button.Location = new System.Drawing.Point(10, 10);
+            this.drivers_button.Margin = new System.Windows.Forms.Padding(10);
+            this.drivers_button.Name = "drivers_button";
+            this.drivers_button.Padding = new System.Windows.Forms.Padding(10);
+            this.drivers_button.Size = new System.Drawing.Size(294, 80);
+            this.drivers_button.TabIndex = 6;
+            this.drivers_button.Text = "Водители";
+            this.drivers_button.UseVisualStyleBackColor = true;
+            this.drivers_button.Click += new System.EventHandler(this.drivers_button_Click);
             // 
             // button1
             // 
@@ -144,7 +145,7 @@
             this.button4.Padding = new System.Windows.Forms.Padding(10);
             this.button4.Size = new System.Drawing.Size(294, 80);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Статусы оплат";
+            this.button4.Text = "Статусы оплаты";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -161,7 +162,7 @@
             this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.label1.Size = new System.Drawing.Size(1254, 80);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Панель администратора";
+            this.label1.Text = "Администратор";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // exitButton
@@ -201,7 +202,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button adminButton;
+        private System.Windows.Forms.Button drivers_button;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

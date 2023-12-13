@@ -23,5 +23,12 @@ namespace FinesApp
             AdminAuthForm adminAuthForm = new AdminAuthForm();
             adminAuthForm.Show();
         }
+
+        private void drivers_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDriversForm driversForm = new AdminDriversForm();
+            driversForm.Show();
+        }
     }
 }

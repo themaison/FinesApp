@@ -101,6 +101,12 @@
     <Compile Include="AdminAuthForm.Designer.cs">
       <DependentUpon>AdminAuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminDriversForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDriversForm.Designer.cs">
+      <DependentUpon>AdminDriversForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="Protocol.cs" />
     <EmbeddedResource Include="AdminAuthForm.resx">
       <DependentUpon>AdminAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDriversForm.resx">
+      <DependentUpon>AdminDriversForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>

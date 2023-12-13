@@ -146,9 +146,9 @@
             this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.to_back_button.Location = new System.Drawing.Point(22, 22);
             this.to_back_button.Name = "to_back_button";
-            this.to_back_button.Size = new System.Drawing.Size(149, 41);
+            this.to_back_button.Size = new System.Drawing.Size(53, 41);
             this.to_back_button.TabIndex = 14;
-            this.to_back_button.Text = "<- Назад";
+            this.to_back_button.Text = "<-";
             this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
             // 
             // InspectorAuthForm
