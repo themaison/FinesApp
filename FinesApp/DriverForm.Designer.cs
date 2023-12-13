@@ -28,11 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.info_button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.protocol_more_button = new System.Windows.Forms.Button();
             this.protocolDGV = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.violationDGV = new System.Windows.Forms.DataGridView();
+            this.profile_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,18 +56,6 @@
             this.violation_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.violationDGV = new System.Windows.Forms.DataGridView();
-            this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profile_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.violationDGV)).BeginInit();
@@ -128,6 +132,14 @@
             this.protocolDGV.AllowUserToDeleteRows = false;
             this.protocolDGV.AllowUserToResizeColumns = false;
             this.protocolDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Product Sans Black", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.protocolDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.protocolDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.protocolDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.protocol_id,
@@ -137,6 +149,14 @@
             this.violation_time,
             this.violation_place,
             this.status_id});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.protocolDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.protocolDGV.Location = new System.Drawing.Point(32, 362);
             this.protocolDGV.Margin = new System.Windows.Forms.Padding(4);
             this.protocolDGV.Name = "protocolDGV";
@@ -146,71 +166,6 @@
             this.protocolDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.protocolDGV.Size = new System.Drawing.Size(1180, 240);
             this.protocolDGV.TabIndex = 3;
-            this.protocolDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.protocolDGV_RowEnter);
-            // 
-            // protocol_id
-            // 
-            this.protocol_id.DataPropertyName = "protocol_id";
-            this.protocol_id.HeaderText = "protocol_id";
-            this.protocol_id.MinimumWidth = 10;
-            this.protocol_id.Name = "protocol_id";
-            this.protocol_id.ReadOnly = true;
-            this.protocol_id.Visible = false;
-            this.protocol_id.Width = 200;
-            // 
-            // violation_id
-            // 
-            this.violation_id.DataPropertyName = "violation_id";
-            this.violation_id.HeaderText = "Нарушение";
-            this.violation_id.MinimumWidth = 10;
-            this.violation_id.Name = "violation_id";
-            this.violation_id.ReadOnly = true;
-            this.violation_id.Width = 200;
-            // 
-            // sts_number2
-            // 
-            this.sts_number2.DataPropertyName = "sts_number";
-            this.sts_number2.HeaderText = "Номер СТС";
-            this.sts_number2.MinimumWidth = 10;
-            this.sts_number2.Name = "sts_number2";
-            this.sts_number2.ReadOnly = true;
-            this.sts_number2.Width = 200;
-            // 
-            // violation_date
-            // 
-            this.violation_date.DataPropertyName = "violation_date";
-            this.violation_date.HeaderText = "Дата";
-            this.violation_date.MinimumWidth = 10;
-            this.violation_date.Name = "violation_date";
-            this.violation_date.ReadOnly = true;
-            this.violation_date.Width = 140;
-            // 
-            // violation_time
-            // 
-            this.violation_time.DataPropertyName = "violation_time";
-            this.violation_time.HeaderText = "Время";
-            this.violation_time.MinimumWidth = 10;
-            this.violation_time.Name = "violation_time";
-            this.violation_time.ReadOnly = true;
-            this.violation_time.Width = 140;
-            // 
-            // violation_place
-            // 
-            this.violation_place.DataPropertyName = "violation_place";
-            this.violation_place.HeaderText = "Место";
-            this.violation_place.MinimumWidth = 10;
-            this.violation_place.Name = "violation_place";
-            this.violation_place.ReadOnly = true;
-            this.violation_place.Width = 280;
-            // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "Статус";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 200;
             // 
             // label3
             // 
@@ -243,14 +198,30 @@
             this.violationDGV.AllowUserToResizeColumns = false;
             this.violationDGV.AllowUserToResizeRows = false;
             this.violationDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Product Sans Black", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.violationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.violationDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.violationDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sts_number,
+            this.state_number,
+            this.license_number,
             this.brand,
             this.model,
-            this.year_of_manufacture,
-            this.state_number,
-            this.license_number});
+            this.year_of_manufacture});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.violationDGV.DefaultCellStyle = dataGridViewCellStyle4;
             this.violationDGV.Location = new System.Drawing.Point(32, 58);
             this.violationDGV.Margin = new System.Windows.Forms.Padding(4);
             this.violationDGV.Name = "violationDGV";
@@ -261,60 +232,6 @@
             this.violationDGV.Size = new System.Drawing.Size(1180, 240);
             this.violationDGV.TabIndex = 0;
             this.violationDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // sts_number
-            // 
-            this.sts_number.DataPropertyName = "sts_number";
-            this.sts_number.HeaderText = "Номер СТС";
-            this.sts_number.MinimumWidth = 10;
-            this.sts_number.Name = "sts_number";
-            this.sts_number.ReadOnly = true;
-            this.sts_number.Width = 200;
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "brand";
-            this.brand.HeaderText = "Марка";
-            this.brand.MinimumWidth = 10;
-            this.brand.Name = "brand";
-            this.brand.ReadOnly = true;
-            this.brand.Width = 140;
-            // 
-            // model
-            // 
-            this.model.DataPropertyName = "model";
-            this.model.HeaderText = "Модель";
-            this.model.MinimumWidth = 10;
-            this.model.Name = "model";
-            this.model.ReadOnly = true;
-            this.model.Width = 140;
-            // 
-            // year_of_manufacture
-            // 
-            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
-            this.year_of_manufacture.HeaderText = "Год выпуска";
-            this.year_of_manufacture.MinimumWidth = 10;
-            this.year_of_manufacture.Name = "year_of_manufacture";
-            this.year_of_manufacture.ReadOnly = true;
-            this.year_of_manufacture.Width = 200;
-            // 
-            // state_number
-            // 
-            this.state_number.DataPropertyName = "state_number";
-            this.state_number.HeaderText = "Госномер";
-            this.state_number.MinimumWidth = 10;
-            this.state_number.Name = "state_number";
-            this.state_number.ReadOnly = true;
-            this.state_number.Width = 140;
-            // 
-            // license_number
-            // 
-            this.license_number.DataPropertyName = "license_number";
-            this.license_number.HeaderText = "Номер в/у";
-            this.license_number.MinimumWidth = 10;
-            this.license_number.Name = "license_number";
-            this.license_number.ReadOnly = true;
-            this.license_number.Width = 200;
             // 
             // profile_button
             // 
@@ -360,6 +277,121 @@
             this.label1.Text = "Выйти";
             this.label1.Click += new System.EventHandler(this.exit_button_Click);
             // 
+            // sts_number
+            // 
+            this.sts_number.DataPropertyName = "sts_number";
+            this.sts_number.HeaderText = "Номер СТС";
+            this.sts_number.MinimumWidth = 10;
+            this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
+            this.sts_number.Width = 140;
+            // 
+            // state_number
+            // 
+            this.state_number.DataPropertyName = "state_number";
+            this.state_number.HeaderText = "Госномер";
+            this.state_number.MinimumWidth = 10;
+            this.state_number.Name = "state_number";
+            this.state_number.ReadOnly = true;
+            this.state_number.Width = 140;
+            // 
+            // license_number
+            // 
+            this.license_number.DataPropertyName = "license_number";
+            this.license_number.HeaderText = "Номер в/у";
+            this.license_number.MinimumWidth = 10;
+            this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
+            this.license_number.Visible = false;
+            this.license_number.Width = 200;
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "Марка";
+            this.brand.MinimumWidth = 10;
+            this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
+            this.brand.Width = 140;
+            // 
+            // model
+            // 
+            this.model.DataPropertyName = "model";
+            this.model.HeaderText = "Модель";
+            this.model.MinimumWidth = 10;
+            this.model.Name = "model";
+            this.model.ReadOnly = true;
+            this.model.Width = 140;
+            // 
+            // year_of_manufacture
+            // 
+            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
+            this.year_of_manufacture.HeaderText = "Год выпуска";
+            this.year_of_manufacture.MinimumWidth = 10;
+            this.year_of_manufacture.Name = "year_of_manufacture";
+            this.year_of_manufacture.ReadOnly = true;
+            this.year_of_manufacture.Width = 140;
+            // 
+            // protocol_id
+            // 
+            this.protocol_id.DataPropertyName = "protocol_id";
+            this.protocol_id.HeaderText = "ID Протокола";
+            this.protocol_id.MinimumWidth = 10;
+            this.protocol_id.Name = "protocol_id";
+            this.protocol_id.ReadOnly = true;
+            this.protocol_id.Visible = false;
+            // 
+            // violation_id
+            // 
+            this.violation_id.DataPropertyName = "violation_id";
+            this.violation_id.HeaderText = "ID Нарушения";
+            this.violation_id.MinimumWidth = 10;
+            this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
+            this.violation_id.Width = 140;
+            // 
+            // sts_number2
+            // 
+            this.sts_number2.DataPropertyName = "sts_number";
+            this.sts_number2.HeaderText = "Номер СТС";
+            this.sts_number2.MinimumWidth = 10;
+            this.sts_number2.Name = "sts_number2";
+            this.sts_number2.ReadOnly = true;
+            this.sts_number2.Width = 140;
+            // 
+            // violation_date
+            // 
+            this.violation_date.DataPropertyName = "violation_date";
+            this.violation_date.HeaderText = "Дата";
+            this.violation_date.MinimumWidth = 10;
+            this.violation_date.Name = "violation_date";
+            this.violation_date.ReadOnly = true;
+            // 
+            // violation_time
+            // 
+            this.violation_time.DataPropertyName = "violation_time";
+            this.violation_time.HeaderText = "Время";
+            this.violation_time.MinimumWidth = 10;
+            this.violation_time.Name = "violation_time";
+            this.violation_time.ReadOnly = true;
+            // 
+            // violation_place
+            // 
+            this.violation_place.DataPropertyName = "violation_place";
+            this.violation_place.HeaderText = "Место";
+            this.violation_place.MinimumWidth = 10;
+            this.violation_place.Name = "violation_place";
+            this.violation_place.ReadOnly = true;
+            this.violation_place.Width = 200;
+            // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "Статус";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            // 
             // DriverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -398,6 +430,12 @@
         private System.Windows.Forms.Button info_button;
         private System.Windows.Forms.Button profile_button;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn license_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn year_of_manufacture;
         private System.Windows.Forms.DataGridViewTextBoxColumn protocol_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn sts_number2;
@@ -405,11 +443,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_place;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn year_of_manufacture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn state_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn license_number;
     }
 }

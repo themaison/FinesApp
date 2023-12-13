@@ -6,15 +6,16 @@ namespace FinesApp
     {
         public int ProtocolId { get; set; }
         public int ViolationId { get; set; }
-        public string StsNumber { get; set; }
-        public DateTime ViolationDate { get; set; }
-        public DateTime ViolationTime { get; set; }
-        public string ViolationPlace { get; set; }
+        public String StsNumber { get; set; }
+        public String ViolationDate { get; set; }
+        public String ViolationTime { get; set; }
+        public String ViolationPlace { get; set; }
         public int StatusId { get; set; }
 
-        public Protocol(int protocol_id, string sts_number, DateTime violation_date, DateTime violation_time, string violation_place, int status_id)
+        public Protocol(int protocol_id, int violation_id, String sts_number, String violation_date, String violation_time, String violation_place, int status_id)
         {
             ProtocolId = protocol_id;
+            ViolationId = violation_id;
             StsNumber = sts_number;
             ViolationDate = violation_date;
             ViolationTime = violation_time;

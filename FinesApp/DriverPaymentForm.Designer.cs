@@ -38,7 +38,7 @@
             this.violation_time_label = new System.Windows.Forms.Label();
             this.violation_date_label = new System.Windows.Forms.Label();
             this.sts_number_label = new System.Windows.Forms.Label();
-            this.violation_label = new System.Windows.Forms.Label();
+            this.violation_name_label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.panel2.Controls.Add(this.violation_time_label);
             this.panel2.Controls.Add(this.violation_date_label);
             this.panel2.Controls.Add(this.sts_number_label);
-            this.panel2.Controls.Add(this.violation_label);
+            this.panel2.Controls.Add(this.violation_name_label);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -176,16 +176,16 @@
             this.sts_number_label.TabIndex = 6;
             this.sts_number_label.Text = "Текст";
             // 
-            // violation_label
+            // violation_name_label
             // 
-            this.violation_label.AutoSize = true;
-            this.violation_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.violation_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.violation_label.Location = new System.Drawing.Point(303, 50);
-            this.violation_label.Name = "violation_label";
-            this.violation_label.Size = new System.Drawing.Size(85, 34);
-            this.violation_label.TabIndex = 5;
-            this.violation_label.Text = "Текст";
+            this.violation_name_label.AutoSize = true;
+            this.violation_name_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.violation_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.violation_name_label.Location = new System.Drawing.Point(303, 50);
+            this.violation_name_label.Name = "violation_name_label";
+            this.violation_name_label.Size = new System.Drawing.Size(85, 34);
+            this.violation_name_label.TabIndex = 5;
+            this.violation_name_label.Text = "Текст";
             // 
             // label6
             // 
@@ -281,6 +281,7 @@
             this.Name = "DriverPaymentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DriverPaymentForm";
+            this.Load += new System.EventHandler(this.DriverPaymentForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -304,7 +305,7 @@
         private System.Windows.Forms.Label violation_time_label;
         private System.Windows.Forms.Label violation_date_label;
         private System.Windows.Forms.Label sts_number_label;
-        private System.Windows.Forms.Label violation_label;
+        private System.Windows.Forms.Label violation_name_label;
         private System.Windows.Forms.Label fine_cost_label;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label to_back_button;
