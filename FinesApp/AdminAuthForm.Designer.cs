@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.passTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.authButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.passTextBox = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,24 +56,12 @@
             this.panel2.Size = new System.Drawing.Size(1254, 566);
             this.panel2.TabIndex = 3;
             // 
-            // passTextBox
-            // 
-            this.passTextBox.Font = new System.Drawing.Font("Product Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passTextBox.Location = new System.Drawing.Point(363, 256);
-            this.passTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.passTextBox.MinimumSize = new System.Drawing.Size(4, 80);
-            this.passTextBox.Name = "passTextBox";
-            this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.passTextBox.Size = new System.Drawing.Size(517, 80);
-            this.passTextBox.TabIndex = 6;
-            this.passTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(356, 212);
+            this.label4.Location = new System.Drawing.Point(357, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 34);
             this.label4.TabIndex = 5;
@@ -87,7 +75,7 @@
             this.authButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.authButton.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.authButton.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.authButton.Location = new System.Drawing.Point(363, 440);
+            this.authButton.Location = new System.Drawing.Point(362, 374);
             this.authButton.Name = "authButton";
             this.authButton.Size = new System.Drawing.Size(517, 80);
             this.authButton.TabIndex = 2;
@@ -101,6 +89,7 @@
             this.loginTextBox.Location = new System.Drawing.Point(363, 105);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(10);
             this.loginTextBox.MinimumSize = new System.Drawing.Size(4, 80);
+            this.loginTextBox.Multiline = true;
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.loginTextBox.Size = new System.Drawing.Size(517, 80);
@@ -134,6 +123,19 @@
             this.label1.Text = "Администратор БД";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // passTextBox
+            // 
+            this.passTextBox.Font = new System.Drawing.Font("Product Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passTextBox.Location = new System.Drawing.Point(369, 243);
+            this.passTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.passTextBox.MinimumSize = new System.Drawing.Size(4, 80);
+            this.passTextBox.Multiline = true;
+            this.passTextBox.Name = "passTextBox";
+            this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.passTextBox.Size = new System.Drawing.Size(517, 80);
+            this.passTextBox.TabIndex = 6;
+            this.passTextBox.UseSystemPasswordChar = true;
+            // 
             // AdminAuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -157,7 +159,7 @@
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox passTextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox passTextBox;
     }
 }
