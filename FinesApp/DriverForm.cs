@@ -38,14 +38,26 @@ namespace FinesApp
         private void protocol_more_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DriverPaymentForm driverPaymenform = new DriverPaymentForm();
-            driverPaymenform.Show();
+            DriverPaymentForm driverPaymenForm = new DriverPaymentForm();
+            driverPaymenForm.driver = driver;
+
+            DataGridViewRow ds = protocolDGV.SelectedRows[0];
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+            driverPaymenForm.protocol.ProtocolId = (int)ds.Cells[0].Value;
+
+            driverPaymenForm.Show();
         }
 
         private void info_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             DriverInfoForm driverInfoForm = new DriverInfoForm();
+            driverInfoForm.driver = driver;
             driverInfoForm.Show();
         }
 
@@ -101,5 +113,12 @@ namespace FinesApp
             db.closeConnection();
         }
 
+        private void protocolDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+            DriverPaymentForm driverPaymentForm = new DriverPaymentForm();
+            driverPaymentForm.driver = driver;
+            driverPaymentForm.Show();
+        }
     }
 }

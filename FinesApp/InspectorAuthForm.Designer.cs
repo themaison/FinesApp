@@ -63,6 +63,7 @@
             this.passTextBox.Margin = new System.Windows.Forms.Padding(10);
             this.passTextBox.MinimumSize = new System.Drawing.Size(4, 80);
             this.passTextBox.Name = "passTextBox";
+            this.passTextBox.PasswordChar = '*';
             this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passTextBox.Size = new System.Drawing.Size(517, 80);
             this.passTextBox.TabIndex = 6;
@@ -85,7 +86,7 @@
             this.authButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.authButton.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.authButton.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.authButton.Location = new System.Drawing.Point(363, 440);
+            this.authButton.Location = new System.Drawing.Point(362, 401);
             this.authButton.Name = "authButton";
             this.authButton.Size = new System.Drawing.Size(517, 80);
             this.authButton.TabIndex = 2;

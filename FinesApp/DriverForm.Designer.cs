@@ -72,7 +72,7 @@
             this.panel2.Controls.Add(this.violationDGV);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.Location = new System.Drawing.Point(0, 83);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 736);
             this.panel2.TabIndex = 5;
@@ -86,7 +86,7 @@
             this.info_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.info_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.info_button.Location = new System.Drawing.Point(32, 633);
-            this.info_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.info_button.Margin = new System.Windows.Forms.Padding(4);
             this.info_button.Name = "info_button";
             this.info_button.Size = new System.Drawing.Size(232, 81);
             this.info_button.TabIndex = 8;
@@ -114,7 +114,7 @@
             this.protocol_more_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.protocol_more_button.ForeColor = System.Drawing.SystemColors.InfoText;
             this.protocol_more_button.Location = new System.Drawing.Point(974, 633);
-            this.protocol_more_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.protocol_more_button.Margin = new System.Windows.Forms.Padding(4);
             this.protocol_more_button.Name = "protocol_more_button";
             this.protocol_more_button.Size = new System.Drawing.Size(238, 81);
             this.protocol_more_button.TabIndex = 6;
@@ -138,12 +138,15 @@
             this.violation_place,
             this.status_id});
             this.protocolDGV.Location = new System.Drawing.Point(32, 362);
-            this.protocolDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.protocolDGV.Margin = new System.Windows.Forms.Padding(4);
             this.protocolDGV.Name = "protocolDGV";
+            this.protocolDGV.ReadOnly = true;
             this.protocolDGV.RowHeadersWidth = 82;
             this.protocolDGV.RowTemplate.Height = 33;
+            this.protocolDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.protocolDGV.Size = new System.Drawing.Size(1180, 240);
             this.protocolDGV.TabIndex = 3;
+            this.protocolDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.protocolDGV_RowEnter);
             // 
             // protocol_id
             // 
@@ -151,6 +154,7 @@
             this.protocol_id.HeaderText = "protocol_id";
             this.protocol_id.MinimumWidth = 10;
             this.protocol_id.Name = "protocol_id";
+            this.protocol_id.ReadOnly = true;
             this.protocol_id.Visible = false;
             this.protocol_id.Width = 200;
             // 
@@ -160,6 +164,7 @@
             this.violation_id.HeaderText = "Нарушение";
             this.violation_id.MinimumWidth = 10;
             this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
             this.violation_id.Width = 200;
             // 
             // sts_number2
@@ -168,6 +173,7 @@
             this.sts_number2.HeaderText = "Номер СТС";
             this.sts_number2.MinimumWidth = 10;
             this.sts_number2.Name = "sts_number2";
+            this.sts_number2.ReadOnly = true;
             this.sts_number2.Width = 200;
             // 
             // violation_date
@@ -176,6 +182,7 @@
             this.violation_date.HeaderText = "Дата";
             this.violation_date.MinimumWidth = 10;
             this.violation_date.Name = "violation_date";
+            this.violation_date.ReadOnly = true;
             this.violation_date.Width = 140;
             // 
             // violation_time
@@ -184,6 +191,7 @@
             this.violation_time.HeaderText = "Время";
             this.violation_time.MinimumWidth = 10;
             this.violation_time.Name = "violation_time";
+            this.violation_time.ReadOnly = true;
             this.violation_time.Width = 140;
             // 
             // violation_place
@@ -192,6 +200,7 @@
             this.violation_place.HeaderText = "Место";
             this.violation_place.MinimumWidth = 10;
             this.violation_place.Name = "violation_place";
+            this.violation_place.ReadOnly = true;
             this.violation_place.Width = 280;
             // 
             // status_id
@@ -200,6 +209,7 @@
             this.status_id.HeaderText = "Статус";
             this.status_id.MinimumWidth = 10;
             this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
             this.status_id.Width = 200;
             // 
             // label3
@@ -242,10 +252,12 @@
             this.state_number,
             this.license_number});
             this.violationDGV.Location = new System.Drawing.Point(32, 58);
-            this.violationDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.violationDGV.Margin = new System.Windows.Forms.Padding(4);
             this.violationDGV.Name = "violationDGV";
+            this.violationDGV.ReadOnly = true;
             this.violationDGV.RowHeadersWidth = 80;
             this.violationDGV.RowTemplate.Height = 33;
+            this.violationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.violationDGV.Size = new System.Drawing.Size(1180, 240);
             this.violationDGV.TabIndex = 0;
             this.violationDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -256,6 +268,7 @@
             this.sts_number.HeaderText = "Номер СТС";
             this.sts_number.MinimumWidth = 10;
             this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
             this.sts_number.Width = 200;
             // 
             // brand
@@ -264,6 +277,7 @@
             this.brand.HeaderText = "Марка";
             this.brand.MinimumWidth = 10;
             this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
             this.brand.Width = 140;
             // 
             // model
@@ -272,6 +286,7 @@
             this.model.HeaderText = "Модель";
             this.model.MinimumWidth = 10;
             this.model.Name = "model";
+            this.model.ReadOnly = true;
             this.model.Width = 140;
             // 
             // year_of_manufacture
@@ -280,6 +295,7 @@
             this.year_of_manufacture.HeaderText = "Год выпуска";
             this.year_of_manufacture.MinimumWidth = 10;
             this.year_of_manufacture.Name = "year_of_manufacture";
+            this.year_of_manufacture.ReadOnly = true;
             this.year_of_manufacture.Width = 200;
             // 
             // state_number
@@ -288,6 +304,7 @@
             this.state_number.HeaderText = "Госномер";
             this.state_number.MinimumWidth = 10;
             this.state_number.Name = "state_number";
+            this.state_number.ReadOnly = true;
             this.state_number.Width = 140;
             // 
             // license_number
@@ -296,6 +313,7 @@
             this.license_number.HeaderText = "Номер в/у";
             this.license_number.MinimumWidth = 10;
             this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
             this.license_number.Width = 200;
             // 
             // profile_button
@@ -306,7 +324,7 @@
             this.profile_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.profile_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.profile_button.Location = new System.Drawing.Point(1032, 2);
-            this.profile_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.profile_button.Margin = new System.Windows.Forms.Padding(4);
             this.profile_button.Name = "profile_button";
             this.profile_button.Size = new System.Drawing.Size(180, 81);
             this.profile_button.TabIndex = 9;
@@ -351,7 +369,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.full_name_label);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1280, 890);
             this.MinimumSize = new System.Drawing.Size(1280, 890);
             this.Name = "DriverForm";
