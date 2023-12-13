@@ -35,6 +35,7 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.PasswordChar = '*';
             this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.passTextBox.Size = new System.Drawing.Size(517, 80);
+            this.passTextBox.Size = new System.Drawing.Size(517, 46);
             this.passTextBox.TabIndex = 6;
             // 
             // label4
@@ -101,7 +102,7 @@
             this.loginTextBox.MinimumSize = new System.Drawing.Size(4, 80);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.loginTextBox.Size = new System.Drawing.Size(517, 80);
+            this.loginTextBox.Size = new System.Drawing.Size(517, 46);
             this.loginTextBox.TabIndex = 1;
             // 
             // label2
@@ -132,11 +133,25 @@
             this.label1.Text = "Инспектор ГИБДД";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // to_back_button
+            // 
+            this.to_back_button.AutoSize = true;
+            this.to_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.to_back_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.to_back_button.Location = new System.Drawing.Point(22, 22);
+            this.to_back_button.Name = "to_back_button";
+            this.to_back_button.Size = new System.Drawing.Size(149, 41);
+            this.to_back_button.TabIndex = 14;
+            this.to_back_button.Text = "<- Назад";
+            this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
+            // 
             // InspectorAuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 649);
+            this.Controls.Add(this.to_back_button);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Name = "InspectorAuthForm";
@@ -145,6 +160,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -157,5 +173,6 @@
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label to_back_button;
     }
 }

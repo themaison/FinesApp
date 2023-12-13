@@ -120,6 +120,7 @@
             this.payButton.TabIndex = 11;
             this.payButton.Text = "Оплатить";
             this.payButton.UseVisualStyleBackColor = true;
+            this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
             // label12
             // 

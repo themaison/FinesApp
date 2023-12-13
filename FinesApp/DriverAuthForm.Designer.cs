@@ -36,12 +36,14 @@
             this.driverLoginButton = new System.Windows.Forms.Button();
             this.licenseNumberTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.to_back_button);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -132,7 +134,7 @@
             this.licenseNumberTextBox.Font = new System.Drawing.Font("Product Sans Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.licenseNumberTextBox.Location = new System.Drawing.Point(362, 218);
             this.licenseNumberTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.licenseNumberTextBox.MinimumSize = new System.Drawing.Size(0, 80);
+            this.licenseNumberTextBox.MinimumSize = new System.Drawing.Size(4, 80);
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.licenseNumberTextBox.Size = new System.Drawing.Size(517, 85);
@@ -152,6 +154,19 @@
             this.label2.Text = "Номер в/у";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // to_back_button
+            // 
+            this.to_back_button.AutoSize = true;
+            this.to_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.to_back_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.to_back_button.Location = new System.Drawing.Point(22, 22);
+            this.to_back_button.Name = "to_back_button";
+            this.to_back_button.Size = new System.Drawing.Size(149, 41);
+            this.to_back_button.TabIndex = 13;
+            this.to_back_button.Text = "<- Назад";
+            this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
+            // 
             // DriverAuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -164,6 +179,7 @@
             this.Text = "DriverAuthForm";
             this.Load += new System.EventHandler(this.DriverAuthForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label registerLabel;
+        private System.Windows.Forms.Label to_back_button;
     }
 }

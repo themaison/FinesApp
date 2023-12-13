@@ -16,5 +16,12 @@ namespace FinesApp
         {
             InitializeComponent();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminAuthForm adminAuthForm = new AdminAuthForm();
+            adminAuthForm.Show();
+        }
     }
 }

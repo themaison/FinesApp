@@ -1,12 +1,6 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinesApp
@@ -37,23 +31,57 @@ namespace FinesApp
 
         private void protocol_more_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DriverPaymentForm driverPaymentForm = new DriverPaymentForm();
-            driverPaymentForm.driver = driver;
+            if (protocolDGV.RowCount == 0)
+            {
+                MessageBox.Show("Список протоколов пуст!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.Hide();
+                DriverPaymentForm driverPaymentForm = new DriverPaymentForm();
+                driverPaymentForm.driver = driver;
 
-            DataGridViewRow ds = protocolDGV.SelectedRows[0];
-            driverPaymentForm.protocol = new Protocol(
-                (int)ds.Cells[0].Value,
-                (int)ds.Cells[1].Value,
-                ds.Cells[2].Value.ToString(),
-                ds.Cells[3].Value.ToString(),
-                ds.Cells[4].Value.ToString(),
-                ds.Cells[5].Value.ToString(),
-                (int)ds.Cells[6].Value
-                );
+                DataGridViewRow ds = protocolDGV.SelectedRows[0];
+                int protocol_id = (int)ds.Cells["protocol_id"].Value;
+                //driverPaymentForm.protocolId = protocol_id;
 
-            driverPaymentForm.Show();
+                DB db = new DB();
+                DataTable table = new DataTable();
+
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+                NpgsqlCommand command;
+
+                string query = "SELECT * FROM protocol " +
+                    "WHERE protocol.protocol_id = @protocolId";
+
+                db.openConnection();
+
+                command = new NpgsqlCommand(query, db.GetConnection());
+                command.Parameters.AddWithValue("@protocolId", protocol_id);
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    DataRow row = table.Rows[0];
+                    driverPaymentForm.protocol = new Protocol(
+                        (int)row[0],
+                        (int)row[1],
+                        row[2].ToString(),
+                        row[3].ToString(),
+                        row[4].ToString(),
+                        row[5].ToString(),
+                        (int)row[6]
+                    );
+                }
+
+                db.closeConnection();
+
+                driverPaymentForm.Show();
+            }
         }
+
 
         private void info_button_Click(object sender, EventArgs e)
         {
@@ -74,8 +102,8 @@ namespace FinesApp
         private void exit_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            DriverAuthForm driverAuthForm = new DriverAuthForm();
+            driverAuthForm.Show();
         }
 
         private void DriverForm_Load(object sender, EventArgs e)
@@ -91,20 +119,24 @@ namespace FinesApp
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command;
 
-            string query = "SELECT * FROM vehicle WHERE license_number = @licenseNumber";
-            string query2 = "SELECT * FROM protocol WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)";
+            string drivers_query = "SELECT * FROM vehicle WHERE license_number = @licenseNumber";
+            string protocols_query = "SELECT protocol.protocol_id, violation.violation_name, protocol.sts_number, protocol.violation_date, protocol.violation_time, protocol.violation_place, payment_status.status_name " +
+                "FROM protocol " +
+                "INNER JOIN violation ON protocol.violation_id = violation.violation_id " +
+                "INNER JOIN payment_status ON protocol.status_id = payment_status.status_id " +
+                "WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)";
 
             db.openConnection();
 
-            command = new NpgsqlCommand(query, db.GetConnection());
+            command = new NpgsqlCommand(drivers_query, db.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
 
             adapter.SelectCommand = command;
             adapter.Fill(table1);
 
-            violationDGV.DataSource = table1;
+            vehicleDGV.DataSource = table1;
 
-            command = new NpgsqlCommand(query2, db.GetConnection());
+            command = new NpgsqlCommand(protocols_query, db.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
 
             adapter.SelectCommand = command;
@@ -113,6 +145,7 @@ namespace FinesApp
             protocolDGV.DataSource = table2;
 
             db.closeConnection();
+
         }
     }
 }

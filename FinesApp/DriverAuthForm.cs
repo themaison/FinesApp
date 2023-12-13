@@ -98,5 +98,12 @@ namespace FinesApp
             DriverRegisterForm  driverRegisterForm = new DriverRegisterForm();
             driverRegisterForm.Show();
         }
+
+        private void to_back_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
     }
 }
