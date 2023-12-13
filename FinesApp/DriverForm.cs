@@ -43,7 +43,6 @@ namespace FinesApp
 
                 DataGridViewRow ds = protocolDGV.SelectedRows[0];
                 int protocol_id = (int)ds.Cells["protocol_id"].Value;
-                //driverPaymentForm.protocolId = protocol_id;
 
                 DB db = new DB();
                 DataTable table = new DataTable();

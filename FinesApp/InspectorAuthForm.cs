@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,37 @@ namespace FinesApp
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+        }
+
+        private void authButton_Click(object sender, EventArgs e)
+        {
+            String login = loginTextBox.Text;
+            String pass = passTextBox.Text;
+
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+
+            string query = "SELECT * FROM inspector WHERE login = @login AND password = @pass";
+            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@pass", pass);
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                this.Hide();
+                InspectorForm inspectorForm = new InspectorForm();
+                inspectorForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

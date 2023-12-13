@@ -62,12 +62,14 @@
             this.passTextBox.Font = new System.Drawing.Font("Product Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passTextBox.Location = new System.Drawing.Point(363, 256);
             this.passTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.passTextBox.MinimumSize = new System.Drawing.Size(4, 80);
+            this.passTextBox.MaximumSize = new System.Drawing.Size(517, 80);
+            this.passTextBox.MinimumSize = new System.Drawing.Size(517, 80);
+            this.passTextBox.Multiline = true;
             this.passTextBox.Name = "passTextBox";
-            this.passTextBox.PasswordChar = '*';
             this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.passTextBox.Size = new System.Drawing.Size(517, 46);
+            this.passTextBox.Size = new System.Drawing.Size(517, 80);
             this.passTextBox.TabIndex = 6;
+            this.passTextBox.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -93,16 +95,19 @@
             this.authButton.TabIndex = 2;
             this.authButton.Text = "Войти";
             this.authButton.UseVisualStyleBackColor = true;
+            this.authButton.Click += new System.EventHandler(this.authButton_Click);
             // 
             // loginTextBox
             // 
             this.loginTextBox.Font = new System.Drawing.Font("Product Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginTextBox.Location = new System.Drawing.Point(363, 105);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(10);
-            this.loginTextBox.MinimumSize = new System.Drawing.Size(4, 80);
+            this.loginTextBox.MaximumSize = new System.Drawing.Size(517, 80);
+            this.loginTextBox.MinimumSize = new System.Drawing.Size(517, 80);
+            this.loginTextBox.Multiline = true;
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.loginTextBox.Size = new System.Drawing.Size(517, 46);
+            this.loginTextBox.Size = new System.Drawing.Size(517, 80);
             this.loginTextBox.TabIndex = 1;
             // 
             // label2
