@@ -70,8 +70,6 @@ namespace FinesApp
                 DB.closeConnection();
 
                 driverForm.Show();
-
-                Messages.DisplayInfoMessage("Вход успешно выполнен!");
             }
             else
             {

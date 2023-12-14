@@ -149,6 +149,11 @@ namespace FinesApp
             {
                 insert_driver_box.Visible = false;
                 driverDGV.DataSource = DriverTable.GetTable();
+                Messages.DisplayInfoMessage("Данные успешно добавлены!");
+            }
+            else
+            {
+                Messages.DisplayErrorMessage("Ошибка при добавлении данных!");
             }
         }
 
@@ -168,7 +173,7 @@ namespace FinesApp
             {
                 if (licenseNumber == "" || fullName=="" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
                 {
-                    MessageBox.Show("Есть незаполненные поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Messages.DisplayErrorMessage("Заполните все поля!");
                     return;
                 }
                 else
@@ -177,6 +182,11 @@ namespace FinesApp
                     {
                         driverDGV.DataSource = DriverTable.GetTable();
                         update_driver_box.Visible = false;
+                        Messages.DisplayInfoMessage("Данные успешно обновлены!");
+                    }
+                    else
+                    {
+                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                     }
                 }
             }
@@ -186,6 +196,28 @@ namespace FinesApp
                 {
                     update_tb1.Text = "";
                     Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
+                }
+
+                else
+                {
+                    if (licenseNumber == "" || fullName == "" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+                    {
+                        Messages.DisplayErrorMessage("Заполните все поля!");
+                        return;
+                    }
+                    else
+                    {
+                        if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
+                        {
+                            driverDGV.DataSource = DriverTable.GetTable();
+                            update_driver_box.Visible = false;
+                            Messages.DisplayInfoMessage("Данные успешно обновлены!");
+                        }
+                        else
+                        {
+                            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                        }
+                    }
                 }
                
                 return;

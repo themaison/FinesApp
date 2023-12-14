@@ -49,7 +49,6 @@ namespace FinesApp
 
                 if (command.ExecuteNonQuery() > 0)
                 {
-                    Messages.DisplayInfoMessage("Водитель успешно добавлен!");
                     DB.closeConnection();
                     return true;
                 }
@@ -61,7 +60,6 @@ namespace FinesApp
             }
             catch
             {
-                Messages.DisplayErrorMessage("Ошибка при добавлении данных!");
                 DB.closeConnection();
                 return false;
             }
@@ -89,7 +87,6 @@ namespace FinesApp
 
                 if (command.ExecuteNonQuery() > 0)
                 {
-                    Messages.DisplayInfoMessage("Данные водителя успешно изменены!");
                     DB.closeConnection();
                     return true;
                 }
@@ -101,7 +98,6 @@ namespace FinesApp
             }
             catch
             {
-                Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                 DB.closeConnection();
                 return false;
             }
@@ -126,7 +122,6 @@ namespace FinesApp
             }
             catch
             {
-                Messages.DisplayErrorMessage("Ошибка при удалении данных!");
                 DB.closeConnection();
             }
         }

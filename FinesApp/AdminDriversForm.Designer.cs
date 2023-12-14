@@ -117,7 +117,7 @@
             this.update_driver_box.Controls.Add(this.update_tb1);
             this.update_driver_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.update_driver_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.update_driver_box.Location = new System.Drawing.Point(32, 350);
+            this.update_driver_box.Location = new System.Drawing.Point(32, 356);
             this.update_driver_box.Name = "update_driver_box";
             this.update_driver_box.Size = new System.Drawing.Size(714, 479);
             this.update_driver_box.TabIndex = 21;
