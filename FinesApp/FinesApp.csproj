@@ -113,6 +113,30 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPaymentStatusesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPaymentStatusesForm.Designer.cs">
+      <DependentUpon>AdminPaymentStatusesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProtocolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProtocolsForm.Designer.cs">
+      <DependentUpon>AdminProtocolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVehiclesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminVehiclesForm.Designer.cs">
+      <DependentUpon>AdminVehiclesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVolationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminVolationsForm.Designer.cs">
+      <DependentUpon>AdminVolationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverAuthForm.cs">
@@ -164,6 +188,18 @@
     <Compile Include="InspectorForm.Designer.cs">
       <DependentUpon>InspectorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InspectorProtocolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectorProtocolsForm.Designer.cs">
+      <DependentUpon>InspectorProtocolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InspectorViolationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectorViolationsForm.Designer.cs">
+      <DependentUpon>InspectorViolationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +222,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPaymentStatusesForm.resx">
+      <DependentUpon>AdminPaymentStatusesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminProtocolsForm.resx">
+      <DependentUpon>AdminProtocolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminVehiclesForm.resx">
+      <DependentUpon>AdminVehiclesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminVolationsForm.resx">
+      <DependentUpon>AdminVolationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriverAuthForm.resx">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
@@ -210,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InspectorForm.resx">
       <DependentUpon>InspectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectorProtocolsForm.resx">
+      <DependentUpon>InspectorProtocolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectorViolationsForm.resx">
+      <DependentUpon>InspectorViolationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
