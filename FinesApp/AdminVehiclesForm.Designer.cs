@@ -48,12 +48,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
-            this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.insert_tb3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,6 +66,12 @@
             this.update_dp1 = new System.Windows.Forms.DateTimePicker();
             this.update_tb2 = new System.Windows.Forms.TextBox();
             this.update_tb1 = new System.Windows.Forms.TextBox();
+            this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.update_vehicle_box.SuspendLayout();
             this.insert_vehicle_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
@@ -368,56 +368,6 @@
             this.full_name_label.Text = "Таблица: Vehicle\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // sts_number
-            // 
-            this.sts_number.DataPropertyName = "sts_number";
-            this.sts_number.HeaderText = "Номер СТС";
-            this.sts_number.MinimumWidth = 10;
-            this.sts_number.Name = "sts_number";
-            this.sts_number.ReadOnly = true;
-            // 
-            // state_number
-            // 
-            this.state_number.DataPropertyName = "state_number";
-            this.state_number.HeaderText = "Госномер";
-            this.state_number.MinimumWidth = 10;
-            this.state_number.Name = "state_number";
-            this.state_number.ReadOnly = true;
-            // 
-            // license_number
-            // 
-            this.license_number.DataPropertyName = "license_number";
-            this.license_number.HeaderText = "Номер в/у";
-            this.license_number.MinimumWidth = 10;
-            this.license_number.Name = "license_number";
-            this.license_number.ReadOnly = true;
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "brand";
-            this.brand.HeaderText = "Марка";
-            this.brand.MinimumWidth = 10;
-            this.brand.Name = "brand";
-            this.brand.ReadOnly = true;
-            this.brand.Width = 200;
-            // 
-            // model
-            // 
-            this.model.DataPropertyName = "model";
-            this.model.HeaderText = "Модель";
-            this.model.MinimumWidth = 10;
-            this.model.Name = "model";
-            this.model.ReadOnly = true;
-            this.model.Width = 200;
-            // 
-            // year_of_manufacture
-            // 
-            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
-            this.year_of_manufacture.HeaderText = "Год выпуска";
-            this.year_of_manufacture.MinimumWidth = 10;
-            this.year_of_manufacture.Name = "year_of_manufacture";
-            this.year_of_manufacture.ReadOnly = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -589,6 +539,54 @@
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 27;
             // 
+            // sts_number
+            // 
+            this.sts_number.DataPropertyName = "sts_number";
+            this.sts_number.HeaderText = "Номер СТС";
+            this.sts_number.MinimumWidth = 10;
+            this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
+            // 
+            // state_number
+            // 
+            this.state_number.DataPropertyName = "state_number";
+            this.state_number.HeaderText = "Госномер";
+            this.state_number.MinimumWidth = 10;
+            this.state_number.Name = "state_number";
+            this.state_number.ReadOnly = true;
+            // 
+            // license_number
+            // 
+            this.license_number.DataPropertyName = "license_number";
+            this.license_number.HeaderText = "Номер в/у";
+            this.license_number.MinimumWidth = 10;
+            this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "Марка";
+            this.brand.MinimumWidth = 10;
+            this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
+            // 
+            // model
+            // 
+            this.model.DataPropertyName = "model";
+            this.model.HeaderText = "Модель";
+            this.model.MinimumWidth = 10;
+            this.model.Name = "model";
+            this.model.ReadOnly = true;
+            // 
+            // year_of_manufacture
+            // 
+            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
+            this.year_of_manufacture.HeaderText = "Год выпуска";
+            this.year_of_manufacture.MinimumWidth = 10;
+            this.year_of_manufacture.Name = "year_of_manufacture";
+            this.year_of_manufacture.ReadOnly = true;
+            // 
             // AdminVehiclesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -639,12 +637,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button insert_button;
         private System.Windows.Forms.Label full_name_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn state_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn license_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn year_of_manufacture;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox insert_tb5;
         private System.Windows.Forms.Label label6;
@@ -663,5 +655,11 @@
         private System.Windows.Forms.DateTimePicker update_dp1;
         private System.Windows.Forms.TextBox update_tb2;
         private System.Windows.Forms.TextBox update_tb1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn license_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn year_of_manufacture;
     }
 }

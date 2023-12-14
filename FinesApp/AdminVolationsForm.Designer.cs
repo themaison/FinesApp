@@ -43,9 +43,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
-            this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.update_volation_box = new System.Windows.Forms.GroupBox();
             this.update_cancel_box_button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +50,9 @@
             this.update_box_button = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insert_volation_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
             this.panel2.SuspendLayout();
@@ -264,31 +264,6 @@
             this.full_name_label.Text = "Таблица: Volation\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // violation_id
-            // 
-            this.violation_id.DataPropertyName = "violation_id";
-            this.violation_id.HeaderText = "ID Нарушения";
-            this.violation_id.MinimumWidth = 10;
-            this.violation_id.Name = "violation_id";
-            this.violation_id.ReadOnly = true;
-            // 
-            // violation_name
-            // 
-            this.violation_name.DataPropertyName = "violation_name";
-            this.violation_name.HeaderText = "Наименование нарушения";
-            this.violation_name.MinimumWidth = 10;
-            this.violation_name.Name = "violation_name";
-            this.violation_name.ReadOnly = true;
-            this.violation_name.Width = 200;
-            // 
-            // fine_amount
-            // 
-            this.fine_amount.DataPropertyName = "fine_amount";
-            this.fine_amount.HeaderText = "Сумма штрафа";
-            this.fine_amount.MinimumWidth = 10;
-            this.fine_amount.Name = "fine_amount";
-            this.fine_amount.ReadOnly = true;
-            // 
             // update_volation_box
             // 
             this.update_volation_box.BackColor = System.Drawing.Color.LightGray;
@@ -372,6 +347,31 @@
             this.textBox2.Size = new System.Drawing.Size(327, 40);
             this.textBox2.TabIndex = 0;
             // 
+            // violation_id
+            // 
+            this.violation_id.DataPropertyName = "violation_id";
+            this.violation_id.HeaderText = "ID Нарушения";
+            this.violation_id.MinimumWidth = 10;
+            this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
+            // 
+            // violation_name
+            // 
+            this.violation_name.DataPropertyName = "violation_name";
+            this.violation_name.HeaderText = "Наименование нарушения";
+            this.violation_name.MinimumWidth = 10;
+            this.violation_name.Name = "violation_name";
+            this.violation_name.ReadOnly = true;
+            this.violation_name.Width = 300;
+            // 
+            // fine_amount
+            // 
+            this.fine_amount.DataPropertyName = "fine_amount";
+            this.fine_amount.HeaderText = "Сумма штрафа";
+            this.fine_amount.MinimumWidth = 10;
+            this.fine_amount.Name = "fine_amount";
+            this.fine_amount.ReadOnly = true;
+            // 
             // AdminVolationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -416,9 +416,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button insert_button;
         private System.Windows.Forms.Label full_name_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn violation_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fine_amount;
         private System.Windows.Forms.GroupBox update_volation_box;
         private System.Windows.Forms.Button update_cancel_box_button;
         private System.Windows.Forms.Label label4;
@@ -426,5 +423,8 @@
         private System.Windows.Forms.Button update_box_button;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn violation_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fine_amount;
     }
 }
