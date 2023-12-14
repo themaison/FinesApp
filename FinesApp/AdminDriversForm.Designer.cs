@@ -94,7 +94,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1254, 926);
+            this.panel2.Size = new System.Drawing.Size(1254, 846);
             this.panel2.TabIndex = 12;
             // 
             // insert_button
@@ -163,7 +163,7 @@
             this.driverDGV.RowHeadersWidth = 80;
             this.driverDGV.RowTemplate.Height = 33;
             this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driverDGV.Size = new System.Drawing.Size(1180, 320);
+            this.driverDGV.Size = new System.Drawing.Size(1180, 280);
             this.driverDGV.TabIndex = 0;
             // 
             // full_name_label
@@ -215,7 +215,7 @@
             this.insert_driver_box.Controls.Add(this.insert_tb1);
             this.insert_driver_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.insert_driver_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.insert_driver_box.Location = new System.Drawing.Point(32, 417);
+            this.insert_driver_box.Location = new System.Drawing.Point(32, 356);
             this.insert_driver_box.Name = "insert_driver_box";
             this.insert_driver_box.Size = new System.Drawing.Size(714, 479);
             this.insert_driver_box.TabIndex = 2;
@@ -402,7 +402,7 @@
             this.update_driver_box.Controls.Add(this.update_tb1);
             this.update_driver_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.update_driver_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.update_driver_box.Location = new System.Drawing.Point(498, 411);
+            this.update_driver_box.Location = new System.Drawing.Point(32, 356);
             this.update_driver_box.Name = "update_driver_box";
             this.update_driver_box.Size = new System.Drawing.Size(714, 479);
             this.update_driver_box.TabIndex = 21;
@@ -638,15 +638,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 1009);
+            this.ClientSize = new System.Drawing.Size(1254, 929);
             this.Controls.Add(this.to_back_button);
             this.Controls.Add(this.update_button);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.insert_button);
             this.Controls.Add(this.full_name_label);
-            this.MaximumSize = new System.Drawing.Size(1280, 1080);
-            this.MinimumSize = new System.Drawing.Size(1280, 1080);
+            this.MaximumSize = new System.Drawing.Size(1280, 1000);
+            this.MinimumSize = new System.Drawing.Size(1280, 1000);
             this.Name = "AdminDriversForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDriversForm";

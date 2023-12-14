@@ -106,8 +106,10 @@
             this.paymentStatusDGV.Location = new System.Drawing.Point(32, 448);
             this.paymentStatusDGV.Margin = new System.Windows.Forms.Padding(4);
             this.paymentStatusDGV.Name = "paymentStatusDGV";
+            this.paymentStatusDGV.ReadOnly = true;
             this.paymentStatusDGV.RowHeadersWidth = 82;
             this.paymentStatusDGV.RowTemplate.Height = 33;
+            this.paymentStatusDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 200);
             this.paymentStatusDGV.TabIndex = 3;
             // 
@@ -117,6 +119,7 @@
             this.status_id.HeaderText = "ID Статуса";
             this.status_id.MinimumWidth = 10;
             this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
             this.status_id.Width = 200;
             // 
             // status_name
@@ -125,6 +128,7 @@
             this.status_name.HeaderText = "Наименование";
             this.status_name.MinimumWidth = 10;
             this.status_name.Name = "status_name";
+            this.status_name.ReadOnly = true;
             this.status_name.Width = 340;
             // 
             // label3
@@ -166,8 +170,10 @@
             this.violationDGV.Location = new System.Drawing.Point(32, 58);
             this.violationDGV.Margin = new System.Windows.Forms.Padding(4);
             this.violationDGV.Name = "violationDGV";
+            this.violationDGV.ReadOnly = true;
             this.violationDGV.RowHeadersWidth = 80;
             this.violationDGV.RowTemplate.Height = 33;
+            this.violationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.violationDGV.Size = new System.Drawing.Size(1180, 320);
             this.violationDGV.TabIndex = 0;
             // 
@@ -177,6 +183,7 @@
             this.violation_id.HeaderText = "ID Нарушения";
             this.violation_id.MinimumWidth = 10;
             this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
             this.violation_id.Width = 80;
             // 
             // violation_name
@@ -185,6 +192,7 @@
             this.violation_name.HeaderText = "Наименование";
             this.violation_name.MinimumWidth = 10;
             this.violation_name.Name = "violation_name";
+            this.violation_name.ReadOnly = true;
             this.violation_name.Width = 340;
             // 
             // fine_amount
@@ -193,6 +201,7 @@
             this.fine_amount.HeaderText = "Сумма штрафа";
             this.fine_amount.MinimumWidth = 10;
             this.fine_amount.Name = "fine_amount";
+            this.fine_amount.ReadOnly = true;
             this.fine_amount.Width = 200;
             // 
             // DriverInfoForm

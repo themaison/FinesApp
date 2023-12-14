@@ -41,16 +41,16 @@ namespace FinesApp
                 DriverPaymentForm driverPaymentForm = new DriverPaymentForm();
                 driverPaymentForm.driver = driver;
 
-                DataGridViewRow ds = protocolDGV.SelectedRows[0];
+                DataGridViewRow ds = protocolDGV.CurrentRow;
                 int protocol_id = (int)ds.Cells["protocol_id"].Value;
 
                 DB db = new DB();
                 DataTable table = new DataTable();
-
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
                 NpgsqlCommand command;
 
-                string query = "SELECT * FROM protocol " +
+                string query = 
+                    "SELECT * FROM protocol " +
                     "WHERE protocol.protocol_id = @protocolId";
 
                 db.openConnection();
@@ -142,6 +142,11 @@ namespace FinesApp
             adapter.Fill(table2);
 
             protocolDGV.DataSource = table2;
+
+            if (protocolDGV.RowCount < 1)
+                protocol_more_button.Enabled = false;
+            else
+                protocol_more_button.Enabled = true;
 
             db.closeConnection();
 

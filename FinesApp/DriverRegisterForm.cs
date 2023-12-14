@@ -89,64 +89,17 @@ namespace FinesApp
                 return;
             }
 
-            if (IsDriverExists(licenseNumber))
+            if (DriverTable.IsExistsDriver(licenseNumber))
             {
+                licenseNumberTextBox.Text = "";
                 return;
             }
 
-
-                DB db = new DB();
-
-            string query = "INSERT INTO driver (license_number, full_name, gender, birth_date, license_issue_date, license_validity) VALUES (@licenseNumber, @fullName, @gender, @birthDate, @licenseIssueDate, @licenseValidityDate)";
-
-            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
-            command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
-            command.Parameters.AddWithValue("@fullName", fullName);
-            command.Parameters.AddWithValue("@gender", gender);
-            command.Parameters.AddWithValue("@birthDate", birthDate);
-            command.Parameters.AddWithValue("@licenseIssueDate", licenseIssueDate);
-            command.Parameters.AddWithValue("@licenseValidityDate", licenseValidityDate);
-
-
-            db.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
+            if (DriverTable.Insert(licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
             {
-                MessageBox.Show("Водитель успешно зарегистирован!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-
                 DriverAuthForm driverAuthForm = new DriverAuthForm();
                 driverAuthForm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Упс... Регистрация не удалась!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            db.closeConnection();
-        }
-
-        public Boolean IsDriverExists(String licenseNumber)
-        {
-            DB db = new DB();
-            DataTable table = new DataTable();
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
-
-            string query = "SELECT * FROM driver WHERE license_number = @licenseNumber";
-            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
-
-            command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if (table.Rows.Count > 0)
-            {
-                MessageBox.Show("Такой номер в/у уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
