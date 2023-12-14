@@ -31,10 +31,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.drivers_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.vehicles_button = new System.Windows.Forms.Button();
+            this.protocols_button = new System.Windows.Forms.Button();
+            this.volations_button = new System.Windows.Forms.Button();
+            this.payment_statuses_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -58,14 +58,15 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.drivers_button);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(179, 114);
+            this.flowLayoutPanel1.Controls.Add(this.vehicles_button);
+            this.flowLayoutPanel1.Controls.Add(this.protocols_button);
+            this.flowLayoutPanel1.Controls.Add(this.volations_button);
+            this.flowLayoutPanel1.Controls.Add(this.payment_statuses_button);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(146, 103);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(944, 300);
             this.flowLayoutPanel1.TabIndex = 7;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // drivers_button
             // 
@@ -84,69 +85,73 @@
             this.drivers_button.UseVisualStyleBackColor = true;
             this.drivers_button.Click += new System.EventHandler(this.drivers_button_Click);
             // 
-            // button1
+            // vehicles_button
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.vehicles_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(324, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10);
-            this.button1.Size = new System.Drawing.Size(294, 80);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Транспорт";
-            this.button1.UseVisualStyleBackColor = true;
+            this.vehicles_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.vehicles_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.vehicles_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.vehicles_button.Location = new System.Drawing.Point(324, 10);
+            this.vehicles_button.Margin = new System.Windows.Forms.Padding(10);
+            this.vehicles_button.Name = "vehicles_button";
+            this.vehicles_button.Padding = new System.Windows.Forms.Padding(10);
+            this.vehicles_button.Size = new System.Drawing.Size(294, 80);
+            this.vehicles_button.TabIndex = 7;
+            this.vehicles_button.Text = "Транспорт";
+            this.vehicles_button.UseVisualStyleBackColor = true;
+            this.vehicles_button.Click += new System.EventHandler(this.vehicles_button_Click);
             // 
-            // button2
+            // protocols_button
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.protocols_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(638, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(10);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10);
-            this.button2.Size = new System.Drawing.Size(294, 80);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Протоколы";
-            this.button2.UseVisualStyleBackColor = true;
+            this.protocols_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.protocols_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.protocols_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.protocols_button.Location = new System.Drawing.Point(638, 10);
+            this.protocols_button.Margin = new System.Windows.Forms.Padding(10);
+            this.protocols_button.Name = "protocols_button";
+            this.protocols_button.Padding = new System.Windows.Forms.Padding(10);
+            this.protocols_button.Size = new System.Drawing.Size(294, 80);
+            this.protocols_button.TabIndex = 8;
+            this.protocols_button.Text = "Протоколы";
+            this.protocols_button.UseVisualStyleBackColor = true;
+            this.protocols_button.Click += new System.EventHandler(this.protocols_button_Click);
             // 
-            // button3
+            // volations_button
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.volations_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(10, 110);
-            this.button3.Margin = new System.Windows.Forms.Padding(10);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10);
-            this.button3.Size = new System.Drawing.Size(294, 80);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Нарушения";
-            this.button3.UseVisualStyleBackColor = true;
+            this.volations_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.volations_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.volations_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.volations_button.Location = new System.Drawing.Point(10, 110);
+            this.volations_button.Margin = new System.Windows.Forms.Padding(10);
+            this.volations_button.Name = "volations_button";
+            this.volations_button.Padding = new System.Windows.Forms.Padding(10);
+            this.volations_button.Size = new System.Drawing.Size(294, 80);
+            this.volations_button.TabIndex = 9;
+            this.volations_button.Text = "Нарушения";
+            this.volations_button.UseVisualStyleBackColor = true;
+            this.volations_button.Click += new System.EventHandler(this.volations_button_Click);
             // 
-            // button4
+            // payment_statuses_button
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.payment_statuses_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(324, 110);
-            this.button4.Margin = new System.Windows.Forms.Padding(10);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10);
-            this.button4.Size = new System.Drawing.Size(294, 80);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Статусы оплаты";
-            this.button4.UseVisualStyleBackColor = true;
+            this.payment_statuses_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.payment_statuses_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.payment_statuses_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.payment_statuses_button.Location = new System.Drawing.Point(324, 110);
+            this.payment_statuses_button.Margin = new System.Windows.Forms.Padding(10);
+            this.payment_statuses_button.Name = "payment_statuses_button";
+            this.payment_statuses_button.Padding = new System.Windows.Forms.Padding(10);
+            this.payment_statuses_button.Size = new System.Drawing.Size(294, 80);
+            this.payment_statuses_button.TabIndex = 10;
+            this.payment_statuses_button.Text = "Статусы оплаты";
+            this.payment_statuses_button.UseVisualStyleBackColor = true;
+            this.payment_statuses_button.Click += new System.EventHandler(this.payment_statuses_button_Click);
             // 
             // label1
             // 
@@ -162,7 +167,7 @@
             this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.label1.Size = new System.Drawing.Size(1254, 80);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Администратор";
+            this.label1.Text = "Панель Администратора";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // exitButton
@@ -203,10 +208,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button drivers_button;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button vehicles_button;
+        private System.Windows.Forms.Button protocols_button;
+        private System.Windows.Forms.Button volations_button;
+        private System.Windows.Forms.Button payment_statuses_button;
         private System.Windows.Forms.Label exitButton;
     }
 }

@@ -30,5 +30,38 @@ namespace FinesApp
             AdminDriversForm driversForm = new AdminDriversForm();
             driversForm.Show();
         }
+
+        private void vehicles_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminVehiclesForm vehiclesForm = new AdminVehiclesForm();
+            vehiclesForm.Show();
+        }
+
+        private void protocols_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminProtocolsForm protocolsForm = new AdminProtocolsForm();
+            protocolsForm.Show();
+        }
+
+        private void volations_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminVolationsForm volationsForm = new AdminVolationsForm();
+            volationsForm.Show();
+        }
+
+        private void payment_statuses_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminPaymentStatusesForm paymentStatusesForm = new AdminPaymentStatusesForm();
+            paymentStatusesForm.Show();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
