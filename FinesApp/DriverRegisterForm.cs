@@ -81,17 +81,25 @@ namespace FinesApp
             DateTime licenseIssueDate = licenseIssueDatePicker.Value;
             DateTime licenseValidityDate = licenseValidityDatePicker.Value;
 
-            gender = maleRB.Checked ? "Мужской" : (femaleRB.Checked ? "Женский" : "");
+            if (maleRB.Checked)
+            {
+                gender = "Мужской";
+            }
+            else if (femaleRB.Checked)
+            {
+                gender = "Женский";
+            }
 
-            if (string.IsNullOrEmpty(licenseNumber) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(gender) || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
-                {
-                MessageBox.Show("Есть незаполненные поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (licenseNumber == "" || fullName == "" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+            {
+                Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
 
             if (DriverTable.IsExistsDriver(licenseNumber))
             {
                 licenseNumberTextBox.Text = "";
+                Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
                 return;
             }
 

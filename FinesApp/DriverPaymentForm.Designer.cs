@@ -81,7 +81,7 @@
             this.fine_cost_label.AutoSize = true;
             this.fine_cost_label.Font = new System.Drawing.Font("Product Sans Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fine_cost_label.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.fine_cost_label.Location = new System.Drawing.Point(298, 434);
+            this.fine_cost_label.Location = new System.Drawing.Point(316, 430);
             this.fine_cost_label.Name = "fine_cost_label";
             this.fine_cost_label.Size = new System.Drawing.Size(174, 61);
             this.fine_cost_label.TabIndex = 14;
@@ -90,11 +90,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(58, 454);
+            this.label14.Location = new System.Drawing.Point(76, 447);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(209, 34);
+            this.label14.Size = new System.Drawing.Size(198, 34);
             this.label14.TabIndex = 13;
             this.label14.Text = "Сумма штрафа";
             // 
@@ -103,7 +103,7 @@
             this.status_label.AutoSize = true;
             this.status_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.status_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.status_label.Location = new System.Drawing.Point(303, 320);
+            this.status_label.Location = new System.Drawing.Point(321, 313);
             this.status_label.Name = "status_label";
             this.status_label.Size = new System.Drawing.Size(85, 34);
             this.status_label.TabIndex = 12;
@@ -125,11 +125,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(58, 320);
+            this.label12.Location = new System.Drawing.Point(76, 313);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 34);
+            this.label12.Size = new System.Drawing.Size(98, 34);
             this.label12.TabIndex = 10;
             this.label12.Text = "Статус";
             // 
@@ -138,7 +138,7 @@
             this.violation_place_label.AutoSize = true;
             this.violation_place_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.violation_place_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.violation_place_label.Location = new System.Drawing.Point(303, 272);
+            this.violation_place_label.Location = new System.Drawing.Point(321, 265);
             this.violation_place_label.Name = "violation_place_label";
             this.violation_place_label.Size = new System.Drawing.Size(85, 34);
             this.violation_place_label.TabIndex = 9;
@@ -149,7 +149,7 @@
             this.violation_time_label.AutoSize = true;
             this.violation_time_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.violation_time_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.violation_time_label.Location = new System.Drawing.Point(304, 217);
+            this.violation_time_label.Location = new System.Drawing.Point(322, 210);
             this.violation_time_label.Name = "violation_time_label";
             this.violation_time_label.Size = new System.Drawing.Size(85, 34);
             this.violation_time_label.TabIndex = 8;
@@ -160,7 +160,7 @@
             this.violation_date_label.AutoSize = true;
             this.violation_date_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.violation_date_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.violation_date_label.Location = new System.Drawing.Point(303, 165);
+            this.violation_date_label.Location = new System.Drawing.Point(321, 158);
             this.violation_date_label.Name = "violation_date_label";
             this.violation_date_label.Size = new System.Drawing.Size(85, 34);
             this.violation_date_label.TabIndex = 7;
@@ -171,7 +171,7 @@
             this.sts_number_label.AutoSize = true;
             this.sts_number_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sts_number_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.sts_number_label.Location = new System.Drawing.Point(303, 107);
+            this.sts_number_label.Location = new System.Drawing.Point(321, 100);
             this.sts_number_label.Name = "sts_number_label";
             this.sts_number_label.Size = new System.Drawing.Size(85, 34);
             this.sts_number_label.TabIndex = 6;
@@ -182,7 +182,7 @@
             this.violation_name_label.AutoSize = true;
             this.violation_name_label.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.violation_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.violation_name_label.Location = new System.Drawing.Point(303, 50);
+            this.violation_name_label.Location = new System.Drawing.Point(321, 43);
             this.violation_name_label.Name = "violation_name_label";
             this.violation_name_label.Size = new System.Drawing.Size(85, 34);
             this.violation_name_label.TabIndex = 5;
@@ -191,55 +191,55 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(58, 272);
+            this.label6.Location = new System.Drawing.Point(76, 265);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 34);
+            this.label6.Size = new System.Drawing.Size(93, 34);
             this.label6.TabIndex = 4;
             this.label6.Text = "Место";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(59, 217);
+            this.label5.Location = new System.Drawing.Point(77, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 34);
+            this.label5.Size = new System.Drawing.Size(91, 34);
             this.label5.TabIndex = 3;
             this.label5.Text = "Время";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(58, 165);
+            this.label4.Location = new System.Drawing.Point(76, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 34);
+            this.label4.Size = new System.Drawing.Size(76, 34);
             this.label4.TabIndex = 2;
             this.label4.Text = "Дата";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(58, 107);
+            this.label3.Location = new System.Drawing.Point(76, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 34);
+            this.label3.Size = new System.Drawing.Size(156, 34);
             this.label3.TabIndex = 1;
             this.label3.Text = "Номер СТС";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(58, 50);
+            this.label2.Location = new System.Drawing.Point(76, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 34);
+            this.label2.Size = new System.Drawing.Size(153, 34);
             this.label2.TabIndex = 0;
             this.label2.Text = "Нарушение";
             // 

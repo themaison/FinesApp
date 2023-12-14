@@ -1,13 +1,5 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinesApp
@@ -98,16 +90,16 @@ namespace FinesApp
             try
             {
                 String licenseNumber = driverDGV.CurrentRow.Cells[0].Value.ToString();
-                DialogResult dr = MessageBox.Show("Вы действительно хотите удалить данные?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dr = Messages.DisplayQuestionMessage("Вы действительно хотите удалить данные?");
                 if (dr == DialogResult.Yes)
                 {
                     DriverTable.Delete(licenseNumber);
                     driverDGV.DataSource = DriverTable.GetTable();
-                    MessageBox.Show("Данные успешно удалены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Messages.DisplayInfoMessage("Данные успешно удалены!");
                 }
             }
             catch {
-                MessageBox.Show("Ошибка при удалении!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Messages.DisplayErrorMessage("Ошибка при удалении данных!");
             }
         }
 
@@ -126,22 +118,30 @@ namespace FinesApp
         {
             String licenseNumber = insert_tb1.Text;
             String fullName = insert_tb2.Text;
-            String gender;
+            String gender = "";
             DateTime birthDate = insert_dp1.Value;
             DateTime licenseIssueDate = insert_dp2.Value;
             DateTime licenseValidityDate = insert_dp3.Value;
 
-            gender = male_insert_rb.Checked ? "Мужской" : "Женский";
-
-            if (string.IsNullOrEmpty(licenseNumber) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(gender) || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+            if (male_insert_rb.Checked)
             {
-                MessageBox.Show("Есть незаполненные поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                gender = "Мужской";
+            }
+            else if (female_insert_rb.Checked)
+            {
+                gender = "Женский";
+            }
+
+            if (licenseNumber=="" || fullName=="" || gender=="" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+            {
+                Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
 
             if (DriverTable.IsExistsDriver(licenseNumber))
             {
                 insert_tb1.Text = "";
+                Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
                 return;
             }
 
@@ -166,7 +166,7 @@ namespace FinesApp
             
             if (licenseNumber == currentLicenseNumber)
             {
-                if (String.IsNullOrEmpty(licenseNumber) || String.IsNullOrEmpty(fullName) || String.IsNullOrEmpty(gender) || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+                if (licenseNumber == "" || fullName=="" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
                 {
                     MessageBox.Show("Есть незаполненные поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -176,10 +176,7 @@ namespace FinesApp
                     if (DriverTable.Update(licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
                     {
                         driverDGV.DataSource = DriverTable.GetTable();
-                        update_tb1.Text = "";
-                        update_tb2.Text = "";
-                        male_insert_rb.Checked = false;
-                        female_update_rb.Checked = false;
+                        update_driver_box.Visible = false;
                     }
                 }
             }
@@ -188,6 +185,7 @@ namespace FinesApp
                 if (DriverTable.IsExistsDriver(licenseNumber))
                 {
                     update_tb1.Text = "";
+                    Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
                 }
                
                 return;

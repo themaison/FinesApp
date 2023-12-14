@@ -27,25 +27,30 @@ namespace FinesApp
         {
             String licenseNumber = licenseNumberTextBox.Text;
 
-            DB db = new DB();
-
-            DataTable table = new DataTable();
-
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
-
-            string query = "SELECT * FROM driver WHERE license_number = @licenseNumber";
-            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
-            command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if (table.Rows.Count > 0)
+            if (licenseNumber == "")
             {
-                this.Hide();
-                DriverForm  driverForm = new DriverForm();
+                Messages.DisplayErrorMessage("Заполните все поля!");
+                return;
+            }
 
-                db.openConnection();
+            if (DriverTable.IsExistsDriver(licenseNumber))
+            {
+                string query =
+                    "SELECT * FROM driver " +
+                    "WHERE license_number = @licenseNumber";
+
+                DataTable table = new DataTable();
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+                NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
+
+                command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                this.Hide();
+                DriverForm driverForm = new DriverForm();
+
+                DB.openConnection();
                 NpgsqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -62,13 +67,15 @@ namespace FinesApp
                     driverForm.driver = driver;
                 }
                 reader.Close();
-                db.closeConnection();
+                DB.closeConnection();
 
                 driverForm.Show();
+
+                Messages.DisplayInfoMessage("Вход успешно выполнен!");
             }
             else
             {
-                MessageBox.Show("Такого номера в/у несуществует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Messages.DisplayErrorMessage("Неизвестный номер в/у!");
             }
         }
 

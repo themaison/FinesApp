@@ -11,7 +11,6 @@ namespace FinesApp
         public Driver driver { get; set; }
         public Protocol protocol { get; set; }
 
-        //public int protocolId { get; set; }
         public DriverPaymentForm()
         {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace FinesApp
 
         private void DriverPaymentForm_Load(object sender, EventArgs e)
         {
-            DB db = new DB();
             DataTable table = new DataTable();
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command;
@@ -38,9 +36,9 @@ namespace FinesApp
                 "INNER JOIN payment_status ON protocol.status_id = payment_status.status_id " +
                 "WHERE protocol.protocol_id = @protocolId";
 
-            db.openConnection();
+            DB.openConnection();
 
-            command = new NpgsqlCommand(query, db.GetConnection());
+            command = new NpgsqlCommand(query, DB.GetConnection());
             command.Parameters.AddWithValue("@protocolId", protocol.ProtocolId);
 
             adapter.SelectCommand = command;
@@ -79,14 +77,13 @@ namespace FinesApp
                 }
             }
 
-            db.closeConnection();
+            DB.closeConnection();
         }
 
         private void payButton_Click(object sender, EventArgs e)
         {
             int newStatusId = 2;
 
-            DB db = new DB();
             DataTable table = new DataTable();
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command;
@@ -100,9 +97,9 @@ namespace FinesApp
                "FROM payment_status " +
                "WHERE status_id = @newStatusId";
 
-            db.openConnection();
+            DB.openConnection();
 
-            command = new NpgsqlCommand(updateQuery, db.GetConnection());
+            command = new NpgsqlCommand(updateQuery, DB.GetConnection());
             command.Parameters.AddWithValue("@newStatusId", newStatusId);
             command.Parameters.AddWithValue("@protocolId", protocol.ProtocolId);
 
@@ -110,7 +107,7 @@ namespace FinesApp
 
             if (rowsAffected > 0)
             {
-                command = new NpgsqlCommand(statusQuery, db.GetConnection());
+                command = new NpgsqlCommand(statusQuery, DB.GetConnection());
                 command.Parameters.AddWithValue("@newStatusId", newStatusId);
 
                 adapter.SelectCommand = command;
@@ -124,14 +121,12 @@ namespace FinesApp
 
                 status_label.ForeColor = Color.Green;
                 payButton.Enabled = false;
-                MessageBox.Show("Штраф успешно оплачен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Messages.DisplayInfoMessage("Штраф успешно оплачен!");
             }
             else
-            {
-                MessageBox.Show("Оплата не удалась!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+                Messages.DisplayErrorMessage("Ошибка оплаты!");
 
-            db.closeConnection();
+            DB.closeConnection();
         }
     }
 }

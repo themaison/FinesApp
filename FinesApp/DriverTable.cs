@@ -1,14 +1,11 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 namespace FinesApp
 {
     public static class DriverTable
     {
-        static Messages msg = new Messages();
-        static DB db = new DB();
         static DataTable table = new DataTable();
 
         public static DataTable GetTable()
@@ -20,13 +17,13 @@ namespace FinesApp
 
             string query = "SELECT * FROM driver";
 
-            db.openConnection();
+            DB.openConnection();
 
-            command = new NpgsqlCommand(query, db.GetConnection());
+            command = new NpgsqlCommand(query, DB.GetConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            db.closeConnection();
+            DB.closeConnection();
 
             return table;
         }
@@ -40,9 +37,9 @@ namespace FinesApp
 
             try
             {
-                db.openConnection();
+                DB.openConnection();
 
-                command = new NpgsqlCommand(query, db.GetConnection());
+                command = new NpgsqlCommand(query, DB.GetConnection());
                 command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
                 command.Parameters.AddWithValue("@fullName", fullName);
                 command.Parameters.AddWithValue("@gender", gender);
@@ -52,20 +49,20 @@ namespace FinesApp
 
                 if (command.ExecuteNonQuery() > 0)
                 {
-                    msg.DisplayInfoMessage("Водитель успешно добавлен!");
-                    db.closeConnection();
+                    Messages.DisplayInfoMessage("Водитель успешно добавлен!");
+                    DB.closeConnection();
                     return true;
                 }
                 else
                 {
-                    db.closeConnection();
+                    DB.closeConnection();
                     return false;
                 }
             }
             catch
             {
-                msg.DisplayErrorMessage("Ошибка при добавлении данных!");
-                db.closeConnection();
+                Messages.DisplayErrorMessage("Ошибка при добавлении данных!");
+                DB.closeConnection();
                 return false;
             }
         }
@@ -80,9 +77,9 @@ namespace FinesApp
 
             try
             {
-                db.openConnection();
+                DB.openConnection();
 
-                command = new NpgsqlCommand(query, db.GetConnection());
+                command = new NpgsqlCommand(query, DB.GetConnection());
                 command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
                 command.Parameters.AddWithValue("@fullName", fullName);
                 command.Parameters.AddWithValue("@gender", gender);
@@ -92,20 +89,20 @@ namespace FinesApp
 
                 if (command.ExecuteNonQuery() > 0)
                 {
-                    msg.DisplayInfoMessage("Данные водителя успешно изменены!");
-                    db.closeConnection();
+                    Messages.DisplayInfoMessage("Данные водителя успешно изменены!");
+                    DB.closeConnection();
                     return true;
                 }
                 else
                 {
-                    db.closeConnection();
+                    DB.closeConnection();
                     return false;
                 }
             }
             catch
             {
-                msg.DisplayErrorMessage("Ошибка при изменении данных!");
-                db.closeConnection();
+                Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                DB.closeConnection();
                 return false;
             }
         }
@@ -119,35 +116,38 @@ namespace FinesApp
 
             try
             {
-                db.openConnection();
+                DB.openConnection();
 
-                command = new NpgsqlCommand(query, db.GetConnection());
+                command = new NpgsqlCommand(query, DB.GetConnection());
                 command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
                 command.ExecuteNonQuery();
 
-                db.closeConnection();
+                DB.closeConnection();
             }
             catch
             {
-                msg.DisplayErrorMessage("Ошибка при удалении данных!");
-                db.closeConnection();
+                Messages.DisplayErrorMessage("Ошибка при удалении данных!");
+                DB.closeConnection();
             }
         }
 
-        public static Boolean IsExistsDriver(String licenseNumber)
+        public static bool IsExistsDriver(String licenseNumber)
         {
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+            DataTable dataTableQuery = new DataTable();
+            string query = 
+                "SELECT * FROM driver " +
+                "WHERE license_number = @licenseNumber";
 
-            string query = "SELECT * FROM driver WHERE license_number = @licenseNumber";
-            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
+
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
 
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
             adapter.SelectCommand = command;
-            adapter.Fill(table);
+            adapter.Fill(dataTableQuery);
 
-            if (table.Rows.Count > 0)
+            if (dataTableQuery.Rows.Count > 0)
             {
-                msg.DisplayErrorMessage("Такой номер в/у уже существует!");
                 return true;
             }
             else

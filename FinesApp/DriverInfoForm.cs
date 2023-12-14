@@ -26,7 +26,6 @@ namespace FinesApp
 
         private void DriverInfoForm_Load(object sender, EventArgs e)
         {
-            DB db = new DB();
             DataTable table1 = new DataTable();
             DataTable table2 = new DataTable();
 
@@ -36,23 +35,23 @@ namespace FinesApp
             string query = "SELECT * FROM violation";
             string query2 = "SELECT * FROM payment_status";
 
-            db.openConnection();
+            DB.openConnection();
 
-            command = new NpgsqlCommand(query, db.GetConnection());
+            command = new NpgsqlCommand(query, DB.GetConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table1);
 
             violationDGV.DataSource = table1;
 
-            command = new NpgsqlCommand(query2, db.GetConnection());
+            command = new NpgsqlCommand(query2, DB.GetConnection());
 
             adapter.SelectCommand = command;
             adapter.Fill(table2);
 
             paymentStatusDGV.DataSource = table2;
 
-            db.closeConnection();
+            DB.closeConnection();
         }
 
         private void to_back_button_Click(object sender, EventArgs e)

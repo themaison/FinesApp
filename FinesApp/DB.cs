@@ -4,20 +4,20 @@ using Npgsql;
 
 namespace FinesApp
 {
-    class DB
+    public static class DB
     {
         static string DBConnect = "Server=localhost; Port=5432; User Id=postgres; Database=fines;";
-        NpgsqlConnection conn = new NpgsqlConnection(DBConnect);
+        static NpgsqlConnection conn = new NpgsqlConnection(DBConnect);
         
 
-        public void openConnection() { 
+        public static void openConnection() { 
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
         }
 
-        public void closeConnection()
+        public static void closeConnection()
         {
             if (conn.State == ConnectionState.Open)
             {
@@ -25,29 +25,9 @@ namespace FinesApp
             }
         }
 
-        public NpgsqlConnection GetConnection()
+        public static NpgsqlConnection GetConnection()
         {
             return conn;
-        }
-
-        public DataTable GetTableFromDB(String tableName)
-        {
-            DataTable table = new DataTable();
-
-            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
-            NpgsqlCommand command;
-
-            string query = "SELECT * FROM " + tableName;
-
-            this.openConnection();
-
-            command = new NpgsqlCommand(query, this.GetConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            this.closeConnection();
-
-            return table;
         }
     }
 }

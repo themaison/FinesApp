@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace FinesApp
 {
-    public class Messages
+    public static class Messages
     {
-        public void DisplayErrorMessage(string message) {
+        public static void DisplayErrorMessage(string message) {
             MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        public void DisplayInfoMessage(string message)
+        public static void DisplayInfoMessage(string message)
         {
-            MessageBox.Show(message, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public static DialogResult DisplayQuestionMessage(string message)
+        {
+            DialogResult dr = MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return dr;
+        }
     }
 }

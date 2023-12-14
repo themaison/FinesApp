@@ -30,17 +30,22 @@ namespace FinesApp
             String login = loginTextBox.Text;
             String pass = passTextBox.Text;
 
-            DB db = new DB();
+            if (login == "" || pass == "")
+            {
+                Messages.DisplayErrorMessage("Заполните все поля!");
+                return;
+            }
+
+            string query =
+                "SELECT * FROM inspector " +
+                "WHERE login = @login AND password = @pass";
 
             DataTable table = new DataTable();
-
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
-
-            string query = "SELECT * FROM inspector WHERE login = @login AND password = @pass";
-            NpgsqlCommand command = new NpgsqlCommand(query, db.GetConnection());
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
+            
             command.Parameters.AddWithValue("@login", login);
             command.Parameters.AddWithValue("@pass", pass);
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -52,7 +57,7 @@ namespace FinesApp
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Messages.DisplayErrorMessage("Неверный логин или пароль!");
             }
         }
     }

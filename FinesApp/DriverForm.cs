@@ -44,7 +44,6 @@ namespace FinesApp
                 DataGridViewRow ds = protocolDGV.CurrentRow;
                 int protocol_id = (int)ds.Cells["protocol_id"].Value;
 
-                DB db = new DB();
                 DataTable table = new DataTable();
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
                 NpgsqlCommand command;
@@ -53,9 +52,9 @@ namespace FinesApp
                     "SELECT * FROM protocol " +
                     "WHERE protocol.protocol_id = @protocolId";
 
-                db.openConnection();
+                DB.openConnection();
 
-                command = new NpgsqlCommand(query, db.GetConnection());
+                command = new NpgsqlCommand(query, DB.GetConnection());
                 command.Parameters.AddWithValue("@protocolId", protocol_id);
 
                 adapter.SelectCommand = command;
@@ -75,7 +74,7 @@ namespace FinesApp
                     );
                 }
 
-                db.closeConnection();
+                DB.closeConnection();
 
                 driverPaymentForm.Show();
             }
@@ -111,45 +110,47 @@ namespace FinesApp
 
             String licenseNumber = driver.LicenseNumber;
 
-            DB db = new DB();
-            DataTable table1 = new DataTable();
-            DataTable table2 = new DataTable();
+            DataTable driverTable = new DataTable();
+            DataTable protocolTable = new DataTable();
 
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command;
 
-            string drivers_query = "SELECT * FROM vehicle WHERE license_number = @licenseNumber";
-            string protocols_query = "SELECT protocol.protocol_id, violation.violation_name, protocol.sts_number, protocol.violation_date, protocol.violation_time, protocol.violation_place, payment_status.status_name " +
+            string drivers_query = 
+                "SELECT * FROM vehicle " +
+                "WHERE license_number = @licenseNumber";
+            
+            string protocols_query = 
+                "SELECT protocol.protocol_id, violation.violation_name, protocol.sts_number, protocol.violation_date, protocol.violation_time, protocol.violation_place, payment_status.status_name " +
                 "FROM protocol " +
                 "INNER JOIN violation ON protocol.violation_id = violation.violation_id " +
                 "INNER JOIN payment_status ON protocol.status_id = payment_status.status_id " +
-                "WHERE sts_number IN (SELECT sts_number FROM vehicle WHERE license_number = @licenseNumber)";
+                "WHERE sts_number IN (" +
+                "SELECT sts_number " +
+                "FROM vehicle " +
+                "WHERE license_number = @licenseNumber)";
 
-            db.openConnection();
+            DB.openConnection();
 
-            command = new NpgsqlCommand(drivers_query, db.GetConnection());
+            command = new NpgsqlCommand(drivers_query, DB.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
 
             adapter.SelectCommand = command;
-            adapter.Fill(table1);
+            adapter.Fill(driverTable);
 
-            vehicleDGV.DataSource = table1;
+            vehicleDGV.DataSource = driverTable;
 
-            command = new NpgsqlCommand(protocols_query, db.GetConnection());
+            command = new NpgsqlCommand(protocols_query, DB.GetConnection());
             command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
 
             adapter.SelectCommand = command;
-            adapter.Fill(table2);
+            adapter.Fill(protocolTable);
 
-            protocolDGV.DataSource = table2;
+            protocolDGV.DataSource = protocolTable;
 
-            if (protocolDGV.RowCount < 1)
-                protocol_more_button.Enabled = false;
-            else
-                protocol_more_button.Enabled = true;
+            protocol_more_button.Enabled = protocolDGV.RowCount > 0;
 
-            db.closeConnection();
-
+            DB.closeConnection();
         }
     }
 }
