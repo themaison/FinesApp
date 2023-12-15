@@ -16,5 +16,12 @@ namespace FinesApp
         {
             InitializeComponent();
         }
+
+        private void to_back_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InspectorForm inspectorForm = new InspectorForm();
+            inspectorForm.Show();
+        }
     }
 }
