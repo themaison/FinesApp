@@ -30,13 +30,11 @@ namespace FinesApp
 
             if (driverDGV.RowCount < 1)
             {
-                insert_box_button.Enabled = false;
                 update_box_button.Enabled = false;
                 delete_button.Enabled = false;
             }
             else
             {
-                insert_box_button.Enabled = true;
                 update_box_button.Enabled = true;
                 delete_button.Enabled = true;
             }

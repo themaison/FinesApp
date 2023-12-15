@@ -32,14 +32,14 @@
             this.update_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.update_volation_box = new System.Windows.Forms.GroupBox();
+            this.update_violation_box = new System.Windows.Forms.GroupBox();
             this.update_cancel_box_button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.update_box_button = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.insert_volation_box = new System.Windows.Forms.GroupBox();
+            this.update_tb2 = new System.Windows.Forms.TextBox();
+            this.update_tb1 = new System.Windows.Forms.TextBox();
+            this.insert_violation_box = new System.Windows.Forms.GroupBox();
             this.insert_cancel_box_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,16 +47,16 @@
             this.insert_tb2 = new System.Windows.Forms.TextBox();
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.driverDGV = new System.Windows.Forms.DataGridView();
+            this.violationDGV = new System.Windows.Forms.DataGridView();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.update_volation_box.SuspendLayout();
-            this.insert_volation_box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
+            this.update_violation_box.SuspendLayout();
+            this.insert_violation_box.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.violationDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // to_back_button
@@ -86,6 +86,7 @@
             this.update_button.TabIndex = 22;
             this.update_button.Text = "Изменить";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // delete_button
             // 
@@ -101,6 +102,7 @@
             this.delete_button.TabIndex = 20;
             this.delete_button.Text = "Удалить";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // panel2
             // 
@@ -108,10 +110,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.update_volation_box);
-            this.panel2.Controls.Add(this.insert_volation_box);
+            this.panel2.Controls.Add(this.update_violation_box);
+            this.panel2.Controls.Add(this.insert_violation_box);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.driverDGV);
+            this.panel2.Controls.Add(this.violationDGV);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -119,23 +121,23 @@
             this.panel2.Size = new System.Drawing.Size(1254, 646);
             this.panel2.TabIndex = 24;
             // 
-            // update_volation_box
+            // update_violation_box
             // 
-            this.update_volation_box.BackColor = System.Drawing.Color.LightGray;
-            this.update_volation_box.Controls.Add(this.update_cancel_box_button);
-            this.update_volation_box.Controls.Add(this.label4);
-            this.update_volation_box.Controls.Add(this.label5);
-            this.update_volation_box.Controls.Add(this.update_box_button);
-            this.update_volation_box.Controls.Add(this.textBox1);
-            this.update_volation_box.Controls.Add(this.textBox2);
-            this.update_volation_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.update_volation_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.update_volation_box.Location = new System.Drawing.Point(32, 356);
-            this.update_volation_box.Name = "update_volation_box";
-            this.update_volation_box.Size = new System.Drawing.Size(714, 254);
-            this.update_volation_box.TabIndex = 18;
-            this.update_volation_box.TabStop = false;
-            this.update_volation_box.Text = "Изменение";
+            this.update_violation_box.BackColor = System.Drawing.Color.LightGray;
+            this.update_violation_box.Controls.Add(this.update_cancel_box_button);
+            this.update_violation_box.Controls.Add(this.label4);
+            this.update_violation_box.Controls.Add(this.label5);
+            this.update_violation_box.Controls.Add(this.update_box_button);
+            this.update_violation_box.Controls.Add(this.update_tb2);
+            this.update_violation_box.Controls.Add(this.update_tb1);
+            this.update_violation_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.update_violation_box.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.update_violation_box.Location = new System.Drawing.Point(32, 356);
+            this.update_violation_box.Name = "update_violation_box";
+            this.update_violation_box.Size = new System.Drawing.Size(714, 254);
+            this.update_violation_box.TabIndex = 18;
+            this.update_violation_box.TabStop = false;
+            this.update_violation_box.Text = "Изменение";
             // 
             // update_cancel_box_button
             // 
@@ -149,6 +151,7 @@
             this.update_cancel_box_button.TabIndex = 17;
             this.update_cancel_box_button.Text = "Отмена";
             this.update_cancel_box_button.UseVisualStyleBackColor = true;
+            this.update_cancel_box_button.Click += new System.EventHandler(this.update_cancel_box_button_Click);
             // 
             // label4
             // 
@@ -185,40 +188,41 @@
             this.update_box_button.Name = "update_box_button";
             this.update_box_button.Size = new System.Drawing.Size(327, 80);
             this.update_box_button.TabIndex = 13;
-            this.update_box_button.Text = "Добавить";
+            this.update_box_button.Text = "Изменить";
             this.update_box_button.UseVisualStyleBackColor = true;
+            this.update_box_button.Click += new System.EventHandler(this.update_box_button_Click);
             // 
-            // textBox1
+            // update_tb2
             // 
-            this.textBox1.Location = new System.Drawing.Point(369, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 40);
-            this.textBox1.TabIndex = 1;
+            this.update_tb2.Location = new System.Drawing.Point(369, 86);
+            this.update_tb2.Name = "update_tb2";
+            this.update_tb2.Size = new System.Drawing.Size(327, 40);
+            this.update_tb2.TabIndex = 1;
             // 
-            // textBox2
+            // update_tb1
             // 
-            this.textBox2.Location = new System.Drawing.Point(18, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(327, 40);
-            this.textBox2.TabIndex = 0;
+            this.update_tb1.Location = new System.Drawing.Point(18, 86);
+            this.update_tb1.Name = "update_tb1";
+            this.update_tb1.Size = new System.Drawing.Size(327, 40);
+            this.update_tb1.TabIndex = 0;
             // 
-            // insert_volation_box
+            // insert_violation_box
             // 
-            this.insert_volation_box.BackColor = System.Drawing.Color.LightGray;
-            this.insert_volation_box.Controls.Add(this.insert_cancel_box_button);
-            this.insert_volation_box.Controls.Add(this.label3);
-            this.insert_volation_box.Controls.Add(this.label1);
-            this.insert_volation_box.Controls.Add(this.insert_box_button);
-            this.insert_volation_box.Controls.Add(this.insert_tb2);
-            this.insert_volation_box.Controls.Add(this.insert_tb1);
-            this.insert_volation_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.insert_volation_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.insert_volation_box.Location = new System.Drawing.Point(32, 356);
-            this.insert_volation_box.Name = "insert_volation_box";
-            this.insert_volation_box.Size = new System.Drawing.Size(714, 254);
-            this.insert_volation_box.TabIndex = 2;
-            this.insert_volation_box.TabStop = false;
-            this.insert_volation_box.Text = "Добавление";
+            this.insert_violation_box.BackColor = System.Drawing.Color.LightGray;
+            this.insert_violation_box.Controls.Add(this.insert_cancel_box_button);
+            this.insert_violation_box.Controls.Add(this.label3);
+            this.insert_violation_box.Controls.Add(this.label1);
+            this.insert_violation_box.Controls.Add(this.insert_box_button);
+            this.insert_violation_box.Controls.Add(this.insert_tb2);
+            this.insert_violation_box.Controls.Add(this.insert_tb1);
+            this.insert_violation_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insert_violation_box.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.insert_violation_box.Location = new System.Drawing.Point(32, 356);
+            this.insert_violation_box.Name = "insert_violation_box";
+            this.insert_violation_box.Size = new System.Drawing.Size(714, 254);
+            this.insert_violation_box.TabIndex = 2;
+            this.insert_violation_box.TabStop = false;
+            this.insert_violation_box.Text = "Добавление";
             // 
             // insert_cancel_box_button
             // 
@@ -232,6 +236,7 @@
             this.insert_cancel_box_button.TabIndex = 17;
             this.insert_cancel_box_button.Text = "Отмена";
             this.insert_cancel_box_button.UseVisualStyleBackColor = true;
+            this.insert_cancel_box_button.Click += new System.EventHandler(this.insert_cancel_box_button_Click);
             // 
             // label3
             // 
@@ -270,6 +275,7 @@
             this.insert_box_button.TabIndex = 13;
             this.insert_box_button.Text = "Добавить";
             this.insert_box_button.UseVisualStyleBackColor = true;
+            this.insert_box_button.Click += new System.EventHandler(this.insert_box_button_Click);
             // 
             // insert_tb2
             // 
@@ -297,27 +303,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Нарушения";
             // 
-            // driverDGV
+            // violationDGV
             // 
-            this.driverDGV.AllowUserToAddRows = false;
-            this.driverDGV.AllowUserToDeleteRows = false;
-            this.driverDGV.AllowUserToResizeColumns = false;
-            this.driverDGV.AllowUserToResizeRows = false;
-            this.driverDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driverDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.driverDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.violationDGV.AllowUserToAddRows = false;
+            this.violationDGV.AllowUserToDeleteRows = false;
+            this.violationDGV.AllowUserToResizeColumns = false;
+            this.violationDGV.AllowUserToResizeRows = false;
+            this.violationDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.violationDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.violationDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.violation_id,
             this.violation_name,
             this.fine_amount});
-            this.driverDGV.Location = new System.Drawing.Point(32, 58);
-            this.driverDGV.Margin = new System.Windows.Forms.Padding(4);
-            this.driverDGV.Name = "driverDGV";
-            this.driverDGV.ReadOnly = true;
-            this.driverDGV.RowHeadersWidth = 80;
-            this.driverDGV.RowTemplate.Height = 33;
-            this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driverDGV.Size = new System.Drawing.Size(1180, 280);
-            this.driverDGV.TabIndex = 0;
+            this.violationDGV.Location = new System.Drawing.Point(32, 58);
+            this.violationDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.violationDGV.Name = "violationDGV";
+            this.violationDGV.ReadOnly = true;
+            this.violationDGV.RowHeadersWidth = 80;
+            this.violationDGV.RowTemplate.Height = 33;
+            this.violationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.violationDGV.Size = new System.Drawing.Size(1180, 280);
+            this.violationDGV.TabIndex = 0;
             // 
             // violation_id
             // 
@@ -360,6 +366,7 @@
             this.insert_button.TabIndex = 21;
             this.insert_button.Text = "Добавить";
             this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
             // 
             // full_name_label
             // 
@@ -390,13 +397,14 @@
             this.Name = "InspectorViolationsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InspectorViolationsForm";
+            this.Load += new System.EventHandler(this.InspectorViolationsForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.update_volation_box.ResumeLayout(false);
-            this.update_volation_box.PerformLayout();
-            this.insert_volation_box.ResumeLayout(false);
-            this.insert_volation_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).EndInit();
+            this.update_violation_box.ResumeLayout(false);
+            this.update_violation_box.PerformLayout();
+            this.insert_violation_box.ResumeLayout(false);
+            this.insert_violation_box.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.violationDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,14 +416,14 @@
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox update_volation_box;
+        private System.Windows.Forms.GroupBox update_violation_box;
         private System.Windows.Forms.Button update_cancel_box_button;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button update_box_button;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox insert_volation_box;
+        private System.Windows.Forms.TextBox update_tb2;
+        private System.Windows.Forms.TextBox update_tb1;
+        private System.Windows.Forms.GroupBox insert_violation_box;
         private System.Windows.Forms.Button insert_cancel_box_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -423,7 +431,7 @@
         private System.Windows.Forms.TextBox insert_tb2;
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView driverDGV;
+        private System.Windows.Forms.DataGridView violationDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn fine_amount;

@@ -63,7 +63,7 @@
             this.insert_tb2 = new System.Windows.Forms.TextBox();
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.driverDGV = new System.Windows.Forms.DataGridView();
+            this.protocolDGV = new System.Windows.Forms.DataGridView();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@
             this.panel2.SuspendLayout();
             this.update_protocol_box.SuspendLayout();
             this.insert_protocol_box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // to_back_button
@@ -131,7 +131,7 @@
             this.panel2.Controls.Add(this.update_protocol_box);
             this.panel2.Controls.Add(this.insert_protocol_box);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.driverDGV);
+            this.panel2.Controls.Add(this.protocolDGV);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -487,15 +487,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Водители";
             // 
-            // driverDGV
+            // protocolDGV
             // 
-            this.driverDGV.AllowUserToAddRows = false;
-            this.driverDGV.AllowUserToDeleteRows = false;
-            this.driverDGV.AllowUserToResizeColumns = false;
-            this.driverDGV.AllowUserToResizeRows = false;
-            this.driverDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driverDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.driverDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.protocolDGV.AllowUserToAddRows = false;
+            this.protocolDGV.AllowUserToDeleteRows = false;
+            this.protocolDGV.AllowUserToResizeColumns = false;
+            this.protocolDGV.AllowUserToResizeRows = false;
+            this.protocolDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.protocolDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.protocolDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.protocol_id,
             this.violation_id,
             this.sts_number,
@@ -503,15 +503,15 @@
             this.violation_time,
             this.violation_place,
             this.status_id});
-            this.driverDGV.Location = new System.Drawing.Point(32, 58);
-            this.driverDGV.Margin = new System.Windows.Forms.Padding(4);
-            this.driverDGV.Name = "driverDGV";
-            this.driverDGV.ReadOnly = true;
-            this.driverDGV.RowHeadersWidth = 80;
-            this.driverDGV.RowTemplate.Height = 33;
-            this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driverDGV.Size = new System.Drawing.Size(1180, 280);
-            this.driverDGV.TabIndex = 0;
+            this.protocolDGV.Location = new System.Drawing.Point(32, 58);
+            this.protocolDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.protocolDGV.Name = "protocolDGV";
+            this.protocolDGV.ReadOnly = true;
+            this.protocolDGV.RowHeadersWidth = 80;
+            this.protocolDGV.RowTemplate.Height = 33;
+            this.protocolDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.protocolDGV.Size = new System.Drawing.Size(1180, 280);
+            this.protocolDGV.TabIndex = 0;
             // 
             // protocol_id
             // 
@@ -626,7 +626,7 @@
             this.update_protocol_box.PerformLayout();
             this.insert_protocol_box.ResumeLayout(false);
             this.insert_protocol_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,7 +669,7 @@
         private System.Windows.Forms.TextBox insert_tb2;
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView driverDGV;
+        private System.Windows.Forms.DataGridView protocolDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn protocol_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;

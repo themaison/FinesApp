@@ -32,19 +32,18 @@ namespace FinesApp
             return table;
         }
 
-        public static bool Insert(int violationId, string violationName, int fineAmount)
+        public static bool Insert(string violationName, int fineAmount)
         {
             NpgsqlCommand command;
             string query =
-                "INSERT INTO violation (violation_id, violation_name, fine_amount) " +
-                "VALUES (@violationId, @violationName, @fineAmount)";
+                "INSERT INTO violation (violation_name, fine_amount) " +
+                "VALUES (@violationName, @fineAmount)";
 
             try
             {
                 DB.openConnection();
 
                 command = new NpgsqlCommand(query, DB.GetConnection());
-                command.Parameters.AddWithValue("@violationId", violationId);
                 command.Parameters.AddWithValue("@violationName", violationName);
                 command.Parameters.AddWithValue("@fineAmount", fineAmount);
 
@@ -123,17 +122,17 @@ namespace FinesApp
             }
         }
 
-        public static bool IsExistsViolation(int violationId)
+        public static bool IsExistsViolation(String violationName)
         {
             DataTable dataTableQuery = new DataTable();
             string query =
                 "SELECT * FROM violation " +
-                "WHERE violation_id = @violationId";
+                "WHERE violation_name = @violationName";
 
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
 
-            command.Parameters.AddWithValue("@violationId", violationId);
+            command.Parameters.AddWithValue("@violationName", violationName);
             adapter.SelectCommand = command;
             adapter.Fill(dataTableQuery);
 
