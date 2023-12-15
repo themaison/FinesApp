@@ -32,11 +32,11 @@
             this.to_back_button = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
-            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.violationDGV = new System.Windows.Forms.DataGridView();
+            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,24 +113,6 @@
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 200);
             this.paymentStatusDGV.TabIndex = 3;
             // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 200;
-            // 
-            // status_name
-            // 
-            this.status_name.DataPropertyName = "status_name";
-            this.status_name.HeaderText = "Наименование";
-            this.status_name.MinimumWidth = 10;
-            this.status_name.Name = "status_name";
-            this.status_name.ReadOnly = true;
-            this.status_name.Width = 340;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -177,6 +159,24 @@
             this.violationDGV.Size = new System.Drawing.Size(1180, 320);
             this.violationDGV.TabIndex = 0;
             // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            this.status_id.Width = 200;
+            // 
+            // status_name
+            // 
+            this.status_name.DataPropertyName = "status_name";
+            this.status_name.HeaderText = "Наименование статуса";
+            this.status_name.MinimumWidth = 10;
+            this.status_name.Name = "status_name";
+            this.status_name.ReadOnly = true;
+            this.status_name.Width = 340;
+            // 
             // violation_id
             // 
             this.violation_id.DataPropertyName = "violation_id";
@@ -189,7 +189,7 @@
             // violation_name
             // 
             this.violation_name.DataPropertyName = "violation_name";
-            this.violation_name.HeaderText = "Наименование";
+            this.violation_name.HeaderText = "Наименование нарушения";
             this.violation_name.MinimumWidth = 10;
             this.violation_name.Name = "violation_name";
             this.violation_name.ReadOnly = true;
