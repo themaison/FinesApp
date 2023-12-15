@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.registerLabel = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.driverLoginButton = new System.Windows.Forms.Button();
             this.licenseNumberTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.to_back_button = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,19 @@
             this.panel1.Size = new System.Drawing.Size(1254, 80);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // to_back_button
+            // 
+            this.to_back_button.AutoSize = true;
+            this.to_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.to_back_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.to_back_button.Location = new System.Drawing.Point(22, 22);
+            this.to_back_button.Name = "to_back_button";
+            this.to_back_button.Size = new System.Drawing.Size(53, 41);
+            this.to_back_button.TabIndex = 13;
+            this.to_back_button.Text = "<-";
+            this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
             // 
             // label1
             // 
@@ -95,7 +108,7 @@
             this.registerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registerLabel.Font = new System.Drawing.Font("Product Sans", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.registerLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.registerLabel.Location = new System.Drawing.Point(645, 425);
+            this.registerLabel.Location = new System.Drawing.Point(645, 372);
             this.registerLabel.Name = "registerLabel";
             this.registerLabel.Size = new System.Drawing.Size(206, 26);
             this.registerLabel.TabIndex = 4;
@@ -107,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Product Sans", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(366, 425);
+            this.label3.Location = new System.Drawing.Point(366, 372);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(276, 26);
@@ -121,7 +134,7 @@
             this.driverLoginButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.driverLoginButton.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.driverLoginButton.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.driverLoginButton.Location = new System.Drawing.Point(362, 325);
+            this.driverLoginButton.Location = new System.Drawing.Point(362, 272);
             this.driverLoginButton.Name = "driverLoginButton";
             this.driverLoginButton.Size = new System.Drawing.Size(517, 80);
             this.driverLoginButton.TabIndex = 2;
@@ -132,7 +145,7 @@
             // licenseNumberTextBox
             // 
             this.licenseNumberTextBox.Font = new System.Drawing.Font("Product Sans Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.licenseNumberTextBox.Location = new System.Drawing.Point(362, 218);
+            this.licenseNumberTextBox.Location = new System.Drawing.Point(362, 165);
             this.licenseNumberTextBox.Margin = new System.Windows.Forms.Padding(10);
             this.licenseNumberTextBox.MinimumSize = new System.Drawing.Size(4, 80);
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
@@ -147,25 +160,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(355, 167);
+            this.label2.Location = new System.Drawing.Point(355, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 34);
             this.label2.TabIndex = 0;
             this.label2.Text = "Номер в/у";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // to_back_button
-            // 
-            this.to_back_button.AutoSize = true;
-            this.to_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.to_back_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.to_back_button.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.to_back_button.Location = new System.Drawing.Point(22, 22);
-            this.to_back_button.Name = "to_back_button";
-            this.to_back_button.Size = new System.Drawing.Size(53, 41);
-            this.to_back_button.TabIndex = 13;
-            this.to_back_button.Text = "<-";
-            this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
             // 
             // DriverAuthForm
             // 

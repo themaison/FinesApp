@@ -48,7 +48,7 @@ namespace FinesApp
         private void volations_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminVolationsForm volationsForm = new AdminVolationsForm();
+            AdminViolationsForm volationsForm = new AdminViolationsForm();
             volationsForm.Show();
         }
 

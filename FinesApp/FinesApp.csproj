@@ -131,11 +131,11 @@
     <Compile Include="AdminVehiclesForm.Designer.cs">
       <DependentUpon>AdminVehiclesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminVolationsForm.cs">
+    <Compile Include="AdminViolationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminVolationsForm.Designer.cs">
-      <DependentUpon>AdminVolationsForm.cs</DependentUpon>
+    <Compile Include="AdminViolationsForm.Designer.cs">
+      <DependentUpon>AdminViolationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Driver.cs" />
@@ -194,6 +194,12 @@
     <Compile Include="InspectorProtocolsForm.Designer.cs">
       <DependentUpon>InspectorProtocolsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InspectorReadableDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectorReadableDataForm.Designer.cs">
+      <DependentUpon>InspectorReadableDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InspectorViolationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,8 +238,8 @@
     <EmbeddedResource Include="AdminVehiclesForm.resx">
       <DependentUpon>AdminVehiclesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminVolationsForm.resx">
-      <DependentUpon>AdminVolationsForm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminViolationsForm.resx">
+      <DependentUpon>AdminViolationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriverAuthForm.resx">
       <DependentUpon>DriverAuthForm.cs</DependentUpon>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InspectorProtocolsForm.resx">
       <DependentUpon>InspectorProtocolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectorReadableDataForm.resx">
+      <DependentUpon>InspectorReadableDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InspectorViolationsForm.resx">
       <DependentUpon>InspectorViolationsForm.cs</DependentUpon>

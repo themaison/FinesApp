@@ -66,10 +66,10 @@
             this.passTextBox.MinimumSize = new System.Drawing.Size(517, 80);
             this.passTextBox.Multiline = true;
             this.passTextBox.Name = "passTextBox";
+            this.passTextBox.PasswordChar = '*';
             this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passTextBox.Size = new System.Drawing.Size(517, 80);
             this.passTextBox.TabIndex = 6;
-            this.passTextBox.UseSystemPasswordChar = true;
             // 
             // label4
             // 

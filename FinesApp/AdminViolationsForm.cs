@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinesApp
 {
-    public partial class AdminVolationsForm : Form
+    public partial class AdminViolationsForm : Form
     {
-        public AdminVolationsForm()
+        public AdminViolationsForm()
         {
             InitializeComponent();
         }

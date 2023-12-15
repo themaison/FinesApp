@@ -1,6 +1,6 @@
 ﻿namespace FinesApp
 {
-    partial class AdminVolationsForm
+    partial class AdminViolationsForm
     {
         /// <summary>
         /// Required designer variable.
