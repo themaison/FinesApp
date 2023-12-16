@@ -377,9 +377,9 @@
             this.full_name_label.Location = new System.Drawing.Point(88, 17);
             this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
             this.full_name_label.Name = "full_name_label";
-            this.full_name_label.Size = new System.Drawing.Size(326, 47);
+            this.full_name_label.Size = new System.Drawing.Size(337, 47);
             this.full_name_label.TabIndex = 23;
-            this.full_name_label.Text = "Таблица: Volation\r\n";
+            this.full_name_label.Text = "Таблица: Violation\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InspectorViolationsForm

@@ -59,7 +59,7 @@
             this.insert_tb2 = new System.Windows.Forms.TextBox();
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.driverDGV = new System.Windows.Forms.DataGridView();
+            this.protocolDGV = new System.Windows.Forms.DataGridView();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +75,7 @@
             this.full_name_label = new System.Windows.Forms.Label();
             this.update_protocol_box.SuspendLayout();
             this.insert_protocol_box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,8 +193,10 @@
             // 
             // update_dp2
             // 
+            this.update_dp2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.update_dp2.Location = new System.Drawing.Point(369, 172);
             this.update_dp2.Name = "update_dp2";
+            this.update_dp2.ShowUpDown = true;
             this.update_dp2.Size = new System.Drawing.Size(327, 40);
             this.update_dp2.TabIndex = 28;
             // 
@@ -232,6 +234,7 @@
             this.update_cancel_box_button.TabIndex = 17;
             this.update_cancel_box_button.Text = "Отмена";
             this.update_cancel_box_button.UseVisualStyleBackColor = true;
+            this.update_cancel_box_button.Click += new System.EventHandler(this.update_cancel_box_button_Click);
             // 
             // update_box_button
             // 
@@ -246,6 +249,7 @@
             this.update_box_button.TabIndex = 13;
             this.update_box_button.Text = "Изменить";
             this.update_box_button.UseVisualStyleBackColor = true;
+            this.update_box_button.Click += new System.EventHandler(this.update_box_button_Click);
             // 
             // insert_protocol_box
             // 
@@ -348,6 +352,7 @@
             this.insert_cancel_box_button.TabIndex = 17;
             this.insert_cancel_box_button.Text = "Отмена";
             this.insert_cancel_box_button.UseVisualStyleBackColor = true;
+            this.insert_cancel_box_button.Click += new System.EventHandler(this.insert_cancel_box_button_Click);
             // 
             // label3
             // 
@@ -386,11 +391,14 @@
             this.insert_box_button.TabIndex = 13;
             this.insert_box_button.Text = "Добавить";
             this.insert_box_button.UseVisualStyleBackColor = true;
+            this.insert_box_button.Click += new System.EventHandler(this.insert_box_button_Click);
             // 
             // insert_dp2
             // 
+            this.insert_dp2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.insert_dp2.Location = new System.Drawing.Point(369, 172);
             this.insert_dp2.Name = "insert_dp2";
+            this.insert_dp2.ShowUpDown = true;
             this.insert_dp2.Size = new System.Drawing.Size(327, 40);
             this.insert_dp2.TabIndex = 5;
             // 
@@ -427,15 +435,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Водители";
             // 
-            // driverDGV
+            // protocolDGV
             // 
-            this.driverDGV.AllowUserToAddRows = false;
-            this.driverDGV.AllowUserToDeleteRows = false;
-            this.driverDGV.AllowUserToResizeColumns = false;
-            this.driverDGV.AllowUserToResizeRows = false;
-            this.driverDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driverDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.driverDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.protocolDGV.AllowUserToAddRows = false;
+            this.protocolDGV.AllowUserToDeleteRows = false;
+            this.protocolDGV.AllowUserToResizeColumns = false;
+            this.protocolDGV.AllowUserToResizeRows = false;
+            this.protocolDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.protocolDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.protocolDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.protocol_id,
             this.violation_id,
             this.sts_number,
@@ -443,15 +451,16 @@
             this.violation_time,
             this.violation_place,
             this.status_id});
-            this.driverDGV.Location = new System.Drawing.Point(32, 58);
-            this.driverDGV.Margin = new System.Windows.Forms.Padding(4);
-            this.driverDGV.Name = "driverDGV";
-            this.driverDGV.ReadOnly = true;
-            this.driverDGV.RowHeadersWidth = 80;
-            this.driverDGV.RowTemplate.Height = 33;
-            this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driverDGV.Size = new System.Drawing.Size(1180, 280);
-            this.driverDGV.TabIndex = 0;
+            this.protocolDGV.Location = new System.Drawing.Point(32, 58);
+            this.protocolDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.protocolDGV.Name = "protocolDGV";
+            this.protocolDGV.ReadOnly = true;
+            this.protocolDGV.RowHeadersWidth = 80;
+            this.protocolDGV.RowTemplate.Height = 33;
+            this.protocolDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.protocolDGV.Size = new System.Drawing.Size(1180, 280);
+            this.protocolDGV.TabIndex = 0;
+            this.protocolDGV.SelectionChanged += new System.EventHandler(this.protocolDGV_SelectionChanged);
             // 
             // protocol_id
             // 
@@ -543,6 +552,7 @@
             this.update_button.TabIndex = 16;
             this.update_button.Text = "Изменить";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // delete_button
             // 
@@ -558,6 +568,7 @@
             this.delete_button.TabIndex = 14;
             this.delete_button.Text = "Удалить";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // panel2
             // 
@@ -568,7 +579,7 @@
             this.panel2.Controls.Add(this.update_protocol_box);
             this.panel2.Controls.Add(this.insert_protocol_box);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.driverDGV);
+            this.panel2.Controls.Add(this.protocolDGV);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -590,6 +601,7 @@
             this.insert_button.TabIndex = 15;
             this.insert_button.Text = "Добавить";
             this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
             // 
             // full_name_label
             // 
@@ -620,11 +632,12 @@
             this.Name = "AdminProtocolsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminProtocolsForm";
+            this.Load += new System.EventHandler(this.AdminProtocolsForm_Load);
             this.update_protocol_box.ResumeLayout(false);
             this.update_protocol_box.PerformLayout();
             this.insert_protocol_box.ResumeLayout(false);
             this.insert_protocol_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -649,7 +662,7 @@
         private System.Windows.Forms.TextBox insert_tb2;
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView driverDGV;
+        private System.Windows.Forms.DataGridView protocolDGV;
         private System.Windows.Forms.Label to_back_button;
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button delete_button;

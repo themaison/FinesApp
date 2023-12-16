@@ -1,10 +1,6 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinesApp
 {
@@ -32,19 +28,18 @@ namespace FinesApp
             return table;
         }
 
-        public static bool Insert(int statusId, string statusName)
+        public static bool Insert(string statusName)
         {
             NpgsqlCommand command;
             string query =
-                "INSERT INTO payment_status (status_id, status_name) " +
-                "VALUES (@statusId, @statusName)";
+                "INSERT INTO payment_status (status_name) " +
+                "VALUES (@statusName)";
 
             try
             {
                 DB.openConnection();
 
                 command = new NpgsqlCommand(query, DB.GetConnection());
-                command.Parameters.AddWithValue("@statusId", statusId);
                 command.Parameters.AddWithValue("@statusName", statusName);
 
                 if (command.ExecuteNonQuery() > 0)
@@ -121,17 +116,17 @@ namespace FinesApp
             }
         }
 
-        public static bool IsExistsPaymentStatus(int statusId)
+        public static bool IsExistsPaymentStatus(String statusName)
         {
             DataTable dataTableQuery = new DataTable();
             string query =
                 "SELECT * FROM payment_status " +
-                "WHERE status_id = @statusId";
+                "WHERE status_name = @statusName";
 
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
             NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
 
-            command.Parameters.AddWithValue("@statusId", statusId);
+            command.Parameters.AddWithValue("@statusName", statusName);
             adapter.SelectCommand = command;
             adapter.Fill(dataTableQuery);
 

@@ -34,22 +34,22 @@
             this.insert_box_button = new System.Windows.Forms.Button();
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.driverDGV = new System.Windows.Forms.DataGridView();
+            this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
             this.to_back_button = new System.Windows.Forms.Label();
             this.update_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
             this.update_payment_status_box = new System.Windows.Forms.GroupBox();
             this.update_cancel_box_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.update_box_button = new System.Windows.Forms.Button();
             this.update_tb1 = new System.Windows.Forms.TextBox();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
             this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insert_payment_status_box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentStatusDGV)).BeginInit();
             this.panel2.SuspendLayout();
             this.update_payment_status_box.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,7 @@
             this.insert_cancel_box_button.TabIndex = 17;
             this.insert_cancel_box_button.Text = "Отмена";
             this.insert_cancel_box_button.UseVisualStyleBackColor = true;
+            this.insert_cancel_box_button.Click += new System.EventHandler(this.insert_cancel_box_button_Click);
             // 
             // label1
             // 
@@ -108,6 +109,7 @@
             this.insert_box_button.TabIndex = 13;
             this.insert_box_button.Text = "Добавить";
             this.insert_box_button.UseVisualStyleBackColor = true;
+            this.insert_box_button.Click += new System.EventHandler(this.insert_box_button_Click);
             // 
             // insert_tb1
             // 
@@ -128,26 +130,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Статусы оплат";
             // 
-            // driverDGV
+            // paymentStatusDGV
             // 
-            this.driverDGV.AllowUserToAddRows = false;
-            this.driverDGV.AllowUserToDeleteRows = false;
-            this.driverDGV.AllowUserToResizeColumns = false;
-            this.driverDGV.AllowUserToResizeRows = false;
-            this.driverDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driverDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.driverDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentStatusDGV.AllowUserToAddRows = false;
+            this.paymentStatusDGV.AllowUserToDeleteRows = false;
+            this.paymentStatusDGV.AllowUserToResizeColumns = false;
+            this.paymentStatusDGV.AllowUserToResizeRows = false;
+            this.paymentStatusDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.paymentStatusDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.paymentStatusDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.status_id,
             this.status_name});
-            this.driverDGV.Location = new System.Drawing.Point(32, 58);
-            this.driverDGV.Margin = new System.Windows.Forms.Padding(4);
-            this.driverDGV.Name = "driverDGV";
-            this.driverDGV.ReadOnly = true;
-            this.driverDGV.RowHeadersWidth = 80;
-            this.driverDGV.RowTemplate.Height = 33;
-            this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.driverDGV.Size = new System.Drawing.Size(1180, 280);
-            this.driverDGV.TabIndex = 0;
+            this.paymentStatusDGV.Location = new System.Drawing.Point(32, 58);
+            this.paymentStatusDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.paymentStatusDGV.Name = "paymentStatusDGV";
+            this.paymentStatusDGV.ReadOnly = true;
+            this.paymentStatusDGV.RowHeadersWidth = 80;
+            this.paymentStatusDGV.RowTemplate.Height = 33;
+            this.paymentStatusDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 280);
+            this.paymentStatusDGV.TabIndex = 0;
+            this.paymentStatusDGV.SelectionChanged += new System.EventHandler(this.paymentStatusDGV_SelectionChanged);
             // 
             // to_back_button
             // 
@@ -176,6 +179,7 @@
             this.update_button.TabIndex = 16;
             this.update_button.Text = "Изменить";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // delete_button
             // 
@@ -191,6 +195,7 @@
             this.delete_button.TabIndex = 14;
             this.delete_button.Text = "Удалить";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // panel2
             // 
@@ -201,41 +206,13 @@
             this.panel2.Controls.Add(this.update_payment_status_box);
             this.panel2.Controls.Add(this.insert_payment_status_box);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.driverDGV);
+            this.panel2.Controls.Add(this.paymentStatusDGV);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 646);
             this.panel2.TabIndex = 18;
-            // 
-            // insert_button
-            // 
-            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.insert_button.Location = new System.Drawing.Point(656, 1);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
-            this.insert_button.Name = "insert_button";
-            this.insert_button.Size = new System.Drawing.Size(180, 80);
-            this.insert_button.TabIndex = 15;
-            this.insert_button.Text = "Добавить";
-            this.insert_button.UseVisualStyleBackColor = true;
-            // 
-            // full_name_label
-            // 
-            this.full_name_label.AutoSize = true;
-            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.full_name_label.Location = new System.Drawing.Point(88, 17);
-            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
-            this.full_name_label.Name = "full_name_label";
-            this.full_name_label.Size = new System.Drawing.Size(452, 47);
-            this.full_name_label.TabIndex = 17;
-            this.full_name_label.Text = "Таблица: Payment Status";
-            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // update_payment_status_box
             // 
@@ -265,6 +242,7 @@
             this.update_cancel_box_button.TabIndex = 17;
             this.update_cancel_box_button.Text = "Отмена";
             this.update_cancel_box_button.UseVisualStyleBackColor = true;
+            this.update_cancel_box_button.Click += new System.EventHandler(this.update_cancel_box_button_Click);
             // 
             // label3
             // 
@@ -289,8 +267,9 @@
             this.update_box_button.Name = "update_box_button";
             this.update_box_button.Size = new System.Drawing.Size(327, 80);
             this.update_box_button.TabIndex = 13;
-            this.update_box_button.Text = "Добавить";
+            this.update_box_button.Text = "Изменить";
             this.update_box_button.UseVisualStyleBackColor = true;
+            this.update_box_button.Click += new System.EventHandler(this.update_box_button_Click);
             // 
             // update_tb1
             // 
@@ -299,6 +278,35 @@
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 0;
             // 
+            // insert_button
+            // 
+            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.insert_button.Location = new System.Drawing.Point(656, 1);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
+            this.insert_button.Name = "insert_button";
+            this.insert_button.Size = new System.Drawing.Size(180, 80);
+            this.insert_button.TabIndex = 15;
+            this.insert_button.Text = "Добавить";
+            this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
+            // 
+            // full_name_label
+            // 
+            this.full_name_label.AutoSize = true;
+            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.full_name_label.Location = new System.Drawing.Point(88, 17);
+            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
+            this.full_name_label.Name = "full_name_label";
+            this.full_name_label.Size = new System.Drawing.Size(452, 47);
+            this.full_name_label.TabIndex = 17;
+            this.full_name_label.Text = "Таблица: Payment Status";
+            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // status_id
             // 
             this.status_id.DataPropertyName = "status_id";
@@ -306,6 +314,7 @@
             this.status_id.MinimumWidth = 10;
             this.status_id.Name = "status_id";
             this.status_id.ReadOnly = true;
+            this.status_id.Width = 200;
             // 
             // status_name
             // 
@@ -314,7 +323,7 @@
             this.status_name.MinimumWidth = 10;
             this.status_name.Name = "status_name";
             this.status_name.ReadOnly = true;
-            this.status_name.Width = 300;
+            this.status_name.Width = 320;
             // 
             // AdminPaymentStatusesForm
             // 
@@ -332,9 +341,10 @@
             this.Name = "AdminPaymentStatusesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPaymentStatusesForm";
+            this.Load += new System.EventHandler(this.AdminPaymentStatusesForm_Load);
             this.insert_payment_status_box.ResumeLayout(false);
             this.insert_payment_status_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driverDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentStatusDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.update_payment_status_box.ResumeLayout(false);
@@ -351,7 +361,7 @@
         private System.Windows.Forms.Button insert_box_button;
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView driverDGV;
+        private System.Windows.Forms.DataGridView paymentStatusDGV;
         private System.Windows.Forms.Label to_back_button;
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button delete_button;

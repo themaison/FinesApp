@@ -103,6 +103,45 @@ namespace FinesApp
             }
         }
 
+        public static bool UpdateWithPrimary(string oldLicenseNumber, string newLicenseNumber, string fullName, string gender, DateTime birthDate, DateTime licenseIssueDate, DateTime licenseValidityDate)
+        {
+            NpgsqlCommand command;
+            string query =
+                "UPDATE driver SET license_number = @newLicenseNumber, full_name = @fullName, gender = @gender, birth_date = @birthDate, license_issue_date = @licenseIssueDate, license_validity = @licenseValidityDate " +
+                "WHERE license_number = @oldLicenseNumber";
+
+            try
+            {
+                DB.openConnection();
+
+                command = new NpgsqlCommand(query, DB.GetConnection());
+                command.Parameters.AddWithValue("@oldLicenseNumber", oldLicenseNumber);
+                command.Parameters.AddWithValue("@newLicenseNumber", newLicenseNumber);
+                command.Parameters.AddWithValue("@fullName", fullName);
+                command.Parameters.AddWithValue("@gender", gender);
+                command.Parameters.AddWithValue("@birthDate", birthDate);
+                command.Parameters.AddWithValue("@licenseIssueDate", licenseIssueDate);
+                command.Parameters.AddWithValue("@licenseValidityDate", licenseValidityDate);
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    DB.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    DB.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                DB.closeConnection();
+                return false;
+            }
+        }
+
+
         public static void Delete(string licenseNumber)
         {
             NpgsqlCommand command;

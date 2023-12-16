@@ -106,6 +106,45 @@ namespace FinesApp
             }
         }
 
+        public static bool UpdateWithPrimary(string oldStsNumber, string newStsNumber, string brand, string model, int yearOfManufacture, string stateNumber, string licenseNumber)
+        {
+            NpgsqlCommand command;
+            string query =
+                "UPDATE vehicle SET sts_number = @newStsNumber, brand = @brand, model = @model, year_of_manufacture = @yearOfManufacture, state_number = @stateNumber, license_number = @licenseNumber " +
+                "WHERE sts_number = @oldStsNumber";
+
+            try
+            {
+                DB.openConnection();
+
+                command = new NpgsqlCommand(query, DB.GetConnection());
+                command.Parameters.AddWithValue("@oldStsNumber", oldStsNumber);
+                command.Parameters.AddWithValue("@newStsNumber", newStsNumber);
+                command.Parameters.AddWithValue("@brand", brand);
+                command.Parameters.AddWithValue("@model", model);
+                command.Parameters.AddWithValue("@yearOfManufacture", yearOfManufacture);
+                command.Parameters.AddWithValue("@stateNumber", stateNumber);
+                command.Parameters.AddWithValue("@licenseNumber", licenseNumber);
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    DB.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    DB.closeConnection();
+                    return false;
+                }
+            }
+            catch
+            {
+                DB.closeConnection();
+                return false;
+            }
+        }
+
+
         public static void Delete(string stsNumber)
         {
             NpgsqlCommand command;
