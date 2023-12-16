@@ -32,19 +32,18 @@ namespace FinesApp
             return table;
         }
 
-        public static bool Insert(int protocolId, int violationId, string stsNumber, DateTime violationDate, TimeSpan violationTime, string violationPlace, int statusId)
+        public static bool Insert(int violationId, string stsNumber, DateTime violationDate, TimeSpan violationTime, string violationPlace, int statusId)
         {
             NpgsqlCommand command;
             string query =
-                "INSERT INTO protocol (protocol_id, violation_id, sts_number, violation_date, violation_time, violation_place, status_id) " +
-                "VALUES (@protocolId, @violationId, @stsNumber, @violationDate, @violationTime, @violationPlace, @statusId)";
+                "INSERT INTO protocol (violation_id, sts_number, violation_date, violation_time, violation_place, status_id) " +
+                "VALUES (@violationId, @stsNumber, @violationDate, @violationTime, @violationPlace, @statusId)";
 
             try
             {
                 DB.openConnection();
 
                 command = new NpgsqlCommand(query, DB.GetConnection());
-                command.Parameters.AddWithValue("@protocolId", protocolId);
                 command.Parameters.AddWithValue("@violationId", violationId);
                 command.Parameters.AddWithValue("@stsNumber", stsNumber);
                 command.Parameters.AddWithValue("@violationDate", violationDate);

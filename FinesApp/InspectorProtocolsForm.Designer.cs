@@ -64,6 +64,8 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.protocolDGV = new System.Windows.Forms.DataGridView();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +73,6 @@
             this.violation_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.update_protocol_box.SuspendLayout();
             this.insert_protocol_box.SuspendLayout();
@@ -106,6 +106,7 @@
             this.update_button.TabIndex = 22;
             this.update_button.Text = "Изменить";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // delete_button
             // 
@@ -121,6 +122,7 @@
             this.delete_button.TabIndex = 20;
             this.delete_button.Text = "Удалить";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // panel2
             // 
@@ -163,7 +165,7 @@
             this.update_protocol_box.Size = new System.Drawing.Size(714, 479);
             this.update_protocol_box.TabIndex = 21;
             this.update_protocol_box.TabStop = false;
-            this.update_protocol_box.Text = "Изменение";
+            this.update_protocol_box.Text = "Изменение протокола";
             // 
             // label8
             // 
@@ -253,8 +255,10 @@
             // 
             // update_dp2
             // 
+            this.update_dp2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.update_dp2.Location = new System.Drawing.Point(369, 172);
             this.update_dp2.Name = "update_dp2";
+            this.update_dp2.ShowUpDown = true;
             this.update_dp2.Size = new System.Drawing.Size(327, 40);
             this.update_dp2.TabIndex = 28;
             // 
@@ -292,6 +296,7 @@
             this.update_cancel_box_button.TabIndex = 17;
             this.update_cancel_box_button.Text = "Отмена";
             this.update_cancel_box_button.UseVisualStyleBackColor = true;
+            this.update_cancel_box_button.Click += new System.EventHandler(this.update_cancel_box_button_Click);
             // 
             // update_box_button
             // 
@@ -306,6 +311,7 @@
             this.update_box_button.TabIndex = 13;
             this.update_box_button.Text = "Изменить";
             this.update_box_button.UseVisualStyleBackColor = true;
+            this.update_box_button.Click += new System.EventHandler(this.update_box_button_Click);
             // 
             // insert_protocol_box
             // 
@@ -331,7 +337,7 @@
             this.insert_protocol_box.Size = new System.Drawing.Size(714, 479);
             this.insert_protocol_box.TabIndex = 2;
             this.insert_protocol_box.TabStop = false;
-            this.insert_protocol_box.Text = "Добавление";
+            this.insert_protocol_box.Text = "Добавление протокола";
             // 
             // label7
             // 
@@ -408,6 +414,7 @@
             this.insert_cancel_box_button.TabIndex = 17;
             this.insert_cancel_box_button.Text = "Отмена";
             this.insert_cancel_box_button.UseVisualStyleBackColor = true;
+            this.insert_cancel_box_button.Click += new System.EventHandler(this.insert_cancel_box_button_Click);
             // 
             // label3
             // 
@@ -446,11 +453,15 @@
             this.insert_box_button.TabIndex = 13;
             this.insert_box_button.Text = "Добавить";
             this.insert_box_button.UseVisualStyleBackColor = true;
+            this.insert_box_button.Click += new System.EventHandler(this.insert_box_button_Click);
             // 
             // insert_dp2
             // 
+            this.insert_dp2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.insert_dp2.Location = new System.Drawing.Point(369, 172);
             this.insert_dp2.Name = "insert_dp2";
+            this.insert_dp2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.insert_dp2.ShowUpDown = true;
             this.insert_dp2.Size = new System.Drawing.Size(327, 40);
             this.insert_dp2.TabIndex = 5;
             // 
@@ -512,6 +523,36 @@
             this.protocolDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.protocolDGV.Size = new System.Drawing.Size(1180, 280);
             this.protocolDGV.TabIndex = 0;
+            this.protocolDGV.SelectionChanged += new System.EventHandler(this.protocolDGV_SelectionChanged);
+            // 
+            // insert_button
+            // 
+            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.insert_button.Location = new System.Drawing.Point(656, 1);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
+            this.insert_button.Name = "insert_button";
+            this.insert_button.Size = new System.Drawing.Size(180, 80);
+            this.insert_button.TabIndex = 21;
+            this.insert_button.Text = "Добавить";
+            this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
+            // 
+            // full_name_label
+            // 
+            this.full_name_label.AutoSize = true;
+            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.full_name_label.Location = new System.Drawing.Point(88, 17);
+            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
+            this.full_name_label.Name = "full_name_label";
+            this.full_name_label.Size = new System.Drawing.Size(328, 47);
+            this.full_name_label.TabIndex = 23;
+            this.full_name_label.Text = "Таблица: Protocol";
+            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // protocol_id
             // 
@@ -520,7 +561,7 @@
             this.protocol_id.MinimumWidth = 10;
             this.protocol_id.Name = "protocol_id";
             this.protocol_id.ReadOnly = true;
-            this.protocol_id.Width = 200;
+            this.protocol_id.Width = 140;
             // 
             // violation_id
             // 
@@ -529,7 +570,7 @@
             this.violation_id.MinimumWidth = 10;
             this.violation_id.Name = "violation_id";
             this.violation_id.ReadOnly = true;
-            this.violation_id.Width = 200;
+            this.violation_id.Width = 140;
             // 
             // sts_number
             // 
@@ -538,7 +579,7 @@
             this.sts_number.MinimumWidth = 10;
             this.sts_number.Name = "sts_number";
             this.sts_number.ReadOnly = true;
-            this.sts_number.Width = 200;
+            this.sts_number.Width = 140;
             // 
             // violation_date
             // 
@@ -576,34 +617,6 @@
             this.status_id.ReadOnly = true;
             this.status_id.Width = 140;
             // 
-            // insert_button
-            // 
-            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.insert_button.Location = new System.Drawing.Point(656, 1);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
-            this.insert_button.Name = "insert_button";
-            this.insert_button.Size = new System.Drawing.Size(180, 80);
-            this.insert_button.TabIndex = 21;
-            this.insert_button.Text = "Добавить";
-            this.insert_button.UseVisualStyleBackColor = true;
-            // 
-            // full_name_label
-            // 
-            this.full_name_label.AutoSize = true;
-            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.full_name_label.Location = new System.Drawing.Point(88, 17);
-            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
-            this.full_name_label.Name = "full_name_label";
-            this.full_name_label.Size = new System.Drawing.Size(328, 47);
-            this.full_name_label.TabIndex = 23;
-            this.full_name_label.Text = "Таблица: Protocol";
-            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // InspectorProtocolsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -620,6 +633,7 @@
             this.Name = "InspectorProtocolsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InspectorProtocolsForm";
+            this.Load += new System.EventHandler(this.InspectorProtocolsForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.update_protocol_box.ResumeLayout(false);
@@ -670,6 +684,8 @@
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView protocolDGV;
+        private System.Windows.Forms.Button insert_button;
+        private System.Windows.Forms.Label full_name_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn protocol_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn sts_number;
@@ -677,7 +693,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn violation_place;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_id;
-        private System.Windows.Forms.Button insert_button;
-        private System.Windows.Forms.Label full_name_label;
     }
 }

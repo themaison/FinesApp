@@ -63,17 +63,17 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.driverDGV = new System.Windows.Forms.DataGridView();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.delete_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
-            this.update_button = new System.Windows.Forms.Button();
-            this.to_back_button = new System.Windows.Forms.Label();
             this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_issue_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_validity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
+            this.update_button = new System.Windows.Forms.Button();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.update_driver_box.SuspendLayout();
             this.insert_driver_box.SuspendLayout();
@@ -507,6 +507,61 @@
             this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.driverDGV.Size = new System.Drawing.Size(1180, 280);
             this.driverDGV.TabIndex = 0;
+            this.driverDGV.SelectionChanged += new System.EventHandler(this.driverDGV_SelectionChanged);
+            // 
+            // license_number
+            // 
+            this.license_number.DataPropertyName = "license_number";
+            this.license_number.HeaderText = "Номер в/у";
+            this.license_number.MinimumWidth = 10;
+            this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
+            this.license_number.Width = 200;
+            // 
+            // full_name
+            // 
+            this.full_name.DataPropertyName = "full_name";
+            this.full_name.HeaderText = "ФИО";
+            this.full_name.MinimumWidth = 10;
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Width = 200;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Пол";
+            this.gender.MinimumWidth = 10;
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Width = 200;
+            // 
+            // birth_date
+            // 
+            this.birth_date.DataPropertyName = "birth_date";
+            this.birth_date.HeaderText = "Дата рождения";
+            this.birth_date.MinimumWidth = 10;
+            this.birth_date.Name = "birth_date";
+            this.birth_date.ReadOnly = true;
+            this.birth_date.Width = 140;
+            // 
+            // license_issue_date
+            // 
+            this.license_issue_date.DataPropertyName = "license_issue_date";
+            this.license_issue_date.HeaderText = "Дата выдачи в/у";
+            this.license_issue_date.MinimumWidth = 10;
+            this.license_issue_date.Name = "license_issue_date";
+            this.license_issue_date.ReadOnly = true;
+            this.license_issue_date.Width = 140;
+            // 
+            // license_validity
+            // 
+            this.license_validity.DataPropertyName = "license_validity";
+            this.license_validity.HeaderText = "Срок действия в/у";
+            this.license_validity.MinimumWidth = 10;
+            this.license_validity.Name = "license_validity";
+            this.license_validity.ReadOnly = true;
+            this.license_validity.Width = 140;
             // 
             // insert_button
             // 
@@ -581,59 +636,6 @@
             this.to_back_button.TabIndex = 13;
             this.to_back_button.Text = "<- ";
             this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
-            // 
-            // license_number
-            // 
-            this.license_number.DataPropertyName = "license_number";
-            this.license_number.HeaderText = "Номер в/у";
-            this.license_number.MinimumWidth = 10;
-            this.license_number.Name = "license_number";
-            this.license_number.ReadOnly = true;
-            this.license_number.Width = 200;
-            // 
-            // full_name
-            // 
-            this.full_name.DataPropertyName = "full_name";
-            this.full_name.HeaderText = "ФИО";
-            this.full_name.MinimumWidth = 10;
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Width = 200;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Пол";
-            this.gender.MinimumWidth = 10;
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // birth_date
-            // 
-            this.birth_date.DataPropertyName = "birth_date";
-            this.birth_date.HeaderText = "Дата рождения";
-            this.birth_date.MinimumWidth = 10;
-            this.birth_date.Name = "birth_date";
-            this.birth_date.ReadOnly = true;
-            this.birth_date.Width = 140;
-            // 
-            // license_issue_date
-            // 
-            this.license_issue_date.DataPropertyName = "license_issue_date";
-            this.license_issue_date.HeaderText = "Дата выдачи в/у";
-            this.license_issue_date.MinimumWidth = 10;
-            this.license_issue_date.Name = "license_issue_date";
-            this.license_issue_date.ReadOnly = true;
-            this.license_issue_date.Width = 140;
-            // 
-            // license_validity
-            // 
-            this.license_validity.DataPropertyName = "license_validity";
-            this.license_validity.HeaderText = "Срок действия в/у";
-            this.license_validity.MinimumWidth = 10;
-            this.license_validity.Name = "license_validity";
-            this.license_validity.ReadOnly = true;
-            this.license_validity.Width = 140;
             // 
             // AdminDriversForm
             // 

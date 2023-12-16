@@ -173,9 +173,9 @@
             this.label5.Location = new System.Drawing.Point(12, 49);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(335, 34);
+            this.label5.Size = new System.Drawing.Size(196, 34);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Наименование нарушения";
+            this.label5.Text = "Наименование";
             // 
             // update_box_button
             // 
@@ -258,9 +258,9 @@
             this.label1.Location = new System.Drawing.Point(12, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 34);
+            this.label1.Size = new System.Drawing.Size(196, 34);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Наименование нарушения";
+            this.label1.Text = "Наименование";
             // 
             // insert_box_button
             // 
@@ -324,6 +324,7 @@
             this.violationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.violationDGV.Size = new System.Drawing.Size(1180, 280);
             this.violationDGV.TabIndex = 0;
+            this.violationDGV.SelectionChanged += new System.EventHandler(this.violationDGV_SelectionChanged);
             // 
             // violation_id
             // 

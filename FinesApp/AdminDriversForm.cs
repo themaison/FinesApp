@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinesApp
 {
@@ -25,6 +26,7 @@ namespace FinesApp
         {
             insert_driver_box.Visible = false;
             update_driver_box.Visible=false;
+            update_tb1.Enabled = false;
 
             driverDGV.DataSource = DriverTable.GetTable();
 
@@ -130,7 +132,10 @@ namespace FinesApp
                 gender = "Женский";
             }
 
-            if (licenseNumber=="" || fullName=="" || gender=="" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+            if (licenseNumber=="" || fullName=="" || gender=="" || 
+                birthDate == DateTime.MinValue || 
+                licenseIssueDate == DateTime.MinValue || 
+                licenseValidityDate == DateTime.MinValue)
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -150,9 +155,7 @@ namespace FinesApp
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
             else
-            {
                 Messages.DisplayErrorMessage("Ошибка при добавлении данных!");
-            }
         }
 
         private void update_box_button_Click(object sender, EventArgs e)
@@ -166,59 +169,117 @@ namespace FinesApp
             gender = male_update_rb.Checked ? "Мужской" : "Женский";
 
             String currentLicenseNumber = driverDGV.CurrentRow.Cells[0].Value.ToString();
-            
-            if (licenseNumber == currentLicenseNumber)
+
+            if (licenseNumber == "" || fullName == "" || gender == "" ||
+                    birthDate == DateTime.MinValue ||
+                    licenseIssueDate == DateTime.MinValue ||
+                    licenseValidityDate == DateTime.MinValue)
             {
-                if (licenseNumber == "" || fullName=="" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
-                {
-                    Messages.DisplayErrorMessage("Заполните все поля!");
-                    return;
-                }
-                else
-                {
-                    if (DriverTable.Update(licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
-                    {
-                        driverDGV.DataSource = DriverTable.GetTable();
-                        update_driver_box.Visible = false;
-                        Messages.DisplayInfoMessage("Данные успешно обновлены!");
-                    }
-                    else
-                    {
-                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-                    }
-                }
+                Messages.DisplayErrorMessage("Заполните все поля!");
+                return;
             }
             else
             {
-                if (DriverTable.IsExistsDriver(licenseNumber))
+                if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
                 {
-                    update_tb1.Text = "";
-                    Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
+                    driverDGV.DataSource = DriverTable.GetTable();
+                    update_driver_box.Visible = false;
+                    Messages.DisplayInfoMessage("Данные успешно обновлены!");
                 }
-
                 else
                 {
-                    if (licenseNumber == "" || fullName == "" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
-                    {
-                        Messages.DisplayErrorMessage("Заполните все поля!");
-                        return;
-                    }
-                    else
-                    {
-                        if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
-                        {
-                            driverDGV.DataSource = DriverTable.GetTable();
-                            update_driver_box.Visible = false;
-                            Messages.DisplayInfoMessage("Данные успешно обновлены!");
-                        }
-                        else
-                        {
-                            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-                        }
-                    }
+                    Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                 }
-               
-                return;
+            }
+            //if (licenseNumber == currentLicenseNumber)
+            //{
+            //    if (licenseNumber == "" || fullName=="" || gender == "" || 
+            //        birthDate == DateTime.MinValue || 
+            //        licenseIssueDate == DateTime.MinValue || 
+            //        licenseValidityDate == DateTime.MinValue)
+            //    {
+            //        Messages.DisplayErrorMessage("Заполните все поля!");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
+            //        {
+            //            driverDGV.DataSource = DriverTable.GetTable();
+            //            update_driver_box.Visible = false;
+            //            Messages.DisplayInfoMessage("Данные успешно обновлены!");
+            //        }
+            //        else
+            //        {
+            //            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Messages.DisplayErrorMessage("Номер в/у не совпадает с выбранной строкой!");
+            //    //if (DriverTable.IsExistsDriver(licenseNumber))
+            //    //{
+            //    //    update_tb1.Text = "";
+            //    //    Messages.DisplayErrorMessage("Такой номер в/у уже существует!");
+            //    //}
+
+            //    //else
+            //    //{
+            //    //    if (licenseNumber == "" || fullName == "" || gender == "" || birthDate == DateTime.MinValue || licenseIssueDate == DateTime.MinValue || licenseValidityDate == DateTime.MinValue)
+            //    //    {
+            //    //        Messages.DisplayErrorMessage("Заполните все поля!");
+            //    //        return;
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
+            //    //        {
+            //    //            driverDGV.DataSource = DriverTable.GetTable();
+            //    //            update_driver_box.Visible = false;
+            //    //            Messages.DisplayInfoMessage("Данные успешно обновлены!");
+            //    //        }
+            //    //        else
+            //    //        {
+            //    //            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+            //    //        }
+            //    //    }
+            //    //}
+
+            //    return;
+            //}
+        }
+
+        private void driverDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if (driverDGV.SelectedRows.Count > 0)
+            {
+                update_driver_box.Visible = true;
+                insert_driver_box.Visible = false;
+
+                DataGridViewRow row = driverDGV.SelectedRows[0];
+
+                String licenseNumber = row.Cells[0].Value.ToString();
+                String fullName = row.Cells[1].Value.ToString();
+                String gender = row.Cells[2].Value.ToString();
+                DateTime birthDate = (DateTime)row.Cells[3].Value;
+                DateTime licenseIssueDate = (DateTime)row.Cells[4].Value;
+                DateTime licenseValidityDate = (DateTime)row.Cells[5].Value;
+
+                update_tb1.Text = licenseNumber;
+                update_tb2.Text = fullName;
+                update_dp1.Value = birthDate;
+                update_dp2.Value = licenseIssueDate;
+                update_dp3.Value = licenseValidityDate;
+
+                if (gender == "Мужской")
+                {
+                    male_update_rb.Checked = true;
+                }
+                else
+                {
+                    female_update_rb.Checked = true;
+                }
             }
         }
     }

@@ -28,10 +28,10 @@ namespace FinesApp
             update_violation_box.Visible = true;
             insert_violation_box.Visible = false;
 
-            DataGridViewRow ds = violationDGV.CurrentRow;
+            DataGridViewRow row  = violationDGV.CurrentRow;
 
-            String violationName = ds.Cells[1].Value.ToString();
-            String fineAmount = ds.Cells[2].Value.ToString();
+            String violationName = row.Cells[1].Value.ToString();
+            String fineAmount = row.Cells[2].Value.ToString();
 
             update_tb1.Text = violationName;
             update_tb2.Text = fineAmount;
@@ -87,14 +87,24 @@ namespace FinesApp
 
         private void insert_box_button_Click(object sender, EventArgs e)
         {
-            String violationName = insert_tb1.Text;
-            int fineAmount = Convert.ToInt32(insert_tb2.Text);
+            String violationNameStr = insert_tb1.Text;
+            String fineAmountStr = insert_tb2.Text;
+
+            String violationName;
+            int fineAmount;
 
 
-            if (violationName == "" || fineAmount.ToString() == "")
+            if (violationNameStr == "" || fineAmountStr == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
+            }
+
+            //Валидация
+            else
+            {
+                violationName = insert_tb1.Text;
+                fineAmount = Convert.ToInt32(insert_tb2.Text);
             }
 
             if (ViolationTable.IsExistsViolation(violationName))
@@ -116,6 +126,9 @@ namespace FinesApp
 
         private void update_box_button_Click(object sender, EventArgs e)
         {
+            String violationNameStr = insert_tb1.Text;
+            String fineAmountStr = insert_tb2.Text;
+
             String violationName = update_tb1.Text;
             int fineAmount = Convert.ToInt32(update_tb2.Text);
 
@@ -124,11 +137,12 @@ namespace FinesApp
 
             if (violationName == currentViolationName)
             {
-                if (violationName == "" || fineAmount.ToString() == "")
+                if (violationNameStr == "" || fineAmountStr == "")
                 {
                     Messages.DisplayErrorMessage("Заполните все поля!");
                     return;
                 }
+                //Валидация
                 else
                 {
                     if (ViolationTable.Update(currentViolationID, violationName, fineAmount))
@@ -174,6 +188,23 @@ namespace FinesApp
                 }
 
                 return;
+            }
+        }
+
+        private void violationDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if (violationDGV.SelectedRows.Count > 0 && update_violation_box.Visible == true)
+            {
+                //update_violation_box.Visible = true;
+                insert_violation_box.Visible = false;
+
+                DataGridViewRow row = violationDGV.SelectedRows[0];
+
+                String violationName = row.Cells[1].Value.ToString();
+                String fineAmount = row.Cells[2].Value.ToString();
+
+                update_tb1.Text = violationName;
+                update_tb2.Text = fineAmount;
             }
         }
     }
