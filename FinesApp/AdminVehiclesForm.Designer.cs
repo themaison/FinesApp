@@ -29,32 +29,34 @@
         private void InitializeComponent()
         {
             this.update_vehicle_box = new System.Windows.Forms.GroupBox();
+            this.update_tb4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.update_tb6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.update_tb5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.update_tb3 = new System.Windows.Forms.TextBox();
+            this.update_tb2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.update_tb2 = new System.Windows.Forms.TextBox();
+            this.update_tb3 = new System.Windows.Forms.TextBox();
             this.update_tb1 = new System.Windows.Forms.TextBox();
             this.update_cancel_box_button = new System.Windows.Forms.Button();
             this.update_box_button = new System.Windows.Forms.Button();
             this.insert_vehicle_box = new System.Windows.Forms.GroupBox();
+            this.insert_tb4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.insert_tb6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.insert_tb5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.insert_tb3 = new System.Windows.Forms.TextBox();
+            this.insert_tb2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.insert_cancel_box_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.insert_box_button = new System.Windows.Forms.Button();
-            this.insert_tb2 = new System.Windows.Forms.TextBox();
+            this.insert_tb3 = new System.Windows.Forms.TextBox();
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.vehicleDGV = new System.Windows.Forms.DataGridView();
@@ -64,8 +66,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
-            this.insert_tb4 = new System.Windows.Forms.TextBox();
-            this.update_tb4 = new System.Windows.Forms.TextBox();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,22 +87,29 @@
             this.update_vehicle_box.Controls.Add(this.label9);
             this.update_vehicle_box.Controls.Add(this.update_tb5);
             this.update_vehicle_box.Controls.Add(this.label10);
-            this.update_vehicle_box.Controls.Add(this.update_tb3);
+            this.update_vehicle_box.Controls.Add(this.update_tb2);
             this.update_vehicle_box.Controls.Add(this.label11);
             this.update_vehicle_box.Controls.Add(this.label12);
             this.update_vehicle_box.Controls.Add(this.label13);
-            this.update_vehicle_box.Controls.Add(this.update_tb2);
+            this.update_vehicle_box.Controls.Add(this.update_tb3);
             this.update_vehicle_box.Controls.Add(this.update_tb1);
             this.update_vehicle_box.Controls.Add(this.update_cancel_box_button);
             this.update_vehicle_box.Controls.Add(this.update_box_button);
             this.update_vehicle_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.update_vehicle_box.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.update_vehicle_box.Location = new System.Drawing.Point(781, 356);
+            this.update_vehicle_box.Location = new System.Drawing.Point(32, 356);
             this.update_vehicle_box.Name = "update_vehicle_box";
             this.update_vehicle_box.Size = new System.Drawing.Size(714, 479);
             this.update_vehicle_box.TabIndex = 21;
             this.update_vehicle_box.TabStop = false;
             this.update_vehicle_box.Text = "Изменение";
+            // 
+            // update_tb4
+            // 
+            this.update_tb4.Location = new System.Drawing.Point(369, 175);
+            this.update_tb4.Name = "update_tb4";
+            this.update_tb4.Size = new System.Drawing.Size(327, 40);
+            this.update_tb4.TabIndex = 39;
             // 
             // label8
             // 
@@ -147,19 +154,19 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(12, 138);
+            this.label10.Location = new System.Drawing.Point(363, 49);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(132, 34);
             this.label10.TabIndex = 34;
             this.label10.Text = "Госномер";
             // 
-            // update_tb3
+            // update_tb2
             // 
-            this.update_tb3.Location = new System.Drawing.Point(18, 175);
-            this.update_tb3.Name = "update_tb3";
-            this.update_tb3.Size = new System.Drawing.Size(327, 40);
-            this.update_tb3.TabIndex = 33;
+            this.update_tb2.Location = new System.Drawing.Point(369, 86);
+            this.update_tb2.Name = "update_tb2";
+            this.update_tb2.Size = new System.Drawing.Size(327, 40);
+            this.update_tb2.TabIndex = 33;
             // 
             // label11
             // 
@@ -178,7 +185,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(363, 49);
+            this.label12.Location = new System.Drawing.Point(12, 138);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(140, 34);
@@ -197,12 +204,12 @@
             this.label13.TabIndex = 30;
             this.label13.Text = "Номер СТС";
             // 
-            // update_tb2
+            // update_tb3
             // 
-            this.update_tb2.Location = new System.Drawing.Point(369, 86);
-            this.update_tb2.Name = "update_tb2";
-            this.update_tb2.Size = new System.Drawing.Size(327, 40);
-            this.update_tb2.TabIndex = 28;
+            this.update_tb3.Location = new System.Drawing.Point(18, 175);
+            this.update_tb3.Name = "update_tb3";
+            this.update_tb3.Size = new System.Drawing.Size(327, 40);
+            this.update_tb3.TabIndex = 28;
             // 
             // update_tb1
             // 
@@ -250,13 +257,13 @@
             this.insert_vehicle_box.Controls.Add(this.label6);
             this.insert_vehicle_box.Controls.Add(this.insert_tb5);
             this.insert_vehicle_box.Controls.Add(this.label4);
-            this.insert_vehicle_box.Controls.Add(this.insert_tb3);
+            this.insert_vehicle_box.Controls.Add(this.insert_tb2);
             this.insert_vehicle_box.Controls.Add(this.label5);
             this.insert_vehicle_box.Controls.Add(this.insert_cancel_box_button);
             this.insert_vehicle_box.Controls.Add(this.label3);
             this.insert_vehicle_box.Controls.Add(this.label1);
             this.insert_vehicle_box.Controls.Add(this.insert_box_button);
-            this.insert_vehicle_box.Controls.Add(this.insert_tb2);
+            this.insert_vehicle_box.Controls.Add(this.insert_tb3);
             this.insert_vehicle_box.Controls.Add(this.insert_tb1);
             this.insert_vehicle_box.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.insert_vehicle_box.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -266,6 +273,13 @@
             this.insert_vehicle_box.TabIndex = 2;
             this.insert_vehicle_box.TabStop = false;
             this.insert_vehicle_box.Text = "Добавление";
+            // 
+            // insert_tb4
+            // 
+            this.insert_tb4.Location = new System.Drawing.Point(369, 175);
+            this.insert_tb4.Name = "insert_tb4";
+            this.insert_tb4.Size = new System.Drawing.Size(327, 40);
+            this.insert_tb4.TabIndex = 27;
             // 
             // label7
             // 
@@ -310,19 +324,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(12, 138);
+            this.label4.Location = new System.Drawing.Point(363, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 34);
             this.label4.TabIndex = 22;
             this.label4.Text = "Госномер";
             // 
-            // insert_tb3
+            // insert_tb2
             // 
-            this.insert_tb3.Location = new System.Drawing.Point(18, 175);
-            this.insert_tb3.Name = "insert_tb3";
-            this.insert_tb3.Size = new System.Drawing.Size(327, 40);
-            this.insert_tb3.TabIndex = 21;
+            this.insert_tb2.Location = new System.Drawing.Point(369, 86);
+            this.insert_tb2.Name = "insert_tb2";
+            this.insert_tb2.Size = new System.Drawing.Size(327, 40);
+            this.insert_tb2.TabIndex = 21;
             // 
             // label5
             // 
@@ -356,7 +370,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(363, 49);
+            this.label3.Location = new System.Drawing.Point(12, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 34);
@@ -390,12 +404,12 @@
             this.insert_box_button.UseVisualStyleBackColor = true;
             this.insert_box_button.Click += new System.EventHandler(this.insert_box_button_Click);
             // 
-            // insert_tb2
+            // insert_tb3
             // 
-            this.insert_tb2.Location = new System.Drawing.Point(369, 86);
-            this.insert_tb2.Name = "insert_tb2";
-            this.insert_tb2.Size = new System.Drawing.Size(327, 40);
-            this.insert_tb2.TabIndex = 1;
+            this.insert_tb3.Location = new System.Drawing.Point(18, 175);
+            this.insert_tb3.Name = "insert_tb3";
+            this.insert_tb3.Size = new System.Drawing.Size(327, 40);
+            this.insert_tb3.TabIndex = 1;
             // 
             // insert_tb1
             // 
@@ -533,20 +547,6 @@
             this.full_name_label.Text = "Таблица: Vehicle\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // insert_tb4
-            // 
-            this.insert_tb4.Location = new System.Drawing.Point(369, 175);
-            this.insert_tb4.Name = "insert_tb4";
-            this.insert_tb4.Size = new System.Drawing.Size(327, 40);
-            this.insert_tb4.TabIndex = 27;
-            // 
-            // update_tb4
-            // 
-            this.update_tb4.Location = new System.Drawing.Point(369, 175);
-            this.update_tb4.Name = "update_tb4";
-            this.update_tb4.Size = new System.Drawing.Size(327, 40);
-            this.update_tb4.TabIndex = 39;
-            // 
             // sts_number
             // 
             this.sts_number.DataPropertyName = "sts_number";
@@ -581,6 +581,7 @@
             this.year_of_manufacture.MinimumWidth = 10;
             this.year_of_manufacture.Name = "year_of_manufacture";
             this.year_of_manufacture.ReadOnly = true;
+            this.year_of_manufacture.Width = 140;
             // 
             // brand
             // 
@@ -638,7 +639,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button insert_box_button;
-        private System.Windows.Forms.TextBox insert_tb2;
+        private System.Windows.Forms.TextBox insert_tb3;
         private System.Windows.Forms.TextBox insert_tb1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView vehicleDGV;
@@ -653,17 +654,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox insert_tb5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox insert_tb3;
+        private System.Windows.Forms.TextBox insert_tb2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox update_tb6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox update_tb5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox update_tb3;
+        private System.Windows.Forms.TextBox update_tb2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox update_tb2;
+        private System.Windows.Forms.TextBox update_tb3;
         private System.Windows.Forms.TextBox update_tb1;
         private System.Windows.Forms.TextBox update_tb4;
         private System.Windows.Forms.TextBox insert_tb4;

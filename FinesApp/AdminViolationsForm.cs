@@ -116,7 +116,11 @@ namespace FinesApp
 
             if (ViolationTable.Insert(violationName, fineAmount))
             {
+
+                insert_tb1.Text = "";
+                insert_tb2.Text = "";
                 insert_violation_box.Visible = false;
+
                 violationDGV.DataSource = ViolationTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }

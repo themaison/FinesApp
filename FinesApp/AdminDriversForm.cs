@@ -12,21 +12,10 @@ namespace FinesApp
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void AdminDriversForm_Load(object sender, EventArgs e)
         {
             insert_driver_box.Visible = false;
             update_driver_box.Visible=false;
-            //update_tb1.Enabled = false;
 
             driverDGV.DataSource = DriverTable.GetTable();
 
@@ -150,7 +139,14 @@ namespace FinesApp
 
             if (DriverTable.Insert(licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
             {
+                insert_tb1.Text = "";
+                insert_tb2.Text = "";
+                insert_dp1.Value = DateTime.MinValue;
+                insert_dp2.Value = DateTime.MinValue;
+                insert_dp3.Value = DateTime.MinValue;
+
                 insert_driver_box.Visible = false;
+
                 driverDGV.DataSource = DriverTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
@@ -170,49 +166,26 @@ namespace FinesApp
 
             String currentLicenseNumber = driverDGV.CurrentRow.Cells[0].Value.ToString();
 
-            //if (licenseNumber == "" || fullName == "" || gender == "" ||
-            //        birthDate == DateTime.MinValue ||
-            //        licenseIssueDate == DateTime.MinValue ||
-            //        licenseValidityDate == DateTime.MinValue)
-            //{
-            //    Messages.DisplayErrorMessage("Заполните все поля!");
-            //    return;
-            //}
-            //else
-            //{
-            //    if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
-            //    {
-            //        driverDGV.DataSource = DriverTable.GetTable();
-            //        update_driver_box.Visible = false;
-            //        Messages.DisplayInfoMessage("Данные успешно обновлены!");
-            //    }
-            //    else
-            //    {
-            //        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-            //    }
-            //}
-            if (licenseNumber == currentLicenseNumber)
-            {
-                if (licenseNumber == "" || fullName == "" || gender == "" ||
+            if (licenseNumber == "" || fullName == "" || gender == "" ||
                     birthDate == DateTime.MinValue ||
                     licenseIssueDate == DateTime.MinValue ||
                     licenseValidityDate == DateTime.MinValue)
+            {
+                Messages.DisplayErrorMessage("Заполните все поля!");
+                return;
+            }
+
+            if (licenseNumber == currentLicenseNumber)
+            {
+                if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
                 {
-                    Messages.DisplayErrorMessage("Заполните все поля!");
-                    return;
+                    driverDGV.DataSource = DriverTable.GetTable();
+                    update_driver_box.Visible = false;
+                    Messages.DisplayInfoMessage("Данные успешно обновлены!");
                 }
                 else
                 {
-                    if (DriverTable.Update(currentLicenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
-                    {
-                        driverDGV.DataSource = DriverTable.GetTable();
-                        update_driver_box.Visible = false;
-                        Messages.DisplayInfoMessage("Данные успешно обновлены!");
-                    }
-                    else
-                    {
-                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-                    }
+                    Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                 }
             }
             else
@@ -225,30 +198,17 @@ namespace FinesApp
 
                 else
                 {
-                    if (licenseNumber == "" || fullName == "" || gender == "" 
-                        || birthDate == DateTime.MinValue 
-                        || licenseIssueDate == DateTime.MinValue 
-                        || licenseValidityDate == DateTime.MinValue)
+                    if (DriverTable.UpdateWithPrimary(currentLicenseNumber, licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
                     {
-                        Messages.DisplayErrorMessage("Заполните все поля!");
-                        return;
+                        driverDGV.DataSource = DriverTable.GetTable();
+                        update_driver_box.Visible = false;
+                        Messages.DisplayInfoMessage("Данные успешно обновлены!");
                     }
                     else
                     {
-                        if (DriverTable.UpdateWithPrimary(currentLicenseNumber, licenseNumber, fullName, gender, birthDate, licenseIssueDate, licenseValidityDate))
-                        {
-                            driverDGV.DataSource = DriverTable.GetTable();
-                            update_driver_box.Visible = false;
-                            Messages.DisplayInfoMessage("Данные успешно обновлены!");
-                        }
-                        else
-                        {
-                            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-                        }
+                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                     }
                 }
-
-                return;
             }
         }
 
@@ -256,9 +216,6 @@ namespace FinesApp
         {
             if (driverDGV.SelectedRows.Count > 0 && update_driver_box.Visible == true)
             {
-                update_driver_box.Visible = true;
-                insert_driver_box.Visible = false;
-
                 DataGridViewRow row = driverDGV.SelectedRows[0];
 
                 String licenseNumber = row.Cells[0].Value.ToString();

@@ -110,7 +110,9 @@ namespace FinesApp
 
             if (PaymentStatusTable.Insert(statusName))
             {
+                insert_tb1.Text = "";
                 insert_payment_status_box.Visible = false;
+
                 paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
@@ -137,8 +139,8 @@ namespace FinesApp
             {
                 if (PaymentStatusTable.Update(currentStatusID, statusName))
                 {
-                    paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
                     update_payment_status_box.Visible = false;
+                    paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
                     Messages.DisplayInfoMessage("Данные успешно обновлены!");
                 }
                 else
@@ -158,8 +160,8 @@ namespace FinesApp
                 {
                     if (PaymentStatusTable.Update(currentStatusID, statusName))
                     {
-                        paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
                         update_payment_status_box.Visible = false;
+                        paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
                         Messages.DisplayInfoMessage("Данные успешно обновлены!");
                     }
                     else

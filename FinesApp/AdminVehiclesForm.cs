@@ -30,12 +30,12 @@ namespace FinesApp
 
             DataGridViewRow row = vehicleDGV.CurrentRow;
 
-            String stsNumber = row.Cells[0].Value.ToString();
-            String stateNumber = row.Cells[1].Value.ToString();
-            String licenseNumber = row.Cells[2].Value.ToString();
-            String yearOfManufacture = row.Cells[3].Value.ToString();
-            String brand = row.Cells[4].Value.ToString();
-            String model = row.Cells[5].Value.ToString();
+            String stsNumber = row.Cells["sts_number"].Value.ToString();
+            String stateNumber = row.Cells["state_number"].Value.ToString();
+            String licenseNumber = row.Cells["license_number"].Value.ToString();
+            String yearOfManufacture = row.Cells["year_of_manufacture"].Value.ToString();
+            String brand = row.Cells["brand"].Value.ToString();
+            String model = row.Cells["model"].Value.ToString();
 
             update_tb1.Text = stsNumber;
             update_tb2.Text = stateNumber;
@@ -125,7 +125,15 @@ namespace FinesApp
 
             if (VehicleTable.Insert(stsNumber, brand, model, yearOfManufacture, stateNumber, licenseNumber))
             {
+                insert_tb1.Text = "";
+                insert_tb2.Text = "";
+                insert_tb3.Text = "";
+                insert_tb4.Text = "";
+                insert_tb5.Text = "";
+                insert_tb6.Text = "";
+
                 insert_vehicle_box.Visible = false;
+
                 vehicleDGV.DataSource = VehicleTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
@@ -135,11 +143,10 @@ namespace FinesApp
 
         private void update_box_button_Click(object sender, EventArgs e)
         {
-            String yearOfManufactureStr = insert_tb4.Text;
-
             String stsNumber = update_tb1.Text;
             String stateNumber = update_tb2.Text;
             String licenseNumber = update_tb3.Text;
+            String yearOfManufactureStr = update_tb4.Text;
             String brand = update_tb5.Text;
             String model = update_tb6.Text;
             int yearOfManufacture;
@@ -149,7 +156,7 @@ namespace FinesApp
             if (stsNumber == "" || brand == "" || model == "" ||
                 yearOfManufactureStr == "" || stateNumber == "" || licenseNumber == "")
             {
-                Messages.DisplayErrorMessage("Заполните все поля ДАДАДАД!");
+                Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
             else
@@ -189,7 +196,7 @@ namespace FinesApp
                     }
                     else
                     {
-                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                        Messages.DisplayErrorMessage("Ошибка при изменении данных (разные стс)!");
                     }
                 }
             }
@@ -201,19 +208,19 @@ namespace FinesApp
             {
                 DataGridViewRow row = vehicleDGV.SelectedRows[0];
 
-                String stsNumber = row.Cells[0].Value.ToString();
-                String brand = row.Cells[1].Value.ToString();
-                String model = row.Cells[2].Value.ToString();
-                String yearOfManufacture = row.Cells[3].Value.ToString();
-                String stateNumber = row.Cells[4].Value.ToString();
-                String licenseNumber = row.Cells[5].Value.ToString();
+                String stsNumber = row.Cells["sts_number"].Value.ToString();
+                String stateNumber = row.Cells["state_number"].Value.ToString();
+                String licenseNumber = row.Cells["license_number"].Value.ToString();
+                String yearOfManufacture = row.Cells["year_of_manufacture"].Value.ToString();
+                String brand = row.Cells["brand"].Value.ToString();
+                String model = row.Cells["model"].Value.ToString();
 
                 update_tb1.Text = stsNumber;
-                update_tb2.Text = brand;
-                update_tb3.Text = model;
+                update_tb2.Text = stateNumber;
+                update_tb3.Text = licenseNumber;
                 update_tb4.Text = yearOfManufacture;
-                update_tb5.Text = stateNumber;
-                update_tb6.Text = licenseNumber;
+                update_tb5.Text = brand;
+                update_tb6.Text = model;
             }
         }
     }

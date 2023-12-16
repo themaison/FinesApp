@@ -37,9 +37,6 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.violationDGV = new System.Windows.Forms.DataGridView();
-            this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.to_back_button = new System.Windows.Forms.Label();
             this.update_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
@@ -53,6 +50,9 @@
             this.update_tb1 = new System.Windows.Forms.TextBox();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
+            this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insert_violation_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.violationDGV)).BeginInit();
             this.panel2.SuspendLayout();
@@ -178,33 +178,6 @@
             this.violationDGV.Size = new System.Drawing.Size(1180, 280);
             this.violationDGV.TabIndex = 0;
             this.violationDGV.SelectionChanged += new System.EventHandler(this.violationDGV_SelectionChanged);
-            // 
-            // violation_id
-            // 
-            this.violation_id.DataPropertyName = "violation_id";
-            this.violation_id.HeaderText = "ID Нарушения";
-            this.violation_id.MinimumWidth = 10;
-            this.violation_id.Name = "violation_id";
-            this.violation_id.ReadOnly = true;
-            this.violation_id.Width = 200;
-            // 
-            // violation_name
-            // 
-            this.violation_name.DataPropertyName = "violation_name";
-            this.violation_name.HeaderText = "Наименование нарушения";
-            this.violation_name.MinimumWidth = 10;
-            this.violation_name.Name = "violation_name";
-            this.violation_name.ReadOnly = true;
-            this.violation_name.Width = 300;
-            // 
-            // fine_amount
-            // 
-            this.fine_amount.DataPropertyName = "fine_amount";
-            this.fine_amount.HeaderText = "Сумма штрафа";
-            this.fine_amount.MinimumWidth = 10;
-            this.fine_amount.Name = "fine_amount";
-            this.fine_amount.ReadOnly = true;
-            this.fine_amount.Width = 200;
             // 
             // to_back_button
             // 
@@ -381,6 +354,33 @@
             this.full_name_label.TabIndex = 17;
             this.full_name_label.Text = "Таблица: Violation\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // violation_id
+            // 
+            this.violation_id.DataPropertyName = "violation_id";
+            this.violation_id.HeaderText = "ID Нарушения";
+            this.violation_id.MinimumWidth = 10;
+            this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
+            this.violation_id.Width = 140;
+            // 
+            // violation_name
+            // 
+            this.violation_name.DataPropertyName = "violation_name";
+            this.violation_name.HeaderText = "Наименование нарушения";
+            this.violation_name.MinimumWidth = 10;
+            this.violation_name.Name = "violation_name";
+            this.violation_name.ReadOnly = true;
+            this.violation_name.Width = 320;
+            // 
+            // fine_amount
+            // 
+            this.fine_amount.DataPropertyName = "fine_amount";
+            this.fine_amount.HeaderText = "Сумма штрафа";
+            this.fine_amount.MinimumWidth = 10;
+            this.fine_amount.Name = "fine_amount";
+            this.fine_amount.ReadOnly = true;
+            this.fine_amount.Width = 140;
             // 
             // AdminViolationsForm
             // 

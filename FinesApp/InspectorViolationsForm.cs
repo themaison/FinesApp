@@ -116,7 +116,11 @@ namespace FinesApp
 
             if (ViolationTable.Insert(violationName, fineAmount))
             {
+
+                insert_tb1.Text = "";
+                insert_tb2.Text = "";
                 insert_violation_box.Visible = false;
+
                 violationDGV.DataSource = ViolationTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
@@ -195,9 +199,6 @@ namespace FinesApp
         {
             if (violationDGV.SelectedRows.Count > 0 && update_violation_box.Visible == true)
             {
-                //update_violation_box.Visible = true;
-                insert_violation_box.Visible = false;
-
                 DataGridViewRow row = violationDGV.SelectedRows[0];
 
                 String violationName = row.Cells[1].Value.ToString();
