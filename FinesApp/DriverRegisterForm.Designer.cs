@@ -73,7 +73,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 606);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // licenseValidityDatePicker
             // 
@@ -86,7 +85,6 @@
             this.licenseValidityDatePicker.Name = "licenseValidityDatePicker";
             this.licenseValidityDatePicker.Size = new System.Drawing.Size(360, 47);
             this.licenseValidityDatePicker.TabIndex = 17;
-            this.licenseValidityDatePicker.ValueChanged += new System.EventHandler(this.licenseValidityDatePicker_ValueChanged);
             // 
             // licenseIssueDatePicker
             // 
@@ -146,7 +144,6 @@
             this.label7.Size = new System.Drawing.Size(241, 34);
             this.label7.TabIndex = 11;
             this.label7.Text = "Срок действия в/у";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -169,7 +166,6 @@
             this.label5.Size = new System.Drawing.Size(206, 34);
             this.label5.TabIndex = 7;
             this.label5.Text = "Дата рождения";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -182,7 +178,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Пол";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // fioTextBox
             // 
@@ -194,6 +189,7 @@
             this.fioTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fioTextBox.Size = new System.Drawing.Size(360, 80);
             this.fioTextBox.TabIndex = 4;
+            this.fioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fioTextBox_KeyPress);
             // 
             // label3
             // 
@@ -205,7 +201,6 @@
             this.label3.Size = new System.Drawing.Size(78, 34);
             this.label3.TabIndex = 3;
             this.label3.Text = "ФИО";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // driverRegisterButton
             // 
@@ -231,9 +226,7 @@
             this.licenseNumberTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.licenseNumberTextBox.Size = new System.Drawing.Size(360, 80);
             this.licenseNumberTextBox.TabIndex = 1;
-            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
-            this.licenseNumberTextBox.Enter += new System.EventHandler(this.licenseNumberEnter);
-            this.licenseNumberTextBox.Leave += new System.EventHandler(this.licenseNumberLeave);
+            this.licenseNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.licenseNumberTextBox_KeyPress);
             // 
             // label2
             // 
@@ -245,7 +238,6 @@
             this.label2.Size = new System.Drawing.Size(140, 34);
             this.label2.TabIndex = 0;
             this.label2.Text = "Номер в/у";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 

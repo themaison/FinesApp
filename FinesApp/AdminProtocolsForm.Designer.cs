@@ -60,12 +60,6 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.protocolDGV = new System.Windows.Forms.DataGridView();
-            this.to_back_button = new System.Windows.Forms.Label();
-            this.update_button = new System.Windows.Forms.Button();
-            this.delete_button = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +67,12 @@
             this.violation_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.to_back_button = new System.Windows.Forms.Label();
+            this.update_button = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
             this.update_protocol_box.SuspendLayout();
             this.insert_protocol_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.protocolDGV)).BeginInit();
@@ -123,6 +123,7 @@
             this.update_tb4.Name = "update_tb4";
             this.update_tb4.Size = new System.Drawing.Size(327, 40);
             this.update_tb4.TabIndex = 35;
+            this.update_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb4_KeyPress);
             // 
             // label9
             // 
@@ -142,6 +143,7 @@
             this.update_tb3.Name = "update_tb3";
             this.update_tb3.Size = new System.Drawing.Size(327, 40);
             this.update_tb3.TabIndex = 33;
+            this.update_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb3_KeyPress);
             // 
             // label10
             // 
@@ -213,6 +215,7 @@
             this.update_tb2.Name = "update_tb2";
             this.update_tb2.Size = new System.Drawing.Size(327, 40);
             this.update_tb2.TabIndex = 26;
+            this.update_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb2_KeyPress);
             // 
             // update_tb1
             // 
@@ -220,6 +223,7 @@
             this.update_tb1.Name = "update_tb1";
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 25;
+            this.update_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb1_KeyPress);
             // 
             // update_cancel_box_button
             // 
@@ -295,6 +299,7 @@
             this.insert_tb4.Name = "insert_tb4";
             this.insert_tb4.Size = new System.Drawing.Size(327, 40);
             this.insert_tb4.TabIndex = 23;
+            this.insert_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb4_KeyPress);
             // 
             // label4
             // 
@@ -314,6 +319,7 @@
             this.insert_tb3.Name = "insert_tb3";
             this.insert_tb3.Size = new System.Drawing.Size(327, 40);
             this.insert_tb3.TabIndex = 21;
+            this.insert_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb3_KeyPress);
             // 
             // label6
             // 
@@ -415,6 +421,7 @@
             this.insert_tb2.Name = "insert_tb2";
             this.insert_tb2.Size = new System.Drawing.Size(327, 40);
             this.insert_tb2.TabIndex = 1;
+            this.insert_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb2_KeyPress);
             // 
             // insert_tb1
             // 
@@ -422,6 +429,7 @@
             this.insert_tb1.Name = "insert_tb1";
             this.insert_tb1.Size = new System.Drawing.Size(327, 40);
             this.insert_tb1.TabIndex = 0;
+            this.insert_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb1_KeyPress);
             // 
             // label2
             // 
@@ -461,6 +469,69 @@
             this.protocolDGV.Size = new System.Drawing.Size(1180, 280);
             this.protocolDGV.TabIndex = 0;
             this.protocolDGV.SelectionChanged += new System.EventHandler(this.protocolDGV_SelectionChanged);
+            // 
+            // protocol_id
+            // 
+            this.protocol_id.DataPropertyName = "protocol_id";
+            this.protocol_id.HeaderText = "ID Протокола";
+            this.protocol_id.MinimumWidth = 10;
+            this.protocol_id.Name = "protocol_id";
+            this.protocol_id.ReadOnly = true;
+            this.protocol_id.Width = 140;
+            // 
+            // violation_id
+            // 
+            this.violation_id.DataPropertyName = "violation_id";
+            this.violation_id.HeaderText = "ID Нарушения";
+            this.violation_id.MinimumWidth = 10;
+            this.violation_id.Name = "violation_id";
+            this.violation_id.ReadOnly = true;
+            this.violation_id.Width = 140;
+            // 
+            // sts_number
+            // 
+            this.sts_number.DataPropertyName = "sts_number";
+            this.sts_number.HeaderText = "Номер СТС";
+            this.sts_number.MinimumWidth = 10;
+            this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
+            this.sts_number.Width = 140;
+            // 
+            // violation_date
+            // 
+            this.violation_date.DataPropertyName = "violation_date";
+            this.violation_date.HeaderText = "Дата нарушения";
+            this.violation_date.MinimumWidth = 10;
+            this.violation_date.Name = "violation_date";
+            this.violation_date.ReadOnly = true;
+            this.violation_date.Width = 140;
+            // 
+            // violation_time
+            // 
+            this.violation_time.DataPropertyName = "violation_time";
+            this.violation_time.HeaderText = "Время нарушения";
+            this.violation_time.MinimumWidth = 10;
+            this.violation_time.Name = "violation_time";
+            this.violation_time.ReadOnly = true;
+            this.violation_time.Width = 140;
+            // 
+            // violation_place
+            // 
+            this.violation_place.DataPropertyName = "violation_place";
+            this.violation_place.HeaderText = "Место нарушения";
+            this.violation_place.MinimumWidth = 10;
+            this.violation_place.Name = "violation_place";
+            this.violation_place.ReadOnly = true;
+            this.violation_place.Width = 200;
+            // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса оплаты";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            this.status_id.Width = 140;
             // 
             // to_back_button
             // 
@@ -552,69 +623,6 @@
             this.full_name_label.TabIndex = 17;
             this.full_name_label.Text = "Таблица: Protocol";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // protocol_id
-            // 
-            this.protocol_id.DataPropertyName = "protocol_id";
-            this.protocol_id.HeaderText = "ID Протокола";
-            this.protocol_id.MinimumWidth = 10;
-            this.protocol_id.Name = "protocol_id";
-            this.protocol_id.ReadOnly = true;
-            this.protocol_id.Width = 140;
-            // 
-            // violation_id
-            // 
-            this.violation_id.DataPropertyName = "violation_id";
-            this.violation_id.HeaderText = "ID Нарушения";
-            this.violation_id.MinimumWidth = 10;
-            this.violation_id.Name = "violation_id";
-            this.violation_id.ReadOnly = true;
-            this.violation_id.Width = 140;
-            // 
-            // sts_number
-            // 
-            this.sts_number.DataPropertyName = "sts_number";
-            this.sts_number.HeaderText = "Номер СТС";
-            this.sts_number.MinimumWidth = 10;
-            this.sts_number.Name = "sts_number";
-            this.sts_number.ReadOnly = true;
-            this.sts_number.Width = 140;
-            // 
-            // violation_date
-            // 
-            this.violation_date.DataPropertyName = "violation_date";
-            this.violation_date.HeaderText = "Дата нарушения";
-            this.violation_date.MinimumWidth = 10;
-            this.violation_date.Name = "violation_date";
-            this.violation_date.ReadOnly = true;
-            this.violation_date.Width = 140;
-            // 
-            // violation_time
-            // 
-            this.violation_time.DataPropertyName = "violation_time";
-            this.violation_time.HeaderText = "Время нарушения";
-            this.violation_time.MinimumWidth = 10;
-            this.violation_time.Name = "violation_time";
-            this.violation_time.ReadOnly = true;
-            this.violation_time.Width = 140;
-            // 
-            // violation_place
-            // 
-            this.violation_place.DataPropertyName = "violation_place";
-            this.violation_place.HeaderText = "Место нарушения";
-            this.violation_place.MinimumWidth = 10;
-            this.violation_place.Name = "violation_place";
-            this.violation_place.ReadOnly = true;
-            this.violation_place.Width = 200;
-            // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса оплаты";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 140;
             // 
             // AdminProtocolsForm
             // 

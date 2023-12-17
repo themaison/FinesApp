@@ -121,10 +121,7 @@ namespace FinesApp
                 gender = "Женский";
             }
 
-            if (licenseNumber=="" || fullName=="" || gender=="" || 
-                birthDate == DateTime.MinValue || 
-                licenseIssueDate == DateTime.MinValue || 
-                licenseValidityDate == DateTime.MinValue)
+            if (licenseNumber=="" || fullName=="" || gender=="")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -141,9 +138,6 @@ namespace FinesApp
             {
                 insert_tb1.Text = "";
                 insert_tb2.Text = "";
-                insert_dp1.Value = DateTime.MinValue;
-                insert_dp2.Value = DateTime.MinValue;
-                insert_dp3.Value = DateTime.MinValue;
 
                 insert_driver_box.Visible = false;
 
@@ -166,10 +160,7 @@ namespace FinesApp
 
             String currentLicenseNumber = driverDGV.CurrentRow.Cells[0].Value.ToString();
 
-            if (licenseNumber == "" || fullName == "" || gender == "" ||
-                    birthDate == DateTime.MinValue ||
-                    licenseIssueDate == DateTime.MinValue ||
-                    licenseValidityDate == DateTime.MinValue)
+            if (licenseNumber == "" || fullName == "" || gender == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -239,6 +230,38 @@ namespace FinesApp
                 {
                     female_update_rb.Checked = true;
                 }
+            }
+        }
+
+        private void update_tb1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void update_tb2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"[А-Яа-я\s]") && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void insert_tb1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void insert_tb2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"[А-Яа-я\s]") && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

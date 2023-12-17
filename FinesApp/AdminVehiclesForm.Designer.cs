@@ -60,18 +60,18 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.vehicleDGV = new System.Windows.Forms.DataGridView();
-            this.to_back_button = new System.Windows.Forms.Label();
-            this.update_button = new System.Windows.Forms.Button();
-            this.delete_button = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.to_back_button = new System.Windows.Forms.Label();
+            this.update_button = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
             this.update_vehicle_box.SuspendLayout();
             this.insert_vehicle_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleDGV)).BeginInit();
@@ -110,6 +110,7 @@
             this.update_tb4.Name = "update_tb4";
             this.update_tb4.Size = new System.Drawing.Size(327, 40);
             this.update_tb4.TabIndex = 39;
+            this.update_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb4_KeyPress);
             // 
             // label8
             // 
@@ -129,6 +130,7 @@
             this.update_tb6.Name = "update_tb6";
             this.update_tb6.Size = new System.Drawing.Size(327, 40);
             this.update_tb6.TabIndex = 37;
+            this.update_tb6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb6_KeyPress);
             // 
             // label9
             // 
@@ -148,6 +150,7 @@
             this.update_tb5.Name = "update_tb5";
             this.update_tb5.Size = new System.Drawing.Size(327, 40);
             this.update_tb5.TabIndex = 35;
+            this.update_tb5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb5_KeyPress);
             // 
             // label10
             // 
@@ -167,6 +170,7 @@
             this.update_tb2.Name = "update_tb2";
             this.update_tb2.Size = new System.Drawing.Size(327, 40);
             this.update_tb2.TabIndex = 33;
+            this.update_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb2_KeyPress);
             // 
             // label11
             // 
@@ -210,6 +214,7 @@
             this.update_tb3.Name = "update_tb3";
             this.update_tb3.Size = new System.Drawing.Size(327, 40);
             this.update_tb3.TabIndex = 28;
+            this.update_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb3_KeyPress);
             // 
             // update_tb1
             // 
@@ -217,6 +222,7 @@
             this.update_tb1.Name = "update_tb1";
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 27;
+            this.update_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb1_KeyPress);
             // 
             // update_cancel_box_button
             // 
@@ -280,6 +286,7 @@
             this.insert_tb4.Name = "insert_tb4";
             this.insert_tb4.Size = new System.Drawing.Size(327, 40);
             this.insert_tb4.TabIndex = 27;
+            this.insert_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb4_KeyPress);
             // 
             // label7
             // 
@@ -299,6 +306,7 @@
             this.insert_tb6.Name = "insert_tb6";
             this.insert_tb6.Size = new System.Drawing.Size(327, 40);
             this.insert_tb6.TabIndex = 25;
+            this.insert_tb6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb6_KeyPress);
             // 
             // label6
             // 
@@ -318,6 +326,7 @@
             this.insert_tb5.Name = "insert_tb5";
             this.insert_tb5.Size = new System.Drawing.Size(327, 40);
             this.insert_tb5.TabIndex = 23;
+            this.insert_tb5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb5_KeyPress);
             // 
             // label4
             // 
@@ -337,6 +346,7 @@
             this.insert_tb2.Name = "insert_tb2";
             this.insert_tb2.Size = new System.Drawing.Size(327, 40);
             this.insert_tb2.TabIndex = 21;
+            this.insert_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb2_KeyPress);
             // 
             // label5
             // 
@@ -410,6 +420,7 @@
             this.insert_tb3.Name = "insert_tb3";
             this.insert_tb3.Size = new System.Drawing.Size(327, 40);
             this.insert_tb3.TabIndex = 1;
+            this.insert_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb3_KeyPress);
             // 
             // insert_tb1
             // 
@@ -417,6 +428,7 @@
             this.insert_tb1.Name = "insert_tb1";
             this.insert_tb1.Size = new System.Drawing.Size(327, 40);
             this.insert_tb1.TabIndex = 0;
+            this.insert_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb1_KeyPress);
             // 
             // label2
             // 
@@ -455,6 +467,60 @@
             this.vehicleDGV.Size = new System.Drawing.Size(1180, 280);
             this.vehicleDGV.TabIndex = 0;
             this.vehicleDGV.SelectionChanged += new System.EventHandler(this.vehicleDGV_SelectionChanged);
+            // 
+            // sts_number
+            // 
+            this.sts_number.DataPropertyName = "sts_number";
+            this.sts_number.HeaderText = "Номер СТС";
+            this.sts_number.MinimumWidth = 10;
+            this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
+            this.sts_number.Width = 140;
+            // 
+            // state_number
+            // 
+            this.state_number.DataPropertyName = "state_number";
+            this.state_number.HeaderText = "Госномер";
+            this.state_number.MinimumWidth = 10;
+            this.state_number.Name = "state_number";
+            this.state_number.ReadOnly = true;
+            this.state_number.Width = 140;
+            // 
+            // license_number
+            // 
+            this.license_number.DataPropertyName = "license_number";
+            this.license_number.HeaderText = "Номер в/у";
+            this.license_number.MinimumWidth = 10;
+            this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
+            this.license_number.Width = 140;
+            // 
+            // year_of_manufacture
+            // 
+            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
+            this.year_of_manufacture.HeaderText = "Год выпуска";
+            this.year_of_manufacture.MinimumWidth = 10;
+            this.year_of_manufacture.Name = "year_of_manufacture";
+            this.year_of_manufacture.ReadOnly = true;
+            this.year_of_manufacture.Width = 140;
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "Марка";
+            this.brand.MinimumWidth = 10;
+            this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
+            this.brand.Width = 200;
+            // 
+            // model
+            // 
+            this.model.DataPropertyName = "model";
+            this.model.HeaderText = "Модель";
+            this.model.MinimumWidth = 10;
+            this.model.Name = "model";
+            this.model.ReadOnly = true;
+            this.model.Width = 200;
             // 
             // to_back_button
             // 
@@ -546,58 +612,6 @@
             this.full_name_label.TabIndex = 17;
             this.full_name_label.Text = "Таблица: Vehicle\r\n";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // sts_number
-            // 
-            this.sts_number.DataPropertyName = "sts_number";
-            this.sts_number.HeaderText = "Номер СТС";
-            this.sts_number.MinimumWidth = 10;
-            this.sts_number.Name = "sts_number";
-            this.sts_number.ReadOnly = true;
-            this.sts_number.Width = 140;
-            // 
-            // state_number
-            // 
-            this.state_number.DataPropertyName = "state_number";
-            this.state_number.HeaderText = "Госномер";
-            this.state_number.MinimumWidth = 10;
-            this.state_number.Name = "state_number";
-            this.state_number.ReadOnly = true;
-            this.state_number.Width = 140;
-            // 
-            // license_number
-            // 
-            this.license_number.DataPropertyName = "license_number";
-            this.license_number.HeaderText = "Номер в/у";
-            this.license_number.MinimumWidth = 10;
-            this.license_number.Name = "license_number";
-            this.license_number.ReadOnly = true;
-            this.license_number.Width = 140;
-            // 
-            // year_of_manufacture
-            // 
-            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
-            this.year_of_manufacture.HeaderText = "Год выпуска";
-            this.year_of_manufacture.MinimumWidth = 10;
-            this.year_of_manufacture.Name = "year_of_manufacture";
-            this.year_of_manufacture.ReadOnly = true;
-            this.year_of_manufacture.Width = 140;
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "brand";
-            this.brand.HeaderText = "Марка";
-            this.brand.MinimumWidth = 10;
-            this.brand.Name = "brand";
-            this.brand.ReadOnly = true;
-            // 
-            // model
-            // 
-            this.model.DataPropertyName = "model";
-            this.model.HeaderText = "Модель";
-            this.model.MinimumWidth = 10;
-            this.model.Name = "model";
-            this.model.ReadOnly = true;
             // 
             // AdminVehiclesForm
             // 

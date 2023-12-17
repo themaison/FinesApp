@@ -64,8 +64,6 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.protocolDGV = new System.Windows.Forms.DataGridView();
-            this.insert_button = new System.Windows.Forms.Button();
-            this.full_name_label = new System.Windows.Forms.Label();
             this.protocol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +71,8 @@
             this.violation_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.insert_button = new System.Windows.Forms.Button();
+            this.full_name_label = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.update_protocol_box.SuspendLayout();
             this.insert_protocol_box.SuspendLayout();
@@ -185,6 +185,7 @@
             this.update_tb4.Name = "update_tb4";
             this.update_tb4.Size = new System.Drawing.Size(327, 40);
             this.update_tb4.TabIndex = 35;
+            this.update_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb4_KeyPress);
             // 
             // label9
             // 
@@ -204,6 +205,7 @@
             this.update_tb3.Name = "update_tb3";
             this.update_tb3.Size = new System.Drawing.Size(327, 40);
             this.update_tb3.TabIndex = 33;
+            this.update_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb3_KeyPress);
             // 
             // label10
             // 
@@ -275,6 +277,7 @@
             this.update_tb2.Name = "update_tb2";
             this.update_tb2.Size = new System.Drawing.Size(327, 40);
             this.update_tb2.TabIndex = 26;
+            this.update_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb2_KeyPress);
             // 
             // update_tb1
             // 
@@ -282,6 +285,7 @@
             this.update_tb1.Name = "update_tb1";
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 25;
+            this.update_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb1_KeyPress);
             // 
             // update_cancel_box_button
             // 
@@ -357,6 +361,7 @@
             this.insert_tb4.Name = "insert_tb4";
             this.insert_tb4.Size = new System.Drawing.Size(327, 40);
             this.insert_tb4.TabIndex = 23;
+            this.insert_tb4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb4_KeyPress);
             // 
             // label4
             // 
@@ -376,6 +381,7 @@
             this.insert_tb3.Name = "insert_tb3";
             this.insert_tb3.Size = new System.Drawing.Size(327, 40);
             this.insert_tb3.TabIndex = 21;
+            this.insert_tb3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb3_KeyPress);
             // 
             // label6
             // 
@@ -478,6 +484,7 @@
             this.insert_tb2.Name = "insert_tb2";
             this.insert_tb2.Size = new System.Drawing.Size(327, 40);
             this.insert_tb2.TabIndex = 1;
+            this.insert_tb2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb2_KeyPress);
             // 
             // insert_tb1
             // 
@@ -485,6 +492,7 @@
             this.insert_tb1.Name = "insert_tb1";
             this.insert_tb1.Size = new System.Drawing.Size(327, 40);
             this.insert_tb1.TabIndex = 0;
+            this.insert_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb1_KeyPress);
             // 
             // label2
             // 
@@ -524,35 +532,6 @@
             this.protocolDGV.Size = new System.Drawing.Size(1180, 280);
             this.protocolDGV.TabIndex = 0;
             this.protocolDGV.SelectionChanged += new System.EventHandler(this.protocolDGV_SelectionChanged);
-            // 
-            // insert_button
-            // 
-            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.insert_button.Location = new System.Drawing.Point(656, 1);
-            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
-            this.insert_button.Name = "insert_button";
-            this.insert_button.Size = new System.Drawing.Size(180, 80);
-            this.insert_button.TabIndex = 21;
-            this.insert_button.Text = "Добавить";
-            this.insert_button.UseVisualStyleBackColor = true;
-            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
-            // 
-            // full_name_label
-            // 
-            this.full_name_label.AutoSize = true;
-            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.full_name_label.Location = new System.Drawing.Point(88, 17);
-            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
-            this.full_name_label.Name = "full_name_label";
-            this.full_name_label.Size = new System.Drawing.Size(328, 47);
-            this.full_name_label.TabIndex = 23;
-            this.full_name_label.Text = "Таблица: Protocol";
-            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // protocol_id
             // 
@@ -616,6 +595,35 @@
             this.status_id.Name = "status_id";
             this.status_id.ReadOnly = true;
             this.status_id.Width = 140;
+            // 
+            // insert_button
+            // 
+            this.insert_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.insert_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.insert_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insert_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.insert_button.Location = new System.Drawing.Point(656, 1);
+            this.insert_button.Margin = new System.Windows.Forms.Padding(4);
+            this.insert_button.Name = "insert_button";
+            this.insert_button.Size = new System.Drawing.Size(180, 80);
+            this.insert_button.TabIndex = 21;
+            this.insert_button.Text = "Добавить";
+            this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
+            // 
+            // full_name_label
+            // 
+            this.full_name_label.AutoSize = true;
+            this.full_name_label.Font = new System.Drawing.Font("Product Sans", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.full_name_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.full_name_label.Location = new System.Drawing.Point(88, 17);
+            this.full_name_label.Margin = new System.Windows.Forms.Padding(0);
+            this.full_name_label.Name = "full_name_label";
+            this.full_name_label.Size = new System.Drawing.Size(328, 47);
+            this.full_name_label.TabIndex = 23;
+            this.full_name_label.Text = "Таблица: Protocol";
+            this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InspectorProtocolsForm
             // 

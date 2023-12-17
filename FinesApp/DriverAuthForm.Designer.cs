@@ -154,6 +154,7 @@
             this.licenseNumberTextBox.TabIndex = 1;
             this.licenseNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
+            this.licenseNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.licenseNumberTextBox_KeyPress);
             // 
             // label2
             // 

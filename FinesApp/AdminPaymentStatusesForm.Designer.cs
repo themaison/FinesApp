@@ -35,6 +35,8 @@
             this.insert_tb1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
+            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.to_back_button = new System.Windows.Forms.Label();
             this.update_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@
             this.update_tb1 = new System.Windows.Forms.TextBox();
             this.insert_button = new System.Windows.Forms.Button();
             this.full_name_label = new System.Windows.Forms.Label();
-            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insert_payment_status_box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentStatusDGV)).BeginInit();
             this.panel2.SuspendLayout();
@@ -117,6 +117,7 @@
             this.insert_tb1.Name = "insert_tb1";
             this.insert_tb1.Size = new System.Drawing.Size(327, 40);
             this.insert_tb1.TabIndex = 0;
+            this.insert_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insert_tb1_KeyPress);
             // 
             // label2
             // 
@@ -151,6 +152,24 @@
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 280);
             this.paymentStatusDGV.TabIndex = 0;
             this.paymentStatusDGV.SelectionChanged += new System.EventHandler(this.paymentStatusDGV_SelectionChanged);
+            // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            this.status_id.Width = 200;
+            // 
+            // status_name
+            // 
+            this.status_name.DataPropertyName = "status_name";
+            this.status_name.HeaderText = "Наименование статуса";
+            this.status_name.MinimumWidth = 10;
+            this.status_name.Name = "status_name";
+            this.status_name.ReadOnly = true;
+            this.status_name.Width = 320;
             // 
             // to_back_button
             // 
@@ -277,6 +296,7 @@
             this.update_tb1.Name = "update_tb1";
             this.update_tb1.Size = new System.Drawing.Size(327, 40);
             this.update_tb1.TabIndex = 0;
+            this.update_tb1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.update_tb1_KeyPress);
             // 
             // insert_button
             // 
@@ -306,24 +326,6 @@
             this.full_name_label.TabIndex = 17;
             this.full_name_label.Text = "Таблица: Payment Status";
             this.full_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 200;
-            // 
-            // status_name
-            // 
-            this.status_name.DataPropertyName = "status_name";
-            this.status_name.HeaderText = "Наименование статуса";
-            this.status_name.MinimumWidth = 10;
-            this.status_name.Name = "status_name";
-            this.status_name.ReadOnly = true;
-            this.status_name.Width = 320;
             // 
             // AdminPaymentStatusesForm
             // 

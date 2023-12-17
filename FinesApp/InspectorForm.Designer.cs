@@ -31,11 +31,11 @@
             this.protocols_button = new System.Windows.Forms.Button();
             this.violations_button = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.read_info_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,45 @@
             this.panel2.Size = new System.Drawing.Size(1254, 566);
             this.panel2.TabIndex = 7;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(78, 291);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(271, 34);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "ГИБДД Информация";
+            // 
+            // read_info_button
+            // 
+            this.read_info_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.read_info_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.read_info_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.read_info_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.read_info_button.Location = new System.Drawing.Point(84, 335);
+            this.read_info_button.Margin = new System.Windows.Forms.Padding(10);
+            this.read_info_button.Name = "read_info_button";
+            this.read_info_button.Padding = new System.Windows.Forms.Padding(10);
+            this.read_info_button.Size = new System.Drawing.Size(294, 80);
+            this.read_info_button.TabIndex = 11;
+            this.read_info_button.Text = "Посмотреть";
+            this.read_info_button.UseVisualStyleBackColor = true;
+            this.read_info_button.Click += new System.EventHandler(this.read_info_button_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(78, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(209, 34);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "ГИБДД Данные";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -120,45 +159,6 @@
             this.exitButton.TabIndex = 12;
             this.exitButton.Text = "Выйти";
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(78, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(271, 34);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Изменяемые данные";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Product Sans", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(78, 291);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(384, 34);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Дополнительная информация";
-            // 
-            // read_info_button
-            // 
-            this.read_info_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.read_info_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.read_info_button.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.read_info_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.read_info_button.Location = new System.Drawing.Point(84, 335);
-            this.read_info_button.Margin = new System.Windows.Forms.Padding(10);
-            this.read_info_button.Name = "read_info_button";
-            this.read_info_button.Padding = new System.Windows.Forms.Padding(10);
-            this.read_info_button.Size = new System.Drawing.Size(294, 80);
-            this.read_info_button.TabIndex = 11;
-            this.read_info_button.Text = "Посмотреть";
-            this.read_info_button.UseVisualStyleBackColor = true;
-            this.read_info_button.Click += new System.EventHandler(this.read_info_button_Click);
             // 
             // InspectorForm
             // 

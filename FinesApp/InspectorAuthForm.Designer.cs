@@ -70,6 +70,7 @@
             this.passTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passTextBox.Size = new System.Drawing.Size(517, 80);
             this.passTextBox.TabIndex = 6;
+            this.passTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passTextBox_KeyPress);
             // 
             // label4
             // 
@@ -109,6 +110,7 @@
             this.loginTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.loginTextBox.Size = new System.Drawing.Size(517, 80);
             this.loginTextBox.TabIndex = 1;
+            this.loginTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginTextBox_KeyPress);
             // 
             // label2
             // 
