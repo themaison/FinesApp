@@ -32,11 +32,11 @@
             this.to_back_button = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
+            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.violationDGV = new System.Windows.Forms.DataGridView();
-            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violation_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fine_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +47,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Product Sans Black", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -113,6 +112,24 @@
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 200);
             this.paymentStatusDGV.TabIndex = 3;
             // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            this.status_id.Width = 200;
+            // 
+            // status_name
+            // 
+            this.status_name.DataPropertyName = "status_name";
+            this.status_name.HeaderText = "Наименование статуса";
+            this.status_name.MinimumWidth = 10;
+            this.status_name.Name = "status_name";
+            this.status_name.ReadOnly = true;
+            this.status_name.Width = 340;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -158,24 +175,6 @@
             this.violationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.violationDGV.Size = new System.Drawing.Size(1180, 320);
             this.violationDGV.TabIndex = 0;
-            // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 200;
-            // 
-            // status_name
-            // 
-            this.status_name.DataPropertyName = "status_name";
-            this.status_name.HeaderText = "Наименование статуса";
-            this.status_name.MinimumWidth = 10;
-            this.status_name.Name = "status_name";
-            this.status_name.ReadOnly = true;
-            this.status_name.Width = 340;
             // 
             // violation_id
             // 

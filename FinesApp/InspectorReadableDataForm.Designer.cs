@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paymentStatusDGV = new System.Windows.Forms.DataGridView();
+            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehicleDGV = new System.Windows.Forms.DataGridView();
-            this.driverDGV = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.to_back_button = new System.Windows.Forms.Label();
             this.sts_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.year_of_manufacture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driverDGV = new System.Windows.Forms.DataGridView();
             this.license_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_issue_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.license_validity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.to_back_button = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentStatusDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleDGV)).BeginInit();
@@ -87,6 +90,14 @@
             this.paymentStatusDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.status_id,
             this.status_name});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.paymentStatusDGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.paymentStatusDGV.Location = new System.Drawing.Point(29, 677);
             this.paymentStatusDGV.Margin = new System.Windows.Forms.Padding(4);
             this.paymentStatusDGV.Name = "paymentStatusDGV";
@@ -96,6 +107,24 @@
             this.paymentStatusDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.paymentStatusDGV.Size = new System.Drawing.Size(1180, 240);
             this.paymentStatusDGV.TabIndex = 12;
+            // 
+            // status_id
+            // 
+            this.status_id.DataPropertyName = "status_id";
+            this.status_id.HeaderText = "ID Статуса";
+            this.status_id.MinimumWidth = 10;
+            this.status_id.Name = "status_id";
+            this.status_id.ReadOnly = true;
+            this.status_id.Width = 140;
+            // 
+            // status_name
+            // 
+            this.status_name.DataPropertyName = "status_name";
+            this.status_name.HeaderText = "Наименование статуса";
+            this.status_name.MinimumWidth = 10;
+            this.status_name.Name = "status_name";
+            this.status_name.ReadOnly = true;
+            this.status_name.Width = 360;
             // 
             // vehicleDGV
             // 
@@ -112,6 +141,14 @@
             this.brand,
             this.model,
             this.year_of_manufacture});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.vehicleDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.vehicleDGV.Location = new System.Drawing.Point(29, 370);
             this.vehicleDGV.Margin = new System.Windows.Forms.Padding(4);
             this.vehicleDGV.Name = "vehicleDGV";
@@ -121,6 +158,60 @@
             this.vehicleDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vehicleDGV.Size = new System.Drawing.Size(1180, 240);
             this.vehicleDGV.TabIndex = 11;
+            // 
+            // sts_number
+            // 
+            this.sts_number.DataPropertyName = "sts_number";
+            this.sts_number.HeaderText = "Номер СТС";
+            this.sts_number.MinimumWidth = 10;
+            this.sts_number.Name = "sts_number";
+            this.sts_number.ReadOnly = true;
+            this.sts_number.Width = 140;
+            // 
+            // state_number
+            // 
+            this.state_number.DataPropertyName = "state_number";
+            this.state_number.HeaderText = "Госномер";
+            this.state_number.MinimumWidth = 10;
+            this.state_number.Name = "state_number";
+            this.state_number.ReadOnly = true;
+            this.state_number.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "license_number";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Номер в/у";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 140;
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "Марка";
+            this.brand.MinimumWidth = 10;
+            this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
+            this.brand.Width = 140;
+            // 
+            // model
+            // 
+            this.model.DataPropertyName = "model";
+            this.model.HeaderText = "Модель";
+            this.model.MinimumWidth = 10;
+            this.model.Name = "model";
+            this.model.ReadOnly = true;
+            this.model.Width = 140;
+            // 
+            // year_of_manufacture
+            // 
+            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
+            this.year_of_manufacture.HeaderText = "Год выпуска";
+            this.year_of_manufacture.MinimumWidth = 10;
+            this.year_of_manufacture.Name = "year_of_manufacture";
+            this.year_of_manufacture.ReadOnly = true;
+            this.year_of_manufacture.Width = 140;
             // 
             // driverDGV
             // 
@@ -137,6 +228,14 @@
             this.birth_date,
             this.license_issue_date,
             this.license_validity});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.driverDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.driverDGV.Location = new System.Drawing.Point(29, 68);
             this.driverDGV.Margin = new System.Windows.Forms.Padding(4);
             this.driverDGV.Name = "driverDGV";
@@ -146,6 +245,60 @@
             this.driverDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.driverDGV.Size = new System.Drawing.Size(1180, 240);
             this.driverDGV.TabIndex = 10;
+            // 
+            // license_number
+            // 
+            this.license_number.DataPropertyName = "license_number";
+            this.license_number.HeaderText = "Номер в/у";
+            this.license_number.MinimumWidth = 10;
+            this.license_number.Name = "license_number";
+            this.license_number.ReadOnly = true;
+            this.license_number.Width = 140;
+            // 
+            // full_name
+            // 
+            this.full_name.DataPropertyName = "full_name";
+            this.full_name.HeaderText = "ФИО";
+            this.full_name.MinimumWidth = 10;
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Width = 200;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Пол";
+            this.gender.MinimumWidth = 10;
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Width = 200;
+            // 
+            // birth_date
+            // 
+            this.birth_date.DataPropertyName = "birth_date";
+            this.birth_date.HeaderText = "Дата рождения";
+            this.birth_date.MinimumWidth = 10;
+            this.birth_date.Name = "birth_date";
+            this.birth_date.ReadOnly = true;
+            this.birth_date.Width = 140;
+            // 
+            // license_issue_date
+            // 
+            this.license_issue_date.DataPropertyName = "license_issue_date";
+            this.license_issue_date.HeaderText = "Дата выдачи в/у";
+            this.license_issue_date.MinimumWidth = 10;
+            this.license_issue_date.Name = "license_issue_date";
+            this.license_issue_date.ReadOnly = true;
+            this.license_issue_date.Width = 140;
+            // 
+            // license_validity
+            // 
+            this.license_validity.DataPropertyName = "license_validity";
+            this.license_validity.HeaderText = "Срок действия в/у";
+            this.license_validity.MinimumWidth = 10;
+            this.license_validity.Name = "license_validity";
+            this.license_validity.ReadOnly = true;
+            this.license_validity.Width = 140;
             // 
             // label4
             // 
@@ -211,131 +364,6 @@
             this.to_back_button.TabIndex = 15;
             this.to_back_button.Text = "<-";
             this.to_back_button.Click += new System.EventHandler(this.to_back_button_Click);
-            // 
-            // sts_number
-            // 
-            this.sts_number.DataPropertyName = "sts_number";
-            this.sts_number.HeaderText = "Номер СТС";
-            this.sts_number.MinimumWidth = 10;
-            this.sts_number.Name = "sts_number";
-            this.sts_number.ReadOnly = true;
-            this.sts_number.Width = 140;
-            // 
-            // state_number
-            // 
-            this.state_number.DataPropertyName = "state_number";
-            this.state_number.HeaderText = "Госномер";
-            this.state_number.MinimumWidth = 10;
-            this.state_number.Name = "state_number";
-            this.state_number.ReadOnly = true;
-            this.state_number.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "license_number";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Номер в/у";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 140;
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "brand";
-            this.brand.HeaderText = "Марка";
-            this.brand.MinimumWidth = 10;
-            this.brand.Name = "brand";
-            this.brand.ReadOnly = true;
-            this.brand.Width = 140;
-            // 
-            // model
-            // 
-            this.model.DataPropertyName = "model";
-            this.model.HeaderText = "Модель";
-            this.model.MinimumWidth = 10;
-            this.model.Name = "model";
-            this.model.ReadOnly = true;
-            this.model.Width = 140;
-            // 
-            // year_of_manufacture
-            // 
-            this.year_of_manufacture.DataPropertyName = "year_of_manufacture";
-            this.year_of_manufacture.HeaderText = "Год выпуска";
-            this.year_of_manufacture.MinimumWidth = 10;
-            this.year_of_manufacture.Name = "year_of_manufacture";
-            this.year_of_manufacture.ReadOnly = true;
-            this.year_of_manufacture.Width = 140;
-            // 
-            // license_number
-            // 
-            this.license_number.DataPropertyName = "license_number";
-            this.license_number.HeaderText = "Номер в/у";
-            this.license_number.MinimumWidth = 10;
-            this.license_number.Name = "license_number";
-            this.license_number.ReadOnly = true;
-            this.license_number.Width = 140;
-            // 
-            // full_name
-            // 
-            this.full_name.DataPropertyName = "full_name";
-            this.full_name.HeaderText = "ФИО";
-            this.full_name.MinimumWidth = 10;
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Width = 200;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Пол";
-            this.gender.MinimumWidth = 10;
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // birth_date
-            // 
-            this.birth_date.DataPropertyName = "birth_date";
-            this.birth_date.HeaderText = "Дата рождения";
-            this.birth_date.MinimumWidth = 10;
-            this.birth_date.Name = "birth_date";
-            this.birth_date.ReadOnly = true;
-            this.birth_date.Width = 140;
-            // 
-            // license_issue_date
-            // 
-            this.license_issue_date.DataPropertyName = "license_issue_date";
-            this.license_issue_date.HeaderText = "Дата выдачи в/у";
-            this.license_issue_date.MinimumWidth = 10;
-            this.license_issue_date.Name = "license_issue_date";
-            this.license_issue_date.ReadOnly = true;
-            this.license_issue_date.Width = 140;
-            // 
-            // license_validity
-            // 
-            this.license_validity.DataPropertyName = "license_validity";
-            this.license_validity.HeaderText = "Срок действия в/у";
-            this.license_validity.MinimumWidth = 10;
-            this.license_validity.Name = "license_validity";
-            this.license_validity.ReadOnly = true;
-            this.license_validity.Width = 140;
-            // 
-            // status_id
-            // 
-            this.status_id.DataPropertyName = "status_id";
-            this.status_id.HeaderText = "ID Статуса";
-            this.status_id.MinimumWidth = 10;
-            this.status_id.Name = "status_id";
-            this.status_id.ReadOnly = true;
-            this.status_id.Width = 140;
-            // 
-            // status_name
-            // 
-            this.status_name.DataPropertyName = "status_name";
-            this.status_name.HeaderText = "Наименование статуса";
-            this.status_name.MinimumWidth = 10;
-            this.status_name.Name = "status_name";
-            this.status_name.ReadOnly = true;
-            this.status_name.Width = 360;
             // 
             // InspectorReadableDataForm
             // 
