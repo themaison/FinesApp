@@ -31,10 +31,7 @@ namespace FinesApp
                 gender = "Женский";
             }
 
-            if (licenseNumber == "" || fullName == "" || gender == "" ||
-                birthDate == DateTime.MinValue ||
-                licenseIssueDate == DateTime.MinValue ||
-                licenseValidityDate == DateTime.MinValue)
+            if (licenseNumber == "" || fullName == "" || gender == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -51,9 +48,9 @@ namespace FinesApp
             {
                 licenseNumberTextBox.Text = "";
                 fioTextBox.Text = "";
-                birthDatePicker.Value = DateTime.MinValue;
-                licenseIssueDatePicker.Value = DateTime.MinValue;
-                licenseValidityDatePicker.Value = DateTime.MinValue;
+                //birthDatePicker.Value = DateTime.MinValue;
+                //licenseIssueDatePicker.Value = DateTime.MinValue;
+                //licenseValidityDatePicker.Value = DateTime.MinValue;
 
                 this.Hide();
                 DriverAuthForm driverAuthForm = new DriverAuthForm();

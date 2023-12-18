@@ -107,6 +107,7 @@ namespace FinesApp
             String stsNumber;
             DateTime violationDate;
             TimeSpan violationTime;
+            TimeSpan fixedViolationTime;
             String violationPlace;
             int statusID;
 
@@ -125,19 +126,13 @@ namespace FinesApp
                 stsNumber = insert_tb2.Text;
                 violationDate = insert_dp1.Value;
                 violationTime = insert_dp2.Value.TimeOfDay;
+                fixedViolationTime = new TimeSpan(violationTime.Hours, violationTime.Minutes, violationTime.Seconds);
                 violationPlace = insert_tb3.Text;
                 statusID = Convert.ToInt32(insert_tb4.Text);
 
             }
 
-            //if (ProtocolTable.IsExistsProtocol(protocolID))
-            //{
-            //    insert_tb1.Text = "";
-            //    Messages.DisplayErrorMessage("Такой протокол уже существует!");
-            //    return;
-            //}
-
-            if (ProtocolTable.Insert(violationID, stsNumber, violationDate, violationTime, violationPlace, statusID))
+            if (ProtocolTable.Insert(violationID, stsNumber, violationDate, fixedViolationTime, violationPlace, statusID))
             {
                 insert_tb1.Text = "";
                 insert_tb2.Text = "";
@@ -168,6 +163,7 @@ namespace FinesApp
             String stsNumber;
             DateTime violationDate;
             TimeSpan violationTime;
+            TimeSpan fixedViolationTime;
             String violationPlace;
             int statusID;
 
@@ -186,11 +182,12 @@ namespace FinesApp
                 stsNumber = update_tb2.Text;
                 violationDate = update_dp1.Value;
                 violationTime = update_dp2.Value.TimeOfDay;
+                fixedViolationTime = new TimeSpan(violationTime.Hours, violationTime.Minutes, violationTime.Seconds);
                 violationPlace = update_tb3.Text;
                 statusID = Convert.ToInt32(update_tb4.Text);
             }
 
-            if (ProtocolTable.Update(currentProtocolID, violationID, stsNumber, violationDate, violationTime, violationPlace, statusID))
+            if (ProtocolTable.Update(currentProtocolID, violationID, stsNumber, violationDate, fixedViolationTime, violationPlace, statusID))
             {
                 protocolDGV.DataSource = ProtocolTable.GetTable();
                 update_protocol_box.Visible = false;
