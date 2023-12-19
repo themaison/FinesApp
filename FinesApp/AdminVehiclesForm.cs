@@ -112,8 +112,8 @@ namespace FinesApp
             }
             else
             {
-                //Валидация
                 yearOfManufacture = Convert.ToInt32(yearOfManufactureStr);
+                
             }
 
             if (VehicleTable.IsExistsVehicle(stsNumber))

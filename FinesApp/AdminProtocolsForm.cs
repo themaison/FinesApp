@@ -118,17 +118,25 @@ namespace FinesApp
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
-
-            //Валидация
             else
             {
-                violationID = Convert.ToInt32(insert_tb1.Text);
+                if (!Int32.TryParse(insert_tb1.Text, out violationID))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
+                //violationID = Convert.ToInt32(insert_tb1.Text);
                 stsNumber = insert_tb2.Text;
                 violationDate = insert_dp1.Value;
                 violationTime = insert_dp2.Value.TimeOfDay;
                 fixedViolationTime = new TimeSpan(violationTime.Hours, violationTime.Minutes, violationTime.Seconds);
                 violationPlace = insert_tb3.Text;
-                statusID = Convert.ToInt32(insert_tb4.Text);
+                //statusID = Convert.ToInt32(insert_tb4.Text);
+                if (!Int32.TryParse(insert_tb4.Text, out statusID))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
 
             }
 
@@ -175,16 +183,25 @@ namespace FinesApp
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
-            //Добавить валидацию
             else
             {
-                violationID = Convert.ToInt32(update_tb1.Text);
+                if (!Int32.TryParse(update_tb1.Text, out violationID))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
+                //violationID = Convert.ToInt32(update_tb1.Text);
                 stsNumber = update_tb2.Text;
                 violationDate = update_dp1.Value;
                 violationTime = update_dp2.Value.TimeOfDay;
                 fixedViolationTime = new TimeSpan(violationTime.Hours, violationTime.Minutes, violationTime.Seconds);
                 violationPlace = update_tb3.Text;
-                statusID = Convert.ToInt32(update_tb4.Text);
+                //statusID = Convert.ToInt32(update_tb4.Text);
+                if (!Int32.TryParse(update_tb4.Text, out statusID))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
             }
 
             if (ProtocolTable.Update(currentProtocolID, violationID, stsNumber, violationDate, fixedViolationTime, violationPlace, statusID))
