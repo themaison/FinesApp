@@ -87,24 +87,23 @@ namespace FinesApp
 
         private void insert_box_button_Click(object sender, EventArgs e)
         {
-            String violationNameStr = insert_tb1.Text;
+            String violationName = insert_tb1.Text;
             String fineAmountStr = insert_tb2.Text;
-
-            String violationName;
             int fineAmount;
 
 
-            if (violationNameStr == "" || fineAmountStr == "")
+            if (violationName == "" || fineAmountStr == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
-
-            //Валидация
             else
             {
-                violationName = insert_tb1.Text;
-                fineAmount = Convert.ToInt32(insert_tb2.Text);
+                if (!Int32.TryParse(fineAmountStr, out fineAmount))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
             }
 
             if (ViolationTable.IsExistsViolation(violationName))
@@ -130,23 +129,48 @@ namespace FinesApp
 
         private void update_box_button_Click(object sender, EventArgs e)
         {
-            String violationNameStr = insert_tb1.Text;
-            String fineAmountStr = insert_tb2.Text;
-
+            String fineAmountStr = update_tb2.Text;
             String violationName = update_tb1.Text;
-            int fineAmount = Convert.ToInt32(update_tb2.Text);
+            int fineAmount;
 
             int currentViolationID = (int)violationDGV.CurrentRow.Cells[0].Value;
             String currentViolationName = (String)violationDGV.CurrentRow.Cells[1].Value;
 
-            if (violationName == currentViolationName)
+            if (violationName == "" || fineAmountStr == "")
             {
-                if (violationNameStr == "" || fineAmountStr == "")
+                Messages.DisplayErrorMessage("Заполните все поля!");
+                return;
+            }
+            else
+            {
+                if (!Int32.TryParse(fineAmountStr, out fineAmount))
                 {
-                    Messages.DisplayErrorMessage("Заполните все поля!");
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
                     return;
                 }
-                //Валидация
+            }
+
+            if (violationName == currentViolationName)
+            {
+                if (ViolationTable.Update(currentViolationID, violationName, fineAmount))
+                {
+                    violationDGV.DataSource = ViolationTable.GetTable();
+                    update_violation_box.Visible = false;
+                    Messages.DisplayInfoMessage("Данные успешно обновлены!");
+                }
+                else
+                {
+                    Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                }
+            }
+            else
+            {
+                if (ViolationTable.IsExistsViolation(violationName))
+                {
+                    update_tb1.Text = "";
+                    Messages.DisplayErrorMessage("Такое нарушение уже существует!");
+                }
+
                 else
                 {
                     if (ViolationTable.Update(currentViolationID, violationName, fineAmount))
@@ -160,38 +184,6 @@ namespace FinesApp
                         Messages.DisplayErrorMessage("Ошибка при изменении данных!");
                     }
                 }
-            }
-            else
-            {
-                if (ViolationTable.IsExistsViolation(violationName))
-                {
-                    update_tb1.Text = "";
-                    Messages.DisplayErrorMessage("Такое нарушение уже существует!");
-                }
-
-                else
-                {
-                    if (violationName == "" || fineAmount.ToString() == "")
-                    {
-                        Messages.DisplayErrorMessage("Заполните все поля!");
-                        return;
-                    }
-                    else
-                    {
-                        if (ViolationTable.Update(currentViolationID, violationName, fineAmount))
-                        {
-                            violationDGV.DataSource = ViolationTable.GetTable();
-                            update_violation_box.Visible = false;
-                            Messages.DisplayInfoMessage("Данные успешно обновлены!");
-                        }
-                        else
-                        {
-                            Messages.DisplayErrorMessage("Ошибка при изменении данных!");
-                        }
-                    }
-                }
-
-                return;
             }
         }
 

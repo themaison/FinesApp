@@ -112,8 +112,12 @@ namespace FinesApp
             }
             else
             {
-                yearOfManufacture = Convert.ToInt32(yearOfManufactureStr);
-                
+                if (!Int32.TryParse(yearOfManufactureStr, out yearOfManufacture))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
+                //yearOfManufacture = Convert.ToInt32(yearOfManufactureStr);       
             }
 
             if (VehicleTable.IsExistsVehicle(stsNumber))
@@ -161,8 +165,12 @@ namespace FinesApp
             }
             else
             {
-                //Валидация
-                yearOfManufacture = Convert.ToInt32(yearOfManufactureStr);
+                if (!Int32.TryParse(yearOfManufactureStr, out yearOfManufacture))
+                {
+                    Messages.DisplayErrorMessage("Кажется вы ввели слишком большое число!");
+                    return;
+                }
+                //yearOfManufacture = Convert.ToInt32(yearOfManufactureStr);
             }
 
             if (stsNumber == currentStsNumber)
