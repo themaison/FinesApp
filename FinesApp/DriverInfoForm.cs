@@ -20,33 +20,6 @@ namespace FinesApp
 
         private void DriverInfoForm_Load(object sender, EventArgs e)
         {
-            //DataTable table1 = new DataTable();
-            //DataTable table2 = new DataTable();
-
-            //NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
-            //NpgsqlCommand command;
-
-            //string query = "SELECT * FROM violation";
-            //string query2 = "SELECT * FROM payment_status";
-
-            //DB.openConnection();
-
-            //command = new NpgsqlCommand(query, DB.GetConnection());
-
-            //adapter.SelectCommand = command;
-            //adapter.Fill(table1);
-
-            //violationDGV.DataSource = table1;
-
-            //command = new NpgsqlCommand(query2, DB.GetConnection());
-
-            //adapter.SelectCommand = command;
-            //adapter.Fill(table2);
-
-            //paymentStatusDGV.DataSource = table2;
-
-            //DB.closeConnection();
-
             violationDGV.DataSource = ViolationTable.GetTable();
             paymentStatusDGV.DataSource = PaymentStatusTable.GetTable();
         }
